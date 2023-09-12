@@ -41,7 +41,7 @@ T2 = "[#FFA500]"  # Oranye
 class ____LambdaObfuscators____:
     def __init__(self):
         current_time = datetime.datetime.now()
-        current_time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
+        current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")  # Menambahkan nama hari dan nama bulan
       
         # Menggunakan triple quotes untuk string multibaris
         self.mzb = f'''
