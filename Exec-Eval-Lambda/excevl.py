@@ -5,7 +5,12 @@ import marshal
 import zlib
 import platform
 import datetime
+
+# Import modul random
+import random
 from random import randint
+
+# Import modul rich
 from rich.panel import Panel
 from rich import print as tulis
 from rich import print
@@ -41,16 +46,15 @@ T2 = "[#FFA500]"  # Oranye
 class ____LambdaObfuscators____:
     def __init__(self):
         current_time = datetime.datetime.now()
-        current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")  # Menambahkan nama hari dan nama bulan
-      
-        # Menggunakan triple quotes untuk string multibaris
+        current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
         self.mzb = f'''
 # Time : {current_time_str}
 # Platform : {platform.system()}-{platform.machine()}
 # Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
 
 Ryougaa_ = (\n'''
-        denventa_lines = ['"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000"' for _ in range(500)]  # Ganti 500 dengan jumlah baris yang Anda inginkan
+        denventa_lines = ['"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000"' for _ in range(150, 12010)]
+        
         self.mzb += ',\n'.join(denventa_lines)
         self.mzb += f'''\n)
 
@@ -58,10 +62,12 @@ Ryougaa_ = (\n'''
 # Platform : {platform.system()}-{platform.machine()}
 # Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
 
+# Variable teks : {len(denventa_lines)} Line
 Ryougaa_Hidekii__=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))(%s))));exec(Ryougaa_Hidekii__)
 
 Hidekii_ = (\n'''
-        denventa_lines = ['"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000"' for _ in range(500)]  # Ganti 500 dengan jumlah baris yang Anda inginkan
+        denventa_lines = ['"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000"' for _ in range(150, 12010)]
+        
         self.mzb += ',\n'.join(denventa_lines)
         self.mzb += f'''\n)'''
 
