@@ -44,11 +44,26 @@ class ____LambdaObfuscators____:
         current_time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
       
         # Menggunakan triple quotes untuk string multibaris
-        self.mzb = f'''# Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
+        self.mzb = f'''
 # Time : {current_time_str}
 # Platform : {platform.system()}-{platform.machine()}
+# Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
 
-Kontolivo=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))(%s))));exec(Kontolivo)'''
+Ryougaa_ = (\n'''
+        denventa_lines = ['"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000"' for _ in range(500)]  # Ganti 500 dengan jumlah baris yang Anda inginkan
+        self.mzb += ',\n'.join(denventa_lines)
+        self.mzb += f'''\n)
+
+# Time : {current_time_str}
+# Platform : {platform.system()}-{platform.machine()}
+# Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
+
+Ryougaa_Hidekii__=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))(%s))));exec(Ryougaa_Hidekii__)
+
+Hidekii_ = (\n'''
+        denventa_lines = ['"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000"' for _ in range(500)]  # Ganti 500 dengan jumlah baris yang Anda inginkan
+        self.mzb += ',\n'.join(denventa_lines)
+        self.mzb += f'''\n)'''
 
     def encrypt_file(self, input_file, output_file, count):
         try:
