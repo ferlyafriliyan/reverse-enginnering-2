@@ -102,7 +102,7 @@ def random_ua_realme():
     b = random.randrange(1000,10000)
     c = random.randrange(10,100)
     os_ver = random.randrange(10,13)                                                        #--> OS Version
-    dv_typ = random.choice(['RMX3686','RMX3393','RMX3081','RMX2170','RMX2061','RMX2020'])   #--> Device Type
+    dv_typ = random.choice(['RMX1001','RMX2001','RMX2002','RMX2003','RMX2005','RMX2006','RMX2007','RMX2008','RMX2009','RMX2010','RMX2011','RMX2012','RMX2013','RMX2014','RMX2015','RMX2016','RMX2017','RMX2019','RMX2020','RMX2021','RMX2022','RMX2023','RMX2024','RMX2025','RMX2026','RMX2027','RMX2028','RMX2029','RMX2030','RMX2031','RMX2032','RMX2033','RMX2034','RMX2035','RMX2037','RMX2039','RMX2040','RMX2041','RMX2042','RMX2043','RMX2044','RMX2045','RMX2046'])  #--> Device Type
     bl_typ = random.choice(['QP1A','SKQ1','TP1A','RKQ1','SP1A','RP1A'])                     #--> Build Type
     dv_ver = random.randrange(100000,250000)                                                #--> Device Version
     sd_ver = random.randrange(1,10)                                                         #--> Update Version
@@ -179,7 +179,7 @@ class menu:
 class menu_create:
     def __init__(self):
         global kelamin, namstat, nameme, web_email, tampil, useragent, uman, passtat, password
-        try:os.mkdir('Akun_New')
+        try:os.mkdir('Ress_Acc')
         except Exception as e :pass
         print('      %s◉ %sRekomendasi   %s◉ %sTidak Rekomendasi   ◉ Netral'%(H,P,M,P))
         print('')
@@ -229,7 +229,7 @@ class create_fb:
 
     #--> Tampung Kabeh
     def __init__(self):
-        self.file  = 'Akun_New/%s.txt'%(waktu())
+        self.file  = 'Ress_Acc/%s.txt'%(waktu())
         self.abc = requests.Session() #--> Sesi Email
         self.xyz = requests.Session() #--> Sesi Facebook
         self.abc.cookies.clear()
