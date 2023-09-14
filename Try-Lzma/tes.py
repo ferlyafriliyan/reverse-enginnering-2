@@ -12,6 +12,13 @@ import bz2
 import binascii
 import zlib
 
+
+mlgb_bz = f"""
+            ╔╦╗┬  ┌─┐┌┐     ╔╗ ┌─┐
+            ║║║│  │ ┬├┴┐    ╠╩╗┌─┘
+            ╩ ╩┴─┘└─┘└─┘────╚═╝└─┘
+            [ Marszhal Lzma Gzip Bz2 Binascii Zlib]
+"""
 def prett(text):
     return text.title().center(os.get_terminal_size().columns)
 
@@ -19,15 +26,16 @@ def encode(source: str) -> str:
     selected_mode = random.choice((lzma, gzip, bz2, binascii, zlib))
     marshal_encoded = marshal.dumps(compile(source, "Py-Fuscate", "exec"))
     if selected_mode is binascii:
-        return "import marshal,lzma,gzip,bz2,binascii,zlib;exec(marshal.loads(binascii.a2b_base64({})))".format(
+        return "import marshal, lzma, gzip, bz2, binascii, zlib;exec(marshal.loads(binascii.a2b_base64({})))".format(
             binascii.b2a_base64(marshal_encoded)
         )
-    return "import marshal,lzma,gzip,bz2,binascii,zlib;exec(marshal.loads({}.decompress({})))".format(
+    return "import marshal, lzma, gzip, bz2, binascii, zlib;exec(marshal.loads({}.decompress({})))".format(
         selected_mode.__name__, selected_mode.compress(marshal_encoded)
     )
 
 def main():
     os.system("clear")
+    print(mlgb_bz)
     print("\n" + prett("[+] Try-Lzma Python File Encryptor [+]\n"))
 
     input_file = input("\t\tMasukan Nama File Input, Contoh : 'tes.py' : ")
@@ -44,10 +52,13 @@ def main():
             source_code = encode(source_code)
             time.sleep(0.1)
         file.write(
-            f'# Encoded By : Ferly Afriliyan\n# Script ini Sudah Dimodifikasi agar lebih Simpel untuk Digunakan\n# To Check Your Python Version Run "python -V" Command\ntry:\n\t{source_code}\nexcept KeyboardInterrupt:\n\texit()'
+            f'# Encoded By : Ferly Afriliyan\n# Script ini Sudah Dimodifikasi agar lebih Simpel untuk Digunakan# To Check Your Python Version Run "python -V" Command\ntry:\n\t{source_code}\nexcept KeyboardInterrupt:\n\texit()'
         )
 
     print("\n[+] Berhasil.. File hasil Encrypt tersimpan Di :", output_file)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        exit()
