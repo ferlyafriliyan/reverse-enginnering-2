@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-# By Sandaru Ashen: https://github.com/Sl-Sanda-Ru, https://t.me/Sl_Sanda_Ru
-
+# Developed By : Ferly Afriliyan
 import os
 import sys
 import random
@@ -28,11 +27,12 @@ def encode(source: str) -> str:
     )
 
 def main():
-    print("\n" + prett("[+] Py-Fuscate Python File Encryptor [+]\n"))
+    os.system("clear")
+    print("\n" + prett("[+] Try-Lzma Python File Encryptor [+]\n"))
 
-    input_file = input(prett("Enter the input Python file name (tes.py): "))
-    output_file = input(prett("Enter the output Python file name (tes_enc.py): "))
-    complexity = int(input(prett("Enter the complexity of obfuscation (ex : 100): ")))
+    input_file = input("\t\tMasukan Nama File Input, Contoh : 'tes.py' : ")
+    output_file = input("\t\tMasukkan Nama File Output, Contoh : 'tes_enc.py' : ")
+    complexity = int(input("\t\tFor Loop, Batasan : '100' (ex : 100): "))
 
     print("\n" + prett("[+] Encrypting... [+]\n"))
 
@@ -44,10 +44,10 @@ def main():
             source_code = encode(source_code)
             time.sleep(0.1)
         file.write(
-            f'# Encoded By Try-Lzma\n# Make Sure You\'re Running The Program With Python {sys.version_info[0]}.{sys.version_info[1]} Otherwise It May Crash\n# To Check Your Python Version Run "python -V" Command\ntry:\n\t{source_code}\nexcept KeyboardInterrupt:\n\texit()'
+            f'# Encoded By : Ferly Afriliyan\n# Script ini Sudah Dimodifikasi agar lebih Simpel untuk Digunakan\n# To Check Your Python Version Run "python -V" Command\ntry:\n\t{source_code}\nexcept KeyboardInterrupt:\n\texit()'
         )
 
-    print("\n" + prett("[+] Encryption completed! Output saved as ") + output_file + prett(" [+]\n"))
+    print("\n[+] Berhasil.. File hasil Encrypt tersimpan Di :", output_file)
 
 if __name__ == "__main__":
     main()
