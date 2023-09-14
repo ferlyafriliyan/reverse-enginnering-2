@@ -58,7 +58,7 @@ def encrypt_and_save_code(source_code, output_file):
         f.write(f"# __Time__ = {current_time}\n")
         f.write(f"# Di Buat Pada Tanggal : {datetime.datetime.now().strftime('%d-%m-%Y')}\n\n")
 
-        f.write(f"import marshal, zlib, base64\nRyougaa_Hidekii__=(marshal.loads(zlib.decompress(base64.b64decode('''{encrypted_code}'''))));exec(Ryougaa_Hidekii__)")
+        f.write(f"import marshal, zlib, base64\nRyougaa_Hidekii__=(marshal.loads(zlib.decompress(base64.b64decode(b'{encrypted_code}'))));exec(Ryougaa_Hidekii__)")
     
         f.write('\n\n')
         f.write(f"# Variable teks : {num_iterations} Line\n")
