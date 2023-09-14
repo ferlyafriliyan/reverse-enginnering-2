@@ -42,7 +42,7 @@ Hidekii__ = [f'Ferly__ = ("https://ferlyafriliyan.github.io");Dev__ = ("https://
 # Fungsi enkripsi dan penyimpanan kode
 def encrypt_and_save_code(source_code, output_file):
     encrypt = lambda data: base64.b64encode(zlib.compress(marshal.dumps(compile(data, "", "exec")))).decode("utf-8")
-    current_time = datetime.datetime.now()
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # Format waktu sesuai keinginan
 
     encrypted_code = encrypt(source_code)
     with open(output_file, "w") as f:
@@ -56,7 +56,7 @@ def encrypt_and_save_code(source_code, output_file):
 
         f.write(f"# One of the best Python3.11 obfuscators.\n\n")
         f.write(f"# __Time__ = {current_time}\n")
-        f.write(f"# Di Buat Pada Tanggal : 15-8-2023\n\n")
+        f.write(f"# Di Buat Pada Tanggal : {datetime.datetime.now().strftime('%d-%m-%Y')}\n\n")
 
         f.write(f"import marshal, zlib, base64\nRyougaa_Hidekii__=(marshal.loads(zlib.decompress(base64.b64decode('''{encrypted_code}'''))));exec(Ryougaa_Hidekii__)")
     
