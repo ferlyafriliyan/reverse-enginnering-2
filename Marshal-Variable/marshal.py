@@ -1,15 +1,11 @@
-# Import Metode Encrypr
 import os
 import marshal
 import zlib
 import base64
-# Import Keterangan
 import datetime
 import platform
-# Import Modul Random
 import random
 from random import randint
-# Module Rich
 from rich import print
 
 # Definisi warna teks ANSI
@@ -39,9 +35,8 @@ A2 = "[#AAAAAA]" # Abu-Abu
 num_iterations = random.randint(150, 6105)
 
 # Tambahkan isi dari variabel Obfuscated_F dan Hidekii__
-
 Obfuscated_F = [f'Ryougaa__=("https://ferlyafriliyan.github.io");Hidekii_=("https://github.com/ferlyafriliyan");["from","import","as","marshal","base64","zlib","((","))","exec","exec(",]']
-# Variable teks : {len(num_iterations)} Line
+# Variable teks : {num_iterations} Line
 Hidekii__ = [f'Ferly__ = ("https://ferlyafriliyan.github.io");Dev__ = ("https://github.com/ferlyafriliyan");["from","import","as","marshal","base64","zlib","((","))","exec","exec(",]']
 
 # Fungsi enkripsi dan penyimpanan kode
@@ -54,6 +49,7 @@ def encrypt_and_save_code(source_code, output_file):
         f.write(f'# Enc by : Ryougaa__XD\n# Github : https://github.com/ferlyafriliyan\n# Terima kasih sudah menggunakan script ini :)\n\n')
       
         # Menambahkan baris Ryougaa__XD dan Hidekii__
+        f.write(f"# Variable teks : {num_iterations} Line\n")
         for _ in range(num_iterations):
             f.write(Obfuscated_F[0] + '\n')
         f.write('\n')
@@ -65,6 +61,7 @@ def encrypt_and_save_code(source_code, output_file):
         f.write(f"import marshal, zlib, base64\nRyougaa_Hidekii__=(marshal.loads(zlib.decompress(base64.b64decode('''{encrypted_code}'''))));exec(Ryougaa_Hidekii__)")
     
         f.write('\n\n')
+        f.write(f"# Variable teks : {num_iterations} Line\n")
         for _ in range(num_iterations):
             f.write(Hidekii__[0] + '\n')
         f.write('\n')
