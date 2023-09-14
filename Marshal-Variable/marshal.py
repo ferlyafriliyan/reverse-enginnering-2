@@ -1,9 +1,15 @@
+# Import Metode Encrypr
 import os
 import marshal
 import zlib
 import base64
+# Import Keterangan
 import datetime
 import platform
+# Import Modul Random
+import random
+from random import randint
+# Module Rich
 from rich import print
 
 # Definisi warna teks ANSI
@@ -30,16 +36,13 @@ P2 = "[#FFFFFF]" # Putih
 J2 = "[#FF8F00]" # Jingga
 A2 = "[#AAAAAA]" # Abu-Abu
 
+num_iterations = random.randint(150, 6105)
 
-num_iterations = 444
-Obfuscated_F = [
-    "Encrypted Marshal coded By Ryougaa__XD Python version 3.11.4" for _ in range(num_iterations)
-]
+# Tambahkan isi dari variabel Obfuscated_F dan Hidekii__
 
-# Tambahkan isi dari variabel Hidekii__ (444 baris)
-Hidekii__ = [
-    "Tinggal Pake Apa susahnya Ka. Hargai Karya Orang Terima Kasih" for _ in range(num_iterations)
-]
+Obfuscated_F = [f'Ryougaa__=("https://ferlyafriliyan.github.io");Hidekii_=("https://github.com/ferlyafriliyan");["from","import","as","marshal","base64","zlib","((","))","exec","exec(",]']
+# Variable teks : {len(num_iterations)} Line
+Hidekii__ = [f'Ferly__ = ("https://ferlyafriliyan.github.io");Dev__ = ("https://github.com/ferlyafriliyan");["from","import","as","marshal","base64","zlib","((","))","exec","exec(",]']
 
 # Fungsi enkripsi dan penyimpanan kode
 def encrypt_and_save_code(source_code, output_file):
@@ -51,21 +54,20 @@ def encrypt_and_save_code(source_code, output_file):
         f.write(f'# Enc by : Ryougaa__XD\n# Github : https://github.com/ferlyafriliyan\n# Terima kasih sudah menggunakan script ini :)\n\n')
       
         # Menambahkan baris Ryougaa__XD dan Hidekii__
-        f.write('Ryougaa__XD = [\n')
-        for obf_line in Obfuscated_F:
-            f.write(f'"{obf_line}",\n')
-        f.write(']\n\n')
+        for _ in range(num_iterations):
+            f.write(Obfuscated_F[0] + '\n')
+        f.write('\n')
 
         f.write(f"# One of the best Python3.11 obfuscators.\n\n")
         f.write(f"# __Time__ = {current_time}\n")
         f.write(f"# Di Buat Pada Tanggal : 15-8-2023\n\n")
 
-        f.write(f"import marshal, zlib, base64\nuncompile6__marshal_loads___zlib_decompress___base64_b64decode=(marshal.loads(zlib.decompress(base64.b64decode('''{encrypted_code}'''))));exec(uncompile6__marshal_loads___zlib_decompress___base64_b64decode)")
+        f.write(f"import marshal, zlib, base64\nRyougaa_Hidekii__=(marshal.loads(zlib.decompress(base64.b64decode('''{encrypted_code}'''))));exec(Ryougaa_Hidekii__)")
     
-        f.write('\n\nHidekii__ = [\n')
-        for hidekii_line in Hidekii__:
-            f.write(f'"{hidekii_line}",\n')
-        f.write(']\n\n')
+        f.write('\n\n')
+        for _ in range(num_iterations):
+            f.write(Hidekii__[0] + '\n')
+        f.write('\n')
 
     print(f"{H2}[ {A2}• {H2}] Berhasil Obfuscated File - Hasil Encrypt : {output_file}")
 
