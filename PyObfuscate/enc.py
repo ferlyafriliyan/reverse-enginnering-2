@@ -191,7 +191,7 @@ def MainMenu():
         except IOError:
             sys.exit("\n File Not Found!")
 
-        output = file.lower().replace('.py', '') + '_enc.py'
+        output = file.lower().replace('.py', '') + '_.py'
         if option == 16:
             SEncode(data, output)
         else:
