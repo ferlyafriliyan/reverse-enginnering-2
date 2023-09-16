@@ -44,7 +44,7 @@ def encrypt_and_save_code(source_code, output_file):
         f.write(f'__Author__ = "Ferly Afriliyan"\n__MadeBy__ = "[ MZB_OBF ( Marshal Zlib Base64 ) ]"\n__Github__ = "https://github.com/ferlyafriliyan"\n\n')
         f.write(f"# One of the best Python3.11 obfuscators.\n\n")
         f.write(f"# Di Buat Pada Tanggal : 15-8-2023\n\nimport base64, zlib, marshal\n")
-        f.write(f"uncompile6__=(marshal.loads(zlib.decompress(base64.b64decode('''{encrypted_code}'''))));exec(uncompile6__)")
+        f.write(f"uncompile6__=(marshal.loads(zlib.decompress(base64.b64decode(z'{encrypted_code}'))));exec(uncompile6__)")
 
     print(f"{H2}[ {A2}• {H2}] Berhasil Obfuscated File - Hasil Encrypt : {output_file}")
 
