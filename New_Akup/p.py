@@ -1,3 +1,5 @@
+import os as auto
+auto("clear")
 # Akun - 1
 Nama = "Denventa Denventa"
 Email = "elq83199@nezid.com"
