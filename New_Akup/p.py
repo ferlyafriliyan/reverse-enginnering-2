@@ -1,5 +1,5 @@
 import os as auto
-auto("clear")
+auto.system("clear")
 # Akun - 1
 Nama = "Denventa Denventa"
 Email = "elq83199@nezid.com"
