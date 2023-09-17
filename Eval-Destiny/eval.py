@@ -36,21 +36,21 @@ A2 = "[#AAAAAA]" # Abu-Abu
 
 def encrypt_and_save_code(source_code, output_file):
     encrypt = lambda data: base64.b64encode(zlib.compress(marshal.dumps(compile(data, "", "exec")))).decode("utf-8")
-    
+
     encrypted_code = encrypt(source_code)
     current_time = datetime.datetime.now()
-    
+
     with open(output_file, "w") as f:
         f.write(f'__Author__ = "Ferly Afriliyan"\n__MadeBy__ = "[ MZB_OBF ( Marshal Zlib Base64 ) ]"\n__Github__ = "https://github.com/ferlyafriliyan"\n\n')
         f.write(f"# One of the best Python3.11 obfuscators.\n\n")
         f.write(f"# Di Buat Pada Tanggal : 15-8-2023\n\nimport base64, zlib, marshal\n")
-        f.write(f"uncompile6__=(marshal.loads(zlib.decompress(base64.b64decode(z'{encrypted_code}'))));exec(uncompile6__)")
+        f.write(f"uncompile6__=(marshal.loads(zlib.decompress(base64.b64decode(b'{encrypted_code}'))));exec(uncompile6__)")
 
     print(f"{H2}[ {A2}• {H2}] Berhasil Obfuscated File - Hasil Encrypt : {output_file}")
 
 def custom_encrypt(input_file, output_file):
     note = f'# Coded by : Ferly Afriliyan\n# Do not share Original Files\n'   \
-           
+
 
     try:
         with open(input_file, 'r') as f:
@@ -89,14 +89,14 @@ def custom_encrypt(input_file, output_file):
 
     nta_xe = codecs.encode(h4, 'rot_13')
 
-    obf_note = note + "trust = '" + str(nta_xe) + "'\t\t\n"
+    obf_note = note + "trust = '" + str(nta_xe) + "'\n"
 
     h6 = open(fer4, 'w')
     h6.write(obf_note + '\nimport codecs, base64\n' + 'magic = ' + str(h2) + '\t\t\n' + "love = '" + str(nta_xe) + "'\t\t\n")
-    h6.write("god = '\\x72\\x6f\\x74\\x5f\\x31\\x33'\t\t\n")
-    h6.write("destiny = codecs.decode(eval('\\x6c\\x6f\\x76\\x65'), eval('\\x67\\x6f\\x64'))\t\t\n")
+    h6.write("god = '\\x72\\x6f\\x74\\x5f\\x31\\x33'\n")
+    h6.write("destiny = codecs.decode(eval('\\x6c\\x6f\\x76\\x65'), eval('\\x67\\x6f\\x64'))\n")
     h6.write("joy = base64.b64decode(''.join([chr(ferz) for ferz in magic])+eval('\\x64\\x65\\x73\\x74\\x69\\x6e\\x79'))\t\t\n")
-    h6.write("eval(compile(eval('\\x6a\\x6f\\x79'),'<string>','exec'))\t\t\n")
+    h6.write("eval(compile(eval('\\x6a\\x6f\\x79'),'<string>','exec'))\n")
     h6.close()
 
     # Compile the encrypted file
