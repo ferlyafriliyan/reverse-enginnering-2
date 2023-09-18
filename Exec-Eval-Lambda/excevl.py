@@ -9,13 +9,11 @@ import datetime
 # Import modul random
 import random
 from random import randint
-
 # Import modul rich
 from rich.panel import Panel
 from rich import print as tulis
 from rich import print
 
-# Definisi warna teks ANSI
 Hitam = "\u001b[30m"
 Merah = "\u001b[31m"
 Hijau = "\u001b[32m"
@@ -42,6 +40,7 @@ P2 = "[#FFFFFF]"  # Putih
 J2 = "[#FF8F00]"  # Jingga
 A2 = "[#AAAAAA]"  # Abu-Abu
 T2 = "[#FFA500]"  # Oranye
+
 
 class ____LambdaObfuscators____:
     def __init__(self):
@@ -80,7 +79,10 @@ Hidekii_ = (\n'''
             with open(output_file, 'w') as f:
                 f.write(self.mzb % __Cum__)
 
-            for komter in range(count):
+            total_iterations = count
+            current_iteration = 0
+
+            while current_iteration < total_iterations:
                 obf__ = open(output_file, 'rb').read()
                 ___zlb__ = compile(obf__, '<Ryougaacoli>', 'exec')
                 ___mars___ = repr(base64.b64encode(zlib.compress(marshal.dumps(___zlb__))))
@@ -88,14 +90,16 @@ Hidekii_ = (\n'''
                 with open(output_file, 'w') as f:
                     f.write(self.mzb % ___mars___)
 
-                print(f"{P2}└──>{B2}[{A2}+{B2}]{P2}Compile ke {A2}: {T2}{komter}")
+                current_iteration += 1
+                loading_percentage = (current_iteration / total_iterations) * 100
+                print(f"Encrypting: [{loading_percentage:.2f}%]", end='\r')
                 time.sleep(1)
 
             print(f"\n{H2}[{A2}!!{H2}]{P2} Berhasil, File tersimpan di {A2}: {output_file}")
             exit()
         except Exception as e:
             print(f"{M2}[{A2}•{M2}]{P2} Error : {P2}\n└──>{M2}[{A2}•{M2}] {P2}Isi Yang Benar {M2}!")
-
+            
 if __name__ == "__main__":
     encryptor = ____LambdaObfuscators____()
     os.system("clear")
