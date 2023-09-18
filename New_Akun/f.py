@@ -19,5 +19,5 @@ print("[•] Akun - 1\nNama FB :", Nama + "\nEmail :", Email + "\nTtl :", TTL + 
 Nama = "Denventa Dev"
 Email = "ber66338@zbok.com"
 TTL = "04/04/2000"
-Pass = " Ferly4409_$XD
+Pass = "Ferly4409_$XD"
 print("[•] Akun - 1\nNama FB :", Nama + "\nEmail :", Email + "\nTtl :", TTL + "\nPassword :", Pass)
