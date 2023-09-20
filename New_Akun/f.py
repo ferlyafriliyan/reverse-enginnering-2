@@ -28,3 +28,11 @@ Email = "deventa966@gmail.com"
 TTL = "10/Agustus/1910"
 Pass = "Ferly4409_$XD"
 print("\n[•] Akun - 4 ( Pribadi )\nNama FB :", Nama + "\nEmail :", Email + "\nTtl :", TTL + "\nPassword :", Pass)
+
+# Akun 5 ( Pribadi + Locked Profile )
+Nama = "Freya Jayawardana Adityaningsih"
+Email = "dvanmeplophferly@gmail.com"
+TTL = "26/Mei/1996"
+Pass = "DenventaAfriliyan费利4409#"
+print("\n[•] Akun - 5 ( Pribadi + Locked Profile)\nNama FB :", Nama + "\nEmail :", Email + "\nTtl :", TTL + "\nPassword :", Pass)
+
