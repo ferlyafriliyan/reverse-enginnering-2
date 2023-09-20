@@ -5,7 +5,7 @@ import os, sys, datetime, random, platform
 import marshal, zlib, binascii
 import gzip, bz2, lzma
 
-# Impory modul rich
+# Import modul rich
 from rich import print
 # Import moduk time
 import time
@@ -49,12 +49,12 @@ mlgb_bz = f"""
 num_iterations = random.randint(150, 6105)
 try_variable_ = [f'''__N00B_3NC0DE3 =("https://ferlyafriliyan.vercel.app")
 __D3v_N00B =("https://github.com/N00B-3NC0DE3")
-["from", "import", "as", "marshal", ".loads", "base64", ".b64decode", ".b64encode", "zlib", ".decompress", "lzma", "gzip", "bz2", "exec(", "try:", "except KeyboardInterrupt:",]''']
+["import marshal, lzma, gzip, bz2, binascii, zlib;", "from", "import", "as", "marshal", ".loads", "base64", ".b64decode", ".b64encode", "zlib", ".decompress", "lzma", "gzip", "bz2", "exec(", "try:", "except KeyboardInterrupt:",]''']
 
 __try__variable__two = [f'''
 __FA4__XCODE = "https://www.facebook.com/freya.xyz"
 __XCODE__XD = "https://github.com/ferlyafriliyan"
-["import", "as", "from", "marshal", ".loads", "base64", "zlib", "b64decode", "b64encode", "decompress", "exec(", "try:", "except KeyboardInterrupt:",]
+["import marshal, lzma, gzip, bz2, binascii, zlib;", "import", "as", "from", "marshal", ".loads", "base64", "zlib", "b64decode", "b64encode", "decompress", "exec(", "try:", "except KeyboardInterrupt:",]
 ''']
 
 
