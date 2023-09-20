@@ -4,10 +4,11 @@
 import os, sys, datetime, random, platform
 import marshal, zlib, binascii
 import gzip, bz2, lzma
-import time  # Import modul time
 
 # Impory modul rich
 from rich import print
+# Import moduk time
+import time
 
 # Warna Text
 Hitam = "\u001b[30m"
@@ -58,9 +59,9 @@ __XCODE__XD = "https://github.com/ferlyafriliyan"
 ["import","as","from","marshal",".loads","base64","zlib","b64decode","b64encode","decompress","exec(",]
 ''']
 
+
 current_time = datetime.datetime.now()
 current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
-
 def prett(text):
     return text.title().center(os.get_terminal_size().columns)
 
@@ -114,8 +115,26 @@ def main():
     while current_iteration <= total_iterations:
         loading_percentage = (current_iteration / total_iterations) * 100
         print(f"{T2}[{J2}+{V2}] {P2}Encrypting: [{loading_percentage:.2f}%]", end='\r')
-        time.sleep(0.1)  # Perubahan kecepatan animasi
+        time.sleep(0.01)  # Perubahan kecepatan animasi
         current_iteration += 1
+
+    with open(input_file, 'r') as file:
+        source_code = file.read()
+
+    with open(output_file, 'w') as f:
+        f.write(
+            f''
+            f'# Time : {current_time_str}\n'
+            f'# Platform : {platform.system()}-{platform.machine()}\n'
+            f'# Obfuscated by : N00B-3NC0DE3 ( Ferly Afriliyan )\n\n'
+            f'# Variable teks : {num_iterations} Line\n\n'
+        )
+        for _ in range(num_iterations):
+            f.write(try_variable_[0] + '\n')
+        f.write('\n')
+        f.write(f'try:\n\t{encode(source_code)}\nexcept KeyboardInterrupt:\n\texit()\n\n')
+        for _ in range(num_iterations):
+            f.write(__try__variable__two[0] + '\n')
 
     print(f"\n{H2}[{B2}!!{H2}] {P2}Berhasil.. File hasil Encrypt tersimpan Di : {K2}", output_file)
 
