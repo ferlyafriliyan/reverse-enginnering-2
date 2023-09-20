@@ -47,16 +47,14 @@ mlgb_bz = f"""
 """
 
 num_iterations = random.randint(150, 6105)
-try_variable_ = [f'''
-__N00B_3NC0DE3 = "https://ferlyafriliyan.vercel.app"
-__D3v_N00B = "https://github.com/N00B-3NC0DE3"
-["from", "import", "as", "marshal", ".loads", "base64", ".b64decode", ".b64encode", "zlib", ".decompress", "lzma", "gzip", "bz2", "exec("]
-''']
+try_variable_ = [f'''__N00B_3NC0DE3 =("https://ferlyafriliyan.vercel.app")
+__D3v_N00B =("https://github.com/N00B-3NC0DE3")
+["from", "import", "as", "marshal", ".loads", "base64", ".b64decode", ".b64encode", "zlib", ".decompress", "lzma", "gzip", "bz2", "exec(", "try:", "except KeyboardInterrupt:",]''']
 
 __try__variable__two = [f'''
 __FA4__XCODE = "https://www.facebook.com/freya.xyz"
 __XCODE__XD = "https://github.com/ferlyafriliyan"
-["import","as","from","marshal",".loads","base64","zlib","b64decode","b64encode","decompress","exec(",]
+["import", "as", "from", "marshal", ".loads", "base64", "zlib", "b64decode", "b64encode", "decompress", "exec(", "try:", "except KeyboardInterrupt:",]
 ''']
 
 
@@ -69,10 +67,10 @@ def encode(source: str) -> str:
     selected_mode = random.choice((lzma, gzip, bz2, binascii, zlib))
     marshal_encoded = marshal.dumps(compile(source, "__N00B-3NC0DE3", "exec"))
     if selected_mode is binascii:
-        return "import marshal, lzma, gzip, bz2, binascii, zlib;exec(marshal.loads(binascii.a2b_base64({})))".format(
+        return "import marshal, lzma, gzip, bz2, binascii, zlib;Kontolivo=(marshal.loads(binascii.a2b_base64({})));exec(Kontolivo)".format(
             binascii.b2a_base64(marshal_encoded)
         )
-    return "import marshal, lzma, gzip, bz2, binascii, zlib;exec(marshal.loads({}.decompress({})))".format(
+    return "import marshal, lzma, gzip, bz2, binascii, zlib;Kontolivo=(marshal.loads({}.decompress({})));exec(Kontolivo)".format(
         selected_mode.__name__, selected_mode.compress(marshal_encoded)
     )
 
@@ -115,7 +113,7 @@ def main():
     while current_iteration <= total_iterations:
         loading_percentage = (current_iteration / total_iterations) * 100
         print(f"{T2}[{J2}+{V2}] {P2}Encrypting: [{loading_percentage:.2f}%]", end='\r')
-        time.sleep(0.01)  # Perubahan kecepatan animasi
+        time.sleep(0.00)  # Perubahan kecepatan animasi
         current_iteration += 1
 
     with open(input_file, 'r') as file:
@@ -130,8 +128,15 @@ def main():
             f'# Variable teks : {num_iterations} Line\n\n'
         )
         for _ in range(num_iterations):
-            f.write(try_variable_[0] + '\n')
+            f.write(try_variable_[0] + '\n\n')
         f.write('\n')
+        f.write(
+            f''
+            f'# Time : {current_time_str}\n'
+            f'# Platform : {platform.system()}-{platform.machine()}\n'
+            f'# Obfuscated by : N00B-3NC0DE3 ( Ferly Afriliyan )\n\n'
+            f'# Variable teks : {num_iterations} Line\n\n'
+        )
         f.write(f'try:\n\t{encode(source_code)}\nexcept KeyboardInterrupt:\n\texit()\n\n')
         for _ in range(num_iterations):
             f.write(__try__variable__two[0] + '\n')
