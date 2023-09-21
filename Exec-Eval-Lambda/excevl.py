@@ -41,6 +41,7 @@ J2 = "[#FF8F00]"  # Jingga
 A2 = "[#AAAAAA]"  # Abu-Abu
 T2 = "[#FFA500]"  # Oranye
 
+variable_value = "__import__('marshal').loads;__import__('zlib').decompress;__import__('base64').b64encode" * random.randint(14, 44) 
 
 class ____LambdaObfuscators____:
     def __init__(self):
@@ -51,9 +52,10 @@ class ____LambdaObfuscators____:
 # Platform : {platform.system()}-{platform.machine()}
 # Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
 
+# Variable Value : {len(variable_value)}
 Ryougaa_ = (\n'''
-        denventa_lines = ['"v*-@(#&+27&718040_;0+$($4-+04-#_0!#9()!;;:*&#($-___##::;(","[!import b4s364, m4r5h41, 2l1b)]()([",")]$@&++$0166:*!*!#(",")/@-&#72963::;!??@+-#73&:!*","2-@(#_-29/@(:__:-_"' for _ in range(150, 4444)]
-        
+        denventa_lines = [f'"{variable_value}", "=(:__:-_= __, lambda c; _ = ,__ .", "import", "as", "from", "marshal", "zlib", "base64", "(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))"' for _ in range(140, 1409)]
+
         self.mzb += ',\n'.join(denventa_lines)
         self.mzb += f'''\n)
 
@@ -65,15 +67,15 @@ Ryougaa_ = (\n'''
 Ryougaa_Hidekii__=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))(%s))));exec(Ryougaa_Hidekii__)
 
 Hidekii_ = (\n'''
-        denventa_lines = ['"v*-@(#&+27&718040_;0+$($4-+04-#_0!#9()!;;:*&#($-___##::;(","[!import b4s364, m4r5h41, 2l1b)]()([",")]$@&++$0166:*!*!#(",")/@-&#72963::;!??@+-#73&:!*","2-@(#_-29/@(:__:-_"' for _ in range(150, 4444)]
-        
+        denventa_lines = [f'"{variable_value}", "=(:__:-_= __, lambda c; _ = ,__ .", "import", "as", "from", "marshal", "zlib", "base64", "(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))"' for _ in range(140, 1409)]
+
         self.mzb += ',\n'.join(denventa_lines)
         self.mzb += f'''\n)'''
 
     def encrypt_file(self, input_file, output_file, count):
         try:
             __Fer = open(input_file, 'rb').read()
-            __com = compile(__Fer, '<Ryougaacoli>', 'exec')
+            __com = compile(__Fer, 'lambda', 'exec')
             __Cum__ = repr(base64.b64encode(zlib.compress(marshal.dumps(__com))))
 
             with open(output_file, 'w') as f:
@@ -84,7 +86,7 @@ Hidekii_ = (\n'''
 
             while current_iteration < total_iterations:
                 obf__ = open(output_file, 'rb').read()
-                ___zlb__ = compile(obf__, '<Ryougaacoli>', 'exec')
+                ___zlb__ = compile(obf__, 'lambda', 'exec')
                 ___mars___ = repr(base64.b64encode(zlib.compress(marshal.dumps(___zlb__))))
 
                 with open(output_file, 'w') as f:
@@ -93,7 +95,7 @@ Hidekii_ = (\n'''
                 current_iteration += 1
                 loading_percentage = (current_iteration / total_iterations) * 100
                 print(f"Encrypting: [{loading_percentage:.2f}%]", end='\r')
-                time.sleep(1)
+                time.sleep(0.00)
 
             print(f"\n{H2}[{A2}!!{H2}]{P2} Berhasil, File tersimpan di {A2}: {output_file}")
             exit()
