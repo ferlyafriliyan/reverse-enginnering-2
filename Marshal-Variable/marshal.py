@@ -54,11 +54,7 @@ def encrypt_and_save_code(source_code, output_file):
             f.write(Obfuscated_F[0] + '\n')
         f.write('\n')
 
-        f.write(f"# One of the best Python3.11 obfuscators.\n\n")
-        f.write(f"# __Time__ = {current_time}\n")
-        f.write(f"# Di Buat Pada Tanggal : {datetime.datetime.now().strftime('%d-%m-%Y')}\n\n")
-
-        f.write(f"import marshal, zlib, base64\nRyougaa_Hidekii__=(marshal.loads(zlib.decompress(base64.b64decode(b'{encrypted_code}'))));exec(Ryougaa_Hidekii__)")
+        f.write(f"try:\n\timport marshal, zlib, base64;Ryougaa_Hidekii__=(marshal.loads(zlib.decompress(base64.b64decode(b'{encrypted_code}'))));exec(Ryougaa_Hidekii__)\nexcept KeyboardInterrupt:\n\texit()")
     
         f.write('\n\n')
         f.write(f"# Variable teks : {num_iterations} Line\n")
