@@ -1,7 +1,9 @@
 from random import choice, randint, shuffle
-
-from os.path import isfile;import os
-import time;from rich import print;from rich import print as printer
+from os.path import isfile
+import os
+import time
+from rich import print
+from rich import print as printer
 from rich.panel import Panel
 from pystyle import Colorate, Colors, Center, Anime
 
@@ -125,30 +127,47 @@ def berserk(content: str, key: int) -> str:
     _vars_ = _vars_content_ + "=" + _valors_content_
     _final_content_ = fr"""# Obfuscated by : Ferly Afriliyan
     # Kontolivo Encryptions File Python
-class __Anubiss_OBF__():
+class Kontolivo():
  def __init__(self:object,_n1_:{choice(_types_)}=False,_n2_:{choice(_types_)}=0,*_n3_:{choice(_types_)},**_n4_:{choice(_types_)})->exec:
   {_vars_}
   return self.__decode__(_n4_[(_n7_[-1]+'_')[-1]+_n7_[18]+_n7_[15]+_n7_[0]+_n7_[17]+_n7_[10]+_n7_[11]+_n7_[4]])
  def __decode__(self,_execute: str)->exec:return(None,_n6_(_n8_(_execute)))[0]
-__Anubiss_OBF__(_n1_=False,_sparkle='''{content}''')""".strip().replace("_n1_",n_1.removeprefix("self.")).replace("_n2_",n_2.removeprefix("self.")).replace("_n3_",n_3.removeprefix("self.")).replace("_n4_",n_4.removeprefix("self.")).replace("_n5_",n_5).replace("_n6_",n_6).replace("_n7_",n_7).replace("_n8_",n_8).replace("_n9_",n_9.removeprefix("self.")).replace("_n10_",n_10.removeprefix("self.")).replace("_n12_",n_12.removeprefix("self."))
-
+Kontolivo(_n1_=False,_sparkle='''{content}''')""".strip().replace("_n1_",n_1.removeprefix("self.")).replace("_n2_",n_2.removeprefix("self.")).replace("_n3_",n_3.removeprefix("self.")).replace("_n4_",n_4.removeprefix("self.")).replace("_n5_",n_5).replace("_n6_",n_6).replace("_n7_",n_7).replace("_n8_",n_8).replace("_n9_",n_9.removeprefix("self.")).replace("_n10_",n_10.removeprefix("self.")).replace("_n12_",n_12.removeprefix("self."))
     return _final_content_
 
 os.system('clear')
 
 banner = f"""
-88""Yb 888888 88""Yb .dP"Y8 888888 88""Yb 88  dP 888888 88""Yb\t\t
-88__dP 88__   88__dP `Ybo." 88__   88__dP 88odP  88__   88__dP\t\t
-88""Yb 88""   88"Yb  o.`Y8b 88""   88"Yb  88"Yb  88""   88"Yb\t\t
-88oodP 888888 88  Yb 8bodP' 888888 88  Yb 88  Yb 888888 88  Yb\t\t
-
+          XX                                    XX
+        XX..X                                  X..XX
+      XX.....X                                X.....XX
+ XXXXX.....XX                                  XX.....XXXXX
+X |......XX%,.@                              @#%,XX......| X
+X |.....X  @#%,.@                          @#%,.@  X.....| X
+X  \...X     @#%,.@                      @#%,.@     X.../  X
+ X# \.X        @#%,.@                  @#%,.@        X./  #
+  ##  X          @#%,.@              @#%,.@          X   #
+, "# #X            @#%,.@          @#%,.@            X ##
+   `###X             @#%,.@      @#%,.@             ####'
+  . ' ###              @#%.,@  @#%,.@              ###`"
+    . ";"                @#%.@#%,.@                ;"` ' .
+      '                    @#%,.@                   ,.
+      ` ,                @#%,.@  @@                `
+                          @@@  @@@                  .
 Tekan Enter Goblok !
 """
+
 os.system('clear')
 Anime.Fade(Center.Center(banner), Colors.red_to_yellow, Colorate.Vertical, enter=True)
 text = f"""
-Kontolodon Encryptions File Python3"""[1:]
-printer(Panel(text,title=f'{J2}[ {P2}Banner {J2}]',subtitle=f'{P2}┌─ {J2}[ {P2}Input {J2}]',subtitle_align='left',width=54,padding=1,style='#FF8F00'))
+# Obfuscated by : Ferly Afriliyan
+    # Kontolivo Encryptions File Python
+    
+88""Yb 888888 88""Yb .dP"Y8 888888 88""Yb 88  dP 888888 88""Yb\t\t
+88__dP 88__   88__dP `Ybo." 88__   88__dP 88odP  88__   88__dP\t\t
+88""Yb 88""   88"Yb  o.`Y8b 88""   88"Yb  88"Yb  88""   88"Yb\t\t
+88oodP 888888 88  Yb 8bodP' 888888 88  Yb 88  Yb 888888 88  Yb\t\t"""[1:]
+printer(Panel(text, title=f'{J2}[ {P2}Banner {J2}]', subtitle=f'{P2}┌─ {J2}[ {P2}Input {J2}]', subtitle_align='left', width=70, padding=1, style='#FF8F00'))
 
 def main():
 
