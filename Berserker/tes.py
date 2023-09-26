@@ -133,6 +133,7 @@ class Kontolivo():
   return self.__decode__(_n4_[(_n7_[-1]+'_')[-1]+_n7_[18]+_n7_[15]+_n7_[0]+_n7_[17]+_n7_[10]+_n7_[11]+_n7_[4]])
  def __decode__(self,_execute: str)->exec:return(None,_n6_(_n8_(_execute)))[0]
 Kontolivo(_n1_=False,_sparkle='''{content}''')""".strip().replace("_n1_",n_1.removeprefix("self.")).replace("_n2_",n_2.removeprefix("self.")).replace("_n3_",n_3.removeprefix("self.")).replace("_n4_",n_4.removeprefix("self.")).replace("_n5_",n_5).replace("_n6_",n_6).replace("_n7_",n_7).replace("_n8_",n_8).replace("_n9_",n_9.removeprefix("self.")).replace("_n10_",n_10.removeprefix("self.")).replace("_n12_",n_12.removeprefix("self."))
+
     return _final_content_
 
 os.system('clear')
@@ -154,26 +155,25 @@ X  \...X     @#%,.@                      @#%,.@     X.../  X
       '                    @#%,.@                   ,.
       ` ,                @#%,.@  @@                `
                           @@@  @@@                  .
-Tekan Enter Goblok !
-     Cubit Layar Agar Tampilan Lebih Bagus
+[•]  Tekan Enter Goblok !
+ └──> [•]  Cubit Layar Agar Tampilan Lebih Rapih !!
 """
 
 os.system('clear')
 Anime.Fade(Center.Center(banner), Colors.red_to_yellow, Colorate.Vertical, enter=True)
-text = f"""
-88""Yb 888888 88""Yb .dP"Y8 888888 88""Yb 88  dP 888888 88""Yb\t\t
+text = f"""88""Yb 888888 88""Yb .dP"Y8 888888 88""Yb 88  dP 888888 88""Yb\t\t
 88__dP 88__   88__dP `Ybo." 88__   88__dP 88odP  88__   88__dP\t\t
 88""Yb 88""   88"Yb  o.`Y8b 88""   88"Yb  88"Yb  88""   88"Yb\t\t
-88oodP 888888 88  Yb 8bodP' 888888 88  Yb 88  Yb 888888 88  Yb\t\t"""[1:]
+88oodP 888888 88  Yb 8bodP' 888888 88  Yb 88  Yb 888888 88  Yb\t\t"""
 printer(Panel(text, title=f'{J2}[ {P2}Banner {J2}]', subtitle=f'{P2}┌─ {J2}[ {P2}Input {J2}]', subtitle_align='left', width=70, padding=1, style='#FF8F00'))
 
 def main():
-
     file = input(f"   └──> Drag your Python file -> ")
 
     if not file.strip() or not isfile(file):
         exit(f"\t{file_not} This file does not exist!")
 
+    
         time.sleep(0.04)
     # print()
     # key = Write.Input("Enter your encryption key (3 - 1000000) -> ", Colors.red_to_yellow, interval=0.005)
