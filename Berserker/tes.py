@@ -155,14 +155,12 @@ X  \...X     @#%,.@                      @#%,.@     X.../  X
       ` ,                @#%,.@  @@                `
                           @@@  @@@                  .
 Tekan Enter Goblok !
+     Cubit Layar Agar Tampilan Lebih Bagus
 """
 
 os.system('clear')
 Anime.Fade(Center.Center(banner), Colors.red_to_yellow, Colorate.Vertical, enter=True)
 text = f"""
-# Obfuscated by : Ferly Afriliyan
-    # Kontolivo Encryptions File Python
-    
 88""Yb 888888 88""Yb .dP"Y8 888888 88""Yb 88  dP 888888 88""Yb\t\t
 88__dP 88__   88__dP `Ybo." 88__   88__dP 88odP  88__   88__dP\t\t
 88""Yb 88""   88"Yb  o.`Y8b 88""   88"Yb  88"Yb  88""   88"Yb\t\t
