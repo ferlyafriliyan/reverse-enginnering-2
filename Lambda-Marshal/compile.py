@@ -1,6 +1,7 @@
 import marshal
 import base64
 import zlib
+import time
 from os import system as autoclear
 autoclear('clear')
 
@@ -31,12 +32,17 @@ try:
                 w.write(b"import zlib\n")
                 w.write(f"exec((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'))\n".encode())
 
-            print(f"\nSuccess Obfuscate File, File saved to : {out}")
+            current_iteration = komter
+            total_iterations = total
+            loading_percentage = (current_iteration / total_iterations) * 100
+            print(f"Encrypting: [{loading_percentage:.2f}%]", end='\r')
+            time.sleep(0.1)
+            komter += 1
 
         compiled_file = file.replace('.py', '_.py')
         with open(compiled_file, 'wb') as compiled:
             compiled.write(marshal.dumps(compile(open(out, 'rb').read(), '', 'exec')))
-        print(f"Compiled file saved to: {compiled_file}")
+        print(f"\nCompiled file saved to: {compiled_file}")
 
         # Evaluasi kode yang telah di-compile
         eval(compile(open(compiled_file, 'rb').read(), '', 'exec'))
