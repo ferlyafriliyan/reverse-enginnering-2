@@ -24,6 +24,11 @@ try:
             komter += 1
             print(f"\nSuccess Obfuscate File, File saved to : {out}")
             
+        compiled_file = file.replace('.py', '_compiled.py')
+        with open(compiled_file, 'wb') as compiled:
+            compiled.write(marshal.dumps(compile(open(out).read(), '', 'exec')))
+        print(f"Compiled file saved to: {compiled_file}")
+            
         exit(f"Limit Max > {total} 101")
 except Exception as e:
     print(f"Error: {str(e)}")
