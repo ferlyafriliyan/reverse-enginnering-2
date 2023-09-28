@@ -32,7 +32,7 @@ try:
             w.write(b"\n")
             w.write(f"# Variable Value : {len(encoded_data)}\n".encode())
             w.write(b"\n")
-            w.write(f"exec((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'))\n".encode())
+            w.write(f"'{variable_value}';exec((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'))\n".encode())
 
         komter = 0
         while total >= komter:
@@ -49,7 +49,7 @@ try:
                 w.write(b"\n")
                 w.write(f"# Variable Value : {len(encoded_data)}\n".encode())
                 w.write(b"\n")
-                w.write(f"exec((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'))\n".encode())
+                w.write(f"'{variable_value}';exec((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'))\n".encode())
 
             current_iteration = komter
             total_iterations = total
