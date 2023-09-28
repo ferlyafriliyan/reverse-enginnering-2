@@ -7,7 +7,7 @@ termux-change-repo && pkg update && pkg upgrade -y && pkg install python -y && p
 
 - ### *Installing Module Pip :*
 ```python
-pip install rich bs4 requests colorama pystyle pyfiglet pycryptodome
+pip install rich bs4 requests colorama pystyle pyfiglet pycryptodome mechanize cython
 
 ```
 
