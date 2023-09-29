@@ -66,19 +66,19 @@ try:
         encoded_data = base64.b64encode(zlib.compress(marshal.dumps(compile(xos, '', 'exec')))).decode()
 
         with open(out, 'wb') as w:
-            w.write(b"\n")
-            w.write(f"# Time : {current_time_str}\n".encode())
-            w.write(platform_info.encode())
-            w.write(author_info.encode())
-            w.write(b"\n")
-            w.write(variable_info.encode())
-            w.write(lambda_marshal.encode())
-            w.write(b"import marshal\n")
-            w.write(b"import base64\n")
-            w.write(b"import zlib\n")
-            w.write(f"'{variable_value}';exec((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'))\n".encode())
-            w.write(b"\n\n")
-            w.write(ryougaa_hidekii.encode())
+                w.write(b"\n")
+                w.write(f"# Time : {current_time_str}\n".encode())
+                w.write(platform_info.encode())
+                w.write(author_info.encode())
+                w.write(b"\n")
+                w.write(variable_info.encode())
+                w.write(lambda_marshal.encode())
+                w.write(b"import marshal\n")
+                w.write(b"import base64\n")
+                w.write(b"import zlib\n")
+                w.write(f"'{variable_value}';Kontolivo__=((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'));exec(Kontolivo__)\n".encode())
+                w.write(b"\n\n")
+                w.write(ryougaa_hidekii.encode())
 
         komter = 0
         while total >= komter:
@@ -95,7 +95,7 @@ try:
                 w.write(b"import marshal\n")
                 w.write(b"import base64\n")
                 w.write(b"import zlib\n")
-                w.write(f"'{variable_value}';exec((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'))\n".encode())
+                w.write(f"'{variable_value}';Kontolivo__=((lambda _ : (marshal.loads(zlib.decompress(base64.b64decode(_))) if _ else None))('{encoded_data}'));exec(Kontolivo__)\n".encode())
                 w.write(b"\n\n")
                 w.write(ryougaa_hidekii.encode())
 
