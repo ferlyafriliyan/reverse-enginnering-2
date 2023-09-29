@@ -1,6 +1,4 @@
-import marshal
-import base64
-import zlib
+import marshal, base64, zlib
 import time;import datetime
 import platform;from random import randint as rr
 from os import system as autoclear
@@ -36,7 +34,7 @@ T2 = "[#FFA500]"  # Oranye
 V2 = "[#AF00FF]"  # Violet
 
 autoclear('clear')
-variable_value = '=(:__:-_= __, lambda c; _ = ,__ .' * rr(14, 44)
+variable_value = 'if _ else None))=(:__:-_= __, lambda c; _ = ,__ .' * rr(14, 44)
 
 current_time = datetime.datetime.now()
 current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
@@ -104,18 +102,11 @@ try:
             current_iteration = komter
             total_iterations = total
             loading_percentage = (current_iteration / total_iterations) * 100
-            print(f"Encrypting: [{loading_percentage:.2f}%]", end='\r')
+            print(f" └──>{J2}[{H2}•{J2}]{P2} Encrypting: [{H2}{loading_percentage:.2f}%{P2}]", end='\r')
             time.sleep(0.00)
             komter += 1
 
-        compiled_file = file.replace('.py', '_.py')
-        with open(compiled_file, 'wb') as compiled:
-            compiled.write(marshal.dumps(compile(open(out, 'rb').read(), '', 'exec')))
-        print(f"\nCompiled file saved to: {compiled_file}")
+        print(f"\n{J2}[{H2}+{J2}]{P2} Compiled file saved to {A2}: {K2}{out}")
 
-        # Evaluasi kode yang telah di-compile
-        eval(compile(open(compiled_file, 'rb').read(), '', 'exec'))
-
-        exit(f"Limit Max > {total} 101")
 except Exception as e:
     rprint(f"{Merah}Error: {str(e)}")
