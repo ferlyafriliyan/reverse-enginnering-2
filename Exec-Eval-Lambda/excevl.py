@@ -41,20 +41,18 @@ J2 = "[#FF8F00]"  # Jingga
 A2 = "[#AAAAAA]"  # Abu-Abu
 T2 = "[#FFA500]"  # Oranye
 
-variable_value = '=(:__:-_= __, lambda c; _ = ,__ .' * random.randint(14, 44)
-
 class ____LambdaObfuscators____:
     def __init__(self):
         current_time = datetime.datetime.now()
         current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
-        self.mzb = f'''
+        self.mzb = f'''# Kalo bisa decrypt file ini kabarin gw
+    # WhatsApp : +62 857-5922-9322\n
 # Time : {current_time_str}
 # Platform : {platform.system()}-{platform.machine()}
 # Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
 
-# Variable Value : {len(variable_value)}
 Ryougaa_ = (\n'''
-        denventa_lines = [f'"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000", "{variable_value}", {str(["import", "as", "from", "marshal", "zlib", "base64"])}, "(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))", "Ryougaa_Hidekii__=(eval((lambda", "exec(", ";exec(Ryougaa_Hidekii__)"' for _ in range(140, 1409)]
+        denventa_lines = [f'"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000", {str(["import", "as", "from", "marshal", "zlib", "base64"])}, "Ryougaa_Hidekii__=(eval((lambda", "exec(", ";exec(Ryougaa_Hidekii__)"' for _ in range(140, 1409)]
 
         self.mzb += ',\n'.join(denventa_lines)
         self.mzb += f'''\n)
@@ -67,7 +65,7 @@ Ryougaa_ = (\n'''
 Ryougaa_Hidekii__=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))(%s))));exec(Ryougaa_Hidekii__)
 
 Hidekii_ = (\n'''
-        denventa_lines = [f'"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000", "{variable_value}", {str(["import", "as", "from", "marshal", "zlib", "base64"])}, "(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))(,[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))", "Ryougaa_Hidekii__=(eval((lambda", "exec(", ";exec(Ryougaa_Hidekii__)"' for _ in range(140, 1409)]
+        denventa_lines = [f'"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000", {str(["import", "as", "from", "marshal", "zlib", "base64"])}, "Ryougaa_Hidekii__=(eval((lambda", "exec(", ";exec(Ryougaa_Hidekii__)"' for _ in range(140, 1409)]
 
         self.mzb += ',\n'.join(denventa_lines)
         self.mzb += f'''\n)'''
@@ -75,7 +73,7 @@ Hidekii_ = (\n'''
     def encrypt_file(self, input_file, output_file, count):
         try:
             __Fer = open(input_file, 'rb').read()
-            __com = compile(__Fer, 'lambda', 'exec')
+            __com = compile(__Fer, '', 'exec')
             __Cum__ = repr(base64.b64encode(zlib.compress(marshal.dumps(__com))))
 
             with open(output_file, 'w') as f:
@@ -86,7 +84,7 @@ Hidekii_ = (\n'''
 
             while current_iteration < total_iterations:
                 obf__ = open(output_file, 'rb').read()
-                ___zlb__ = compile(obf__, 'lambda', 'exec')
+                ___zlb__ = compile(obf__, '', 'exec')
                 ___mars___ = repr(base64.b64encode(zlib.compress(marshal.dumps(___zlb__))))
 
                 with open(output_file, 'w') as f:
