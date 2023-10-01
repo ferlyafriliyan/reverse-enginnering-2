@@ -41,7 +41,7 @@ def encrypt_and_save_code(source_code, output_file):
     current_time = datetime.datetime.now()
 
     with open(output_file, "w") as f:
-        f.write(f'__Author__ = "Ferly Afriliyan"\n__MadeBy__ = "[ MZB_OBF ( Marshal Zlib Base64 ) ]"\n__Github__ = "https://github.com/ferlyafriliyan"\n\n')
+        f.write(f'__Author__ = "Ferly Afriliyan"\n__Method = "[( Marshal Zlib Base64 )]"\n__Github__ = "https://github.com/ferlyafriliyan"\n\n')
         f.write(f"# One of the best Python3.11 obfuscators.\n\n")
         f.write(f"# Di Buat Pada Tanggal : 15-8-2023\n\nimport base64, zlib, marshal\n")
         f.write(f"uncompile6__=(marshal.loads(zlib.decompress(base64.b64decode(b'{encrypted_code}'))));exec(uncompile6__)")
@@ -49,7 +49,7 @@ def encrypt_and_save_code(source_code, output_file):
     print(f"{H2}[ {A2}• {H2}] Berhasil Obfuscated File - Hasil Encrypt : {output_file}")
 
 def custom_encrypt(input_file, output_file):
-    note = f'# Coded by : Ferly Afriliyan\n# Do not share Original Files\n'   \
+    note = f'# Coded by : Ferly Afriliyan\n# Obfuscate use marshal, zlib, and base64\n# Do not share Original Files\n'   \
 
 
     try:
@@ -96,7 +96,7 @@ def custom_encrypt(input_file, output_file):
     h6.write("god = '\\x72\\x6f\\x74\\x5f\\x31\\x33'\n")
     h6.write("destiny = codecs.decode(eval('\\x6c\\x6f\\x76\\x65'), eval('\\x67\\x6f\\x64'))\n")
     h6.write("joy = base64.b64decode(''.join([chr(ferz) for ferz in magic])+eval('\\x64\\x65\\x73\\x74\\x69\\x6e\\x79'))\t\t\n")
-    h6.write("eval(compile(eval('\\x6a\\x6f\\x79'),'<string>','exec'))\n")
+    h6.write("eval(compile(eval('\\x6a\\x6f\\x79'),'<string>','exec'))")
     h6.close()
 
     # Compile the encrypted file
@@ -108,9 +108,9 @@ if __name__ == '__main__':
     os.system('clear')
 
     print(f"""
-{B2}╔═╗┬ ┬   ╔═╗┌─┐┌┬┐┌─┐┬┬  ┌─┐
-{H2}╠═╝└┬┘───║  │ ││││├─┘││  ├┤ 
-{P2}╩   ┴    ╚═╝└─┘┴ ┴┴  ┴┴─┘└─┘ Version : 0.1
+{B2}╔═╗┬  ┬┌─┐┬   ╔═╗┬ ┬  
+{H2}║╣ └┐┌┘├─┤│───╠═╝└┬┘  
+{P2}╚═╝ └┘ ┴ ┴┴─┘ ╩   ┴    Version : 0.2
 -----------------------------------------
 Author : Ferly Afriliyan
 Github : https:github.com/ferlyafriliyan
