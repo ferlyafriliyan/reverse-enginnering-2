@@ -48,7 +48,7 @@ class LambdaObfuscators:
         current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
 
         self.mzb = f'''# Kalo bisa decrypt file ini kabarin gw
-# WhatsApp : +62 857-5922-9322\n
+# WhatsApp : +62 857-5922-9322\n# Facebook : www.facebook.com/freya.xyz
 # Time : {current_time_str}
 # Platform : {platform.system()}-{platform.machine()}
 # Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
@@ -76,23 +76,23 @@ Hidekii_ = (\n'''
 
     def encrypt_file(self, input_file, output_file, count):
         try:
-            __Fer = open(input_file, 'rb').read()
-            __com = compile(__Fer, '', 'exec')
-            __Cum__ = repr(marshal.dumps(__com))
+            __obf = open(input_file, 'rb').read()
+            __com = compile(__obf, '', 'exec')
+            __repr__ = repr(marshal.dumps(__com))
 
             with open(output_file, 'w') as f:
-                f.write(self.mzb % __Cum__)
+                f.write(self.mzb % __repr__)
 
             total_iterations = count
             current_iteration = 0
 
             while current_iteration < total_iterations:
                 obf__ = open(output_file, 'rb').read()
-                ___zlb__ = compile(obf__, '', 'exec')
-                ___mars___ = repr(marshal.dumps(___zlb__))
+                ___compile__ = compile(obf__, '', 'exec')
+                ___repr_compile___ = repr(marshal.dumps(___compile__))
 
                 with open(output_file, 'w') as f:
-                    f.write(self.mzb % ___mars___)
+                    f.write(self.mzb % ___repr_compile___)
 
                 current_iteration += 1
                 loading_percentage = (current_iteration / total_iterations) * 100
