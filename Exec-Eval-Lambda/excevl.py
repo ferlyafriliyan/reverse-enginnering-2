@@ -78,7 +78,7 @@ Hidekii_ = (\n'''
         try:
             __Fer = open(input_file, 'rb').read()
             __com = compile(__Fer, '', 'exec')
-            __Cum__ = repr(base64.b64encode(zlib.compress(marshal.dumps(__com)))
+            __Cum__ = repr(base64.b64encode(zlib.compress(marshal.dumps(__com))))
 
             with open(output_file, 'w') as f:
                 f.write(self.mzb % __Cum__)
@@ -89,7 +89,7 @@ Hidekii_ = (\n'''
             while current_iteration < total_iterations:
                 obf__ = open(output_file, 'rb').read()
                 ___zlb__ = compile(obf__, '', 'exec')
-                ___mars___ = repr(base64.b64encode(zlib.compress(marshal.dumps(___zlb__)))
+                ___mars___ = repr(base64.b64encode(zlib.compress(marshal.dumps(___zlb__))))
 
                 with open(output_file, 'w') as f:
                     f.write(self.mzb % ___mars___)
