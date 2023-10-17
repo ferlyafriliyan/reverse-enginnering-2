@@ -65,7 +65,7 @@ Ryougaa_ = (\n'''
 # Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
 # Variable teks : {len(denventa_lines)} Line
 
-Ryougaa_Hidekii__=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 122, 108, 105, 98, 34, 41, 46, 100, 101, 99, 111, 109, 112, 114, 101, 115, 115],chr))(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 34, 98, 97, 115, 101, 54, 52, 34, 41, 46, 98, 54, 52, 100, 101, 99, 111, 100, 101],chr))(%s))));exec(Ryougaa_Hidekii__)
+Ryougaa_Hidekii__=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(%s));exec(Ryougaa_Hidekii__)
 
 Hidekii_ = (\n'''
 
@@ -78,7 +78,7 @@ Hidekii_ = (\n'''
         try:
             __Fer = open(input_file, 'rb').read()
             __com = compile(__Fer, '', 'exec')
-            __Cum__ = repr(base64.b64encode(zlib.compress(marshal.dumps(__com))))
+            __Cum__ = repr(marshal.dumps(__com))
 
             with open(output_file, 'w') as f:
                 f.write(self.mzb % __Cum__)
@@ -89,7 +89,7 @@ Hidekii_ = (\n'''
             while current_iteration < total_iterations:
                 obf__ = open(output_file, 'rb').read()
                 ___zlb__ = compile(obf__, '', 'exec')
-                ___mars___ = repr(base64.b64encode(zlib.compress(marshal.dumps(___zlb__))))
+                ___mars___ = repr(marshal.dumps(___zlb__))
 
                 with open(output_file, 'w') as f:
                     f.write(self.mzb % ___mars___)
