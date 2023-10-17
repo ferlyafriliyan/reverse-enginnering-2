@@ -65,7 +65,8 @@ Ryougaa_ = (\n'''
 # Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
 # Variable teks : {len(denventa_lines)} Line
 
-Ryougaa_Hidekii__=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(%s));exec(Ryougaa_Hidekii__)
+
+recode_kontol = %s;Ryougaa_Hidekii__=(eval((lambda ____,__,_ : ____.join([_(___) for ___ in __]))('',[95, 95, 105, 109, 112, 111, 114, 116, 95, 95, 40, 39, 109, 97, 114, 115, 104, 97, 108, 39, 41, 46, 108, 111, 97, 100, 115],chr))(recode_kontol));exec(Ryougaa_Hidekii__)
 
 Hidekii_ = (\n'''
 
@@ -116,8 +117,8 @@ if __name__ == "__main__":
     input_file = input(f"└──>{Hijau}[{Abu}•{Hijau}]{Putih} Input File {Abu}: {Putih}")
     count = int(input(f"     └──>{Biru}[{Abu}+{Biru}]{Putih} Count {Orange_muda}({Putih}Ex{Orange_muda}) •4• : {Putih}"))
 
-    if count < 300:
+    if count < 11:
         output_file = input(f"     └──>{Hijau}[{Abu}•{Hijau}]{Putih} Output File {Abu}: {Putih}")
         encryptor.encrypt_file(input_file, output_file, count)
     else:
-        print(f"{B2}[{A2}!{B2}]{P2} Count must be < 300")
+        print(f"{B2}[{A2}!{B2}]{P2} Count must be < 10")
