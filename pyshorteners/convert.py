@@ -1,5 +1,10 @@
+#  Coded by Ferly Afriliyan (Ryougaa Hidekii)
 import pyshorteners
+from os import system as clear
+
 converting_url = pyshorteners.Shortener()
+clear("clear")
+
 url = input("Input url : ")
 print("Converting link ...")
 
