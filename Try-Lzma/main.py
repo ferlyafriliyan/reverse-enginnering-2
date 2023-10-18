@@ -39,6 +39,10 @@ A2 = "[#AAAAAA]"  # Abu-Abu
 T2 = "[#FFA500]"  # Oranye
 V2 = "[#800080]"  # Violet
 
+def clear():
+    if 'linux' in sys.platform.lower():os.system('clear')
+    elif 'win' in sys.platform.lower():os.system('cls')  # clear()
+
 mlgb_bz = f"""
             {T2}╔╦╗┬  ┌─┐┌┐     ╔╗ ┌─┐
             {J2}║║║│  │ ┬├┴┐    ╠╩╗┌─┘
@@ -75,7 +79,7 @@ def encode(source: str) -> str:
     )
 
 def main():
-    os.system("clear")
+    clear()
     print(mlgb_bz)
     print(prett(f"\t{M2}•{K2}•{H2}• {P2}Try-Lzma Python File Encryptor {H2}•{K2}•{M2}•\n"))
 
