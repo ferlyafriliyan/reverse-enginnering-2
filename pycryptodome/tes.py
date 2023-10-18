@@ -44,5 +44,4 @@ try:
     import os
 except:
     clear()
-clear()
 print("[•] Berhasil Obfuscated file, File Tersimpan di :", file_output)
