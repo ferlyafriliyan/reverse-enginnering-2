@@ -1,14 +1,19 @@
-
 import random,base64,zlib,codecs
+import os,sys
+
+def clear():
+    if 'linux' in sys.platform.lower():os.system('clear')
+    elif 'win' in sys.platform.lower():os.system('cls')  # clear()
 
 def encode(seed, enc, c_int=100000):
     new = ""
     random.seed(seed)
     for letter in enc:
         new += str(ord(letter) * random.randint(1, c_int)) + " "
-    return new[:-1]    
+    return new[:-1]
 
 oc = "# https://ferlyafriliyan.vercel.app\n\n"
+clear()
 file_input = input("Masukkan nama file input: ") 
 with open(file_input) as f:
     oc += f.read()
@@ -38,6 +43,6 @@ with open(file_output, "w") as f:
 try:
     import os
 except:
-    os.system('clear')
-os.system("clear")
+    clear()
+clear()
 print("[•] Berhasil Obfuscated file, File Tersimpan di :", file_output)
