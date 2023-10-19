@@ -8,23 +8,34 @@ import sys
 
 # Clear Terminal
 def clear():
-    if 'linux' in sys.platform.lower():os.system('clear')
-    elif 'win' in sys.platform.lower():os.system('cls')
-      
+    if 'linux' in sys.platform.lower():
+        os.system('clear')
+    elif 'win' in sys.platform.lower():
+        os.system('cls')
+
 # Metode Obfuscate
-def encrypt_text(text, method):
+def encrypt_text(text, method, use_marshal=True):
     if method == 'codecs':
-        return codecs.encode(text, 'rot_13')
+        encrypted = codecs.encode(text, 'rot_13')
     elif method == 'zlib':
-        return zlib.compress(text.encode())
+        encrypted = zlib.compress(text.encode())
+        if use_marshal:
+            encrypted = marshal.dumps(encrypted)
     elif method == 'base64':
-        return base64.b64encode(text.encode()).decode()
+        encrypted = base64.b64encode(text.encode()).decode()
+        if use_marshal:
+            encrypted = marshal.dumps(encrypted)
     elif method == 'gzip':
-        return base64.b64encode(gzip.compress(text.encode())).decode()
+        encrypted = base64.b64encode(gzip.compress(text.encode())).decode()
+        if use_marshal:
+            encrypted = marshal.dumps(encrypted)
     elif method == 'marshal':
-        return marshal.dumps(compile(text, '', 'exec'))
+        encrypted = marshal.dumps(compile(text, '', 'exec'))
     else:
         return text  # Tidak ada enkripsi, kembalikan teks asli
+
+    return encrypted
+
 clear()
 # Input file
 input_file = input("Masukkan nama file sumber Python yang ingin dienkripsi: ")
@@ -34,7 +45,7 @@ with open(input_file, 'r') as file:
     source_code = file.read()
 
 # Variable Obfuscate
-__key = encrypt_text(source_code, 'codecs')
+__key = encrypt_text(source_code, 'codecs', use_marshal=False)
 __pubkey = encrypt_text(source_code, 'zlib')
 _obfuscate_ = encrypt_text(source_code, 'base64')
 __pyobfuscate__ = encrypt_text(source_code, 'gzip')
@@ -56,6 +67,6 @@ with open(output_file, 'w') as file:
 
 print("File yang telah dienkripsi telah disimpan dalam", output_file)
 try:
-  import os, sys
+    import os, sys
 except:
-  clear()
+    clear()
