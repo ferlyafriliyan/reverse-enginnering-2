@@ -21,7 +21,7 @@ def encrypt_text(text, method, use_marshal=True):
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'base64':
-        encrypted = base64.b85encode(text.encode()).decode()
+        encrypted = base64.b85encode(binascii.a2b_base64(text.encode())).decode()
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'b64_lzma':
