@@ -1,0 +1,15 @@
+__True__ =
+__key = encrypt_text(source_code, 'codecs', use_marshal=False)
+__pubkey = encrypt_text(source_code, 'zlib')
+_obfuscate_ = encrypt_text(source_code, 'base64')
+__pyobfuscate__ = encrypt_text(source_code, 'gzip')
+_pycryptodome = encrypt_text(source_code, 'pycryptodome')
+__marshal__ = encrypt_text(source_code, 'marshal')
+
+__Wrong__ =
+__pubkey = encrypt_text(source_code, 'zlib')
+__key = encrypt_text(source_code, 'codecs', use_marshal=False)
+_obfuscate_ = encrypt_text(source_code, 'base64')
+__marshal__ = encrypt_text(source_code, 'marshal')
+_pycryptodome = encrypt_text(source_code, 'pycryptodome')
+__pyobfuscate__ = encrypt_text(source_code, 'gzip')
