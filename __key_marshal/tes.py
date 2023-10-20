@@ -62,7 +62,8 @@ with open(output_file, 'w') as file:
     # Simpan metode enkripsi dengan marshal di bawah variabel
     file.write('\n\x69\x6d\x70\x6f\x72\x74\x20\x6d\x61\x72\x73\x68\x61\x6c')
     file.write(f'\n')
-    file.write(f'encrypted_source = {repr(__marshal__)};exec(marshal.loads((encrypted_source)))\n')
+    file.write(f'encrypted_source = {repr(__marshal__)}\n')
+    file.write(f'exec(marshal.loads((encrypted_source)))\n')
 
 print("File yang telah dienkripsi telah disimpan dalam", output_file)
 try:
