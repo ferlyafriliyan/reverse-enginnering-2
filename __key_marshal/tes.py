@@ -17,15 +17,15 @@ def encrypt_text(text, method, use_marshal=True):
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'zlib':
-        encrypted = zlib.compress(text.encode())
+        encrypted = base64.b85encode(zlib.compress(text.encode()))
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'base64':
-        encrypted = base64.b64encode(text.encode()).decode()
+        encrypted = base64.b85encode(text.encode()).decode()
         if use_marshal:
             encrypted = md(encrypted)
-    elif method == 'gzip':
-        encrypted = base64.b64encode(zlib.compress(text.encode())).decode()
+    elif method == 'b64_lzma':
+        encrypted = base64.b85encode(lzma.compress(text.encode())).decode()
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'marshal':
@@ -57,7 +57,7 @@ __key = encrypt_text(source_code, 'lzma', use_marshal=False)
 _obfuscate_ = encrypt_text(source_code, 'base64')
 __marshal__ = encrypt_text(source_code, 'marshal')
 _pycryptodome = encrypt_text(source_code, 'pycryptodome')
-__pyobfuscate__ = encrypt_text(source_code, 'gzip')
+__pyobfuscate__ = encrypt_text(source_code, 'b64_lzma')
 
 # Output file
 output_file = input("Output file : ")
