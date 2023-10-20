@@ -1,8 +1,7 @@
 from Crypto.Cipher import AES
-import  zlib, base64
-import gzip, codecs
+import zlib, base64, lzma, codecs, binascii
 import os, sys
-from marshal import dumps as md # marshal.dumps
+from marshal import dumps as md  # marshal.dumps
 
 # Clear Terminal
 def clear():
@@ -13,18 +12,20 @@ def clear():
 
 # Metode Obfuscate
 def encrypt_text(text, method, use_marshal=True):
-    if method == 'codecs':
-        encrypted = codecs.encode(text, 'rot_13')
+    if method == 'lzma':
+        encrypted = lzma.compress(text.encode())
+        if use_marshal:
+            encrypted = md(encrypted)
     elif method == 'zlib':
-        encrypted = (zlib.compress(text.encode()))
+        encrypted = zlib.compress(text.encode())
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'base64':
-        encrypted = (base64.b64encode(text.encode())).decode()
+        encrypted = base64.b64encode(text.encode()).decode()
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'gzip':
-        encrypted = (base64.b64encode(gzip.compress(text.encode()))).decode()
+        encrypted = base64.b64encode(zlib.compress(text.encode())).decode()
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'marshal':
@@ -35,7 +36,8 @@ def encrypt_text(text, method, use_marshal=True):
         nonce = cipher.nonce
         ciphertext, tag = cipher.encrypt_and_digest(text.encode())
         encrypted = (nonce, ciphertext, tag)
-
+    elif method == 'binascii.a2b_base64':
+        encrypted = binascii.a2b_base64(text.encode())
     else:
         return text  # Tidak ada enkripsi, kembalikan teks asli
 
@@ -51,7 +53,7 @@ with open(input_file, 'r') as file:
 
 # Variable Obfuscate
 __pubkey = encrypt_text(source_code, 'zlib')
-__key = encrypt_text(source_code, 'codecs', use_marshal=False)
+__key = encrypt_text(source_code, 'lzma', use_marshal=False)
 _obfuscate_ = encrypt_text(source_code, 'base64')
 __marshal__ = encrypt_text(source_code, 'marshal')
 _pycryptodome = encrypt_text(source_code, 'pycryptodome')
@@ -66,13 +68,13 @@ with open(output_file, 'w') as file:
     file.write(f'\x5f\x6f\x62\x66\x75\x73\x63\x61\x74\x65\x5f = {repr(_obfuscate_)}\n')
     file.write(f'\x5f\x5f\x70\x79\x6f\x62\x66\x75\x73\x63\x61\x74\x65\x5f\x5f = {repr(__pyobfuscate__)}\n')
     file.write(f'\x5f\x70\x79\x63\x72\x79\x70\x74\x6f\x64\x6f\x6d\x65 = {repr(_pycryptodome)}\n')
-    file.write(f'__marshal__ = {repr(__marshal__)}\n')
+    file.write(f'__marshal__ = {repr(__marshal__)};')
 
     # Simpan metode enkripsi dengan marshal di bawah variabel
-    file.write('\n\x69\x6d\x70\x6f\x72\x74\x20\x6d\x61\x72\x73\x68\x61\x6c')
-    file.write(f'\n')
-    file.write(f'encrypted_source = (\x5f\x5f\x6d\x61\x72\x73\x68\x61\x6c\x5f\x5f)\n')
-    file.write(f'exec(marshal.loads(encrypted_source))\n')
+    file.write('\x69\x6d\x70\x6f\x72\x74\x20\x6d\x61\x72\x73\x68\x61\x6c')
+    file.write(f';')
+    file.write(f'encrypted_source = (\x5f\x5f\x6d\x61\x72\x73\x68\x61\x6c\x5f\x5f);')
+    file.write(f'exec(marshal.loads(encrypted_source))\ntry:\n\timport os, sys\nexcept KeyboardInterrupt:\n\texit()\n\n')
 
 print("\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x2c\x20\x6f\x62\x66\x75\x73\x63\x61\x74\x65\x20\x66\x69\x6c\x65\x20\x73\x61\x76\x65\x64\x20\x69\x6e", ("\x6f\x75\x74\x70\x75\x74\x5f\x66\x69\x6c\x65"))
 try:
