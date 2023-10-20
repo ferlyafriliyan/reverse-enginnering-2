@@ -81,3 +81,5 @@ try:
     import os, sys
 except:
     clear()
+
+input("Press enter to Exit... !")
