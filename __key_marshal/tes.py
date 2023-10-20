@@ -17,15 +17,15 @@ def encrypt_text(text, method, use_marshal=True):
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'zlib':
-        encrypted = base64.b85encode(zlib.compress(text.encode()))
+        encrypted = base64.b85encode(zlib.compress(base64.b16encode(lzma.compress(text.encode()))))
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'base64':
-        encrypted = base64.b85encode(binascii.a2b_base64(text.encode())).decode()
+        encrypted = base64.b85encode(zlib.compress(lzma.compress(base64.b32hexencode(binascii.a2b_base64(text.encode()))))).decode()
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'b64_lzma':
-        encrypted = base64.b85encode(lzma.compress(text.encode())).decode()
+        encrypted = base64.b85encode(lzma.compress(base64.b32encode(zlib.compress(base64.b16encode(text.encode()))))).decode()
         if use_marshal:
             encrypted = md(encrypted)
     elif method == 'marshal':
