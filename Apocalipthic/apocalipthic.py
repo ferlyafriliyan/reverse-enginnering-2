@@ -860,16 +860,11 @@ from pystyle import *
 from time import sleep, time
 from getpass import getpass
 
+text = r"""
+"""[:-1]
 
-text = r""""""[:-1]
 
-banner = f"""
-   _____                              .__  .__        __  .__    .__        
-  /  _  \  ______   ____   ____  _____  |  | |__|______/  |_|  |__ |__| ____  
- /  /_\  \ \____ \ /  _ \_/ ___\ \__  \ |  | |  \____ \   __\  |  \|  |/ ___\ 
-/    |    \   |_> >  <_> )  \___  / __ \|  |_|  |  |_> >  | |   Y  \  \  \___ 
-\____|__  /    __/ \____/ \___  > ____  /____/__|   __/|__| |___|  /__|\___  >
-        \/ |__|               \/      \/        |__|             \/        \/
+banner = f"""Kontolivo
 """
 
 banner = Add.Add(text, banner, center=True)
