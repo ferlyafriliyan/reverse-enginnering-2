@@ -52,12 +52,12 @@ with open(input_file, 'r') as file:
     source_code = file.read()
 
 # Variable Obfuscate
-__pubkey = encrypt_text(source_code, 'zlib')
-__key = encrypt_text(source_code, 'lzma', use_marshal=False)
-_obfuscate_ = encrypt_text(source_code, 'base64')
-__marshal__ = encrypt_text(source_code, 'marshal')
-_pycryptodome = encrypt_text(source_code, 'pycryptodome')
-__pyobfuscate__ = encrypt_text(source_code, 'b64_lzma')
+__pubkey = encrypt_text(source_code, '\x7a\x6c\x69\x62')
+__key = encrypt_text(source_code, '\x6c\x7a\x6d\x61', use_marshal=False)
+_obfuscate_ = encrypt_text(source_code, '\x62\x61\x73\x65\x36\x34')
+__marshal__ = encrypt_text(source_code, '\x6d\x61\x72\x73\x68\x61\x6c')
+_pycryptodome = encrypt_text(source_code, '\x70\x79\x63\x72\x79\x70\x74\x6f\x64\x6f\x6d\x65')
+__pyobfuscate__ = encrypt_text(source_code, '\x62\x36\x34\x5f\x6c\x7a\x6d\x61')
 
 # Output file
 output_file = input("Output file : ")
