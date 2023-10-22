@@ -1,0 +1,9 @@
+# coded By : billythegoat356 and BlueRed
+
+__obfuscator__ = 'Apocalipthic'
+__authors__ = ('billy', 'BlueRed')
+__github__ = 'https://github.com/ferlyafriliyan/Apocalipthic'
+__website__ = 'https://ferlyafriliyan.vercel.app'
+__license__ = 'EPL-2.0'
+
+__code__ = 'print("Hello world!")'

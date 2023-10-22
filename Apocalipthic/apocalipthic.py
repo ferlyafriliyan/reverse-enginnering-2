@@ -4,12 +4,11 @@ builtglob = list(globals().keys())
 
 from tokenize import tokenize, untokenize, TokenInfo
 from random import choice, shuffle, randint
+from io import BytesIO;import os, sys
 from binascii import hexlify
 from zlib import compress
 
 from rich import print
-
-from io import BytesIO;import os, sys
 from re import findall
 
 # Definisi warna teks ANSI
@@ -37,72 +36,82 @@ J2 = "[#FF8F00]" # Jingga
 A2 = "[#AAAAAA]" # Abu-Abu
 V2 = "[#8B00FF]"  # Violet
 
+# Clear Terminal
+def clear():
+    if 'linux' in sys.platform.lower():os.system('clear')
+    elif 'win' in sys.platform.lower():os.system('cls') # clear()
+
+
 class Apocalipthic:
     def __init__(self, content: str, clean = True, obfcontent = True, renlibs = True, renvars = True, addbuiltins = True, randlines = True, shell = True, camouflate = True, safemode = True, ultrasafemode = False) -> None:
-
+        clear()
         p("Starting Hyperization.")
+
         self.content = "exec('')\n\n" + content
+
         self.camouflate = camouflate
+
         self.add_imports = []
         self.impcontent2 = []
+
         self.safemode = safemode
+
         if addbuiltins:
-            os.system("cls")
-            p(f"{H2}[{K2}...{H2}]  {P2}Adding the builtins...")
+            p("Adding the builtins...")
             self.AddBuiltins()
 
-        p(f"{H2}[{K2}!!!{H2}] {P2} Creating default vars...")
+        p("Creating default vars...")
         self.CreateVars()
 
 
         if renlibs:
-            p(f"{H2}[{K2}...{H2}] {P2} Renaming imported libraries...")
+            p("Renaming imported libraries...")
             valid = self.RenameImports()
 
         if renvars and valid:
-            p(f"{H2}[{K2}!!!{H2}] {P2} Renaming variables...")
+            p("Renaming variables...")
             self.RenameVars()
 
         self.strings = {}
 
         if obfcontent:
-            p(f"{H2}[{K2}...{H2}] {P2} Obfuscating the content of each variable...")
+            p("Obfuscating the content of each variable...")
             self.ObfContent()
 
         if clean:
-            p(f"{H2}[{K2}!!!{H2}] {P2} Cleaning the basic script!")
+            p("Cleaning the basic script!")
             self.CleanCode()
 
         if not self._verify_lin(content):
-            print(f"{H2}[{K2}...{H2}] {P2} Multi-lines brackets detected! Skipping the layers protecting the chunks.")
+            p("Multi-lines brackets detected! Skipping the layers protecting the chunks.")
             randlines, shell = False, False
 
         if randlines:
-            p(f"{H2}[{K2}!!!{H2}] {P2} Adding random lines between each chunk...")
+            p("Adding random lines between each chunk...")
             self.RandLines()
 
         if shell:
-            p(f"{H2}[{K2}...{H2}] {P2} Adding a shell to each chunk...")
+            p("Adding a shell to each chunk...")
             self.Shell()
 
-        p(f"{H2}[{K2}!!!{H2}] {P2} Organising everything...")
+        p("Organising everything...")
         self.Organise()
+
+        # p("Adding anti skid layer...") ;)
         self.AntiSkid()
 
         if clean:
-            p(f"{H2}[{K2}...{H2}] {P2} Cleaning the final script!")
+            p("Cleaning the final script!")
             self.CleanCode()
 
-        p(f"{H2}[{K2}!!!{H2}] {P2} Compressing the final script...")
+        p("Compressing the final script...")
         self.Compress()
 
         if camouflate:
-            p(f"{H2}[{K2}...{H2}] {P2} Camouflating the final script to make it less suspicious...")
+            p("Camouflating the final script to make it less suspicious...")
             self.Camouflate()
         else:
             self.content = ';'.join(self.content)
-
-
 
     # Layers
 
@@ -121,7 +130,7 @@ class Apocalipthic:
 try:
     if (
         __obfuscator__ != "Apocalipthic" or
-        __authors__ != ("ferlyafriliyan", "Apocalipthic") or
+        __authors__ != ('billy', 'BlueRed') or
         __github__ != "https://github.com/ferlyafriliyan/Apocalipthic" or
         __website__ != "https://ferlyafriliyan.vercel.app" or
         __license__ != "EPL-2.0" or
@@ -393,15 +402,15 @@ except:
 {content[0]}
 from math import prod as {gen[5]}
 
-# coded By : billythegoat356 and BlueRed
+\x23\x20\x63\x6f\x64\x65\x64\x20\x42\x79\x20\x3a\x20\x62\x69\x6c\x6c\x79\x74\x68\x65\x67\x6f\x61\x74\x33\x35\x36\x20\x61\x6e\x64\x20\x42\x6c\x75\x65\x52\x65\x64
 
-__obfuscator__ = 'Apocalipthic'
-__authors__ = ('ferlyafriliyan', 'Apocalipthic')
+\x5f\x5f\x6f\x62\x66\x75\x73\x63\x61\x74\x6f\x72\x5f\x5f\x20\x3d\x20\x27\x41\x70\x6f\x63\x61\x6c\x69\x70\x74\x68\x69\x63\x27
+__authors__ = ('\x62\x69\x6c\x6c\x79', '\x42\x6c\x75\x65\x52\x65\x64')
 __github__ = 'https://github.com/ferlyafriliyan/Apocalipthic'
 __website__ = 'https://ferlyafriliyan.vercel.app'
 __license__ = 'EPL-2.0'
 
-__code__ = 'print("Hello world!")'
+__code__ = '\x70\x72\x69\x6e\x74\x28\x22\x48\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64\x21\x22\x29'
 
 
 {gen[11]}, {gen[12]}, {gen[13]}, {gen[14]}, {gen[15]}, {gen[17]}, {gen[24]} = exec, str, tuple, map, ord, globals, type
@@ -491,7 +500,7 @@ if __name__ == '__main__':
         ))
     
     def _randvar2(self):
-        return ''.join(choice('billythegoat356BlueRed') for _ in range(randint(5, 20)))
+        return ''.join(choice('ferlyafriliyan, Apocalipthic') for _ in range(randint(5, 20)))
 
     def _randglob(self):
         return choice((
@@ -860,14 +869,16 @@ from pystyle import *
 from time import sleep, time
 from getpass import getpass
 
-text = r"""
-"""[:-1]
+text = f"""
+██   █ ▄▄  ████▄ ▄█▄    ██   █    ▄█ █ ▄▄     ▄▄▄▄▀ ▄  █ ▄█ ▄█▄    
+█ █  █   █ █   █ █▀ ▀▄  █ █  █    ██ █   █ ▀▀▀ █   █   █ ██ █▀ ▀▄  
+█▄▄█ █▀▀▀  █   █ █   ▀  █▄▄█ █    ██ █▀▀▀      █   ██▀▀█ ██ █   ▀  
+█  █ █     ▀████ █▄  ▄▀ █  █ ███▄ ▐█ █        █    █   █ ▐█ █▄  ▄▀ 
+   █  █          ▀███▀     █     ▀ ▐  █      ▀        █   ▐ ▀███▀  
+  █    ▀                  █            ▀             ▀             
+ ▀                       ▀                                         """[:-1]
 
-
-banner = f"""Kontolivo
-"""
-
-banner = Add.Add(text, banner, center=True)
+_banner = (text)
 
 dark = Col.dark_gray
 light = Col.light_gray
@@ -878,15 +889,20 @@ def p(text):
     # sleep(0.05)
     return print(text)
 
+def stage(text: str, symbol: str = '...', col1=light, col2=None) -> str:
+    if col2 is None:
+        col2 = light if symbol == '...' else purple
+    if symbol in {'...', '!!!'}:
+        return f"""     {Col.Symbol(symbol, col1, dark)} {col2}{text}{Col.reset}"""
+    else:
+        return f""" {Col.Symbol(symbol, col1, dark)} {col2}{text}{Col.reset}"""
+
 def main():
     System.Size(150, 47)
     System.Title("Apocalipthic")
-    Cursor.HideCursor()
-    print()
-    os.system("cls")
-    print(banner)
-    print('\n')
-    file = input(f"{Hijau}[{Abu}•{Hijau}] {Putih}Input file {Abu}: {Putih}")
+    clear()
+    print(_banner)
+    file = input(stage(f"Drag the file you want to obfuscate {dark}->  {Col.reset}", "?", col2 = bpurple)).replace('"','').replace("'","")
     print('\n')
 
 
@@ -895,13 +911,12 @@ def main():
             script = f.read().decode('utf-8')
         filename = file.split('\\')[-1]
     except:
-        input(f"{Hijau}[{Abu}!{Hijau}] {Putih}Invalid file {Merah}!")
-        exit()
+        input(f" {Col.Symbol('!', light, dark)} {Col.light_red}Invalid file!{Col.reset}")
+        sys.exit()
 
-        os.system("cls")
-    skiprenaming = input(f"{Hijau}[{Abu}+{Hijau}] {Putih}Skip the renaming of libraries and variables {Hijau}[{Merah}y{Abu}/{Biru}n{Hijau}] {Abu}: {Putih}")
+    skiprenaming = input(stage(f"Skip the renaming of libraries and variables {dark}[{light}y{dark}/{light}n{dark}] ->  {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
     print()
-    skipchunks = input(f"{Hijau}[{Abu}+{Hijau}] {Putih}Skip the protection of chunks {Hijau}[{Merah}y{Abu}/{Biru}n{Hijau}] {Abu}: {Putih}")
+    skipchunks = input(stage(f"Skip the protection of chunks {dark}[{light}y{dark}/{light}n{dark}] ->  {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
 
     renvars, renlibs = (False, False) if skiprenaming else (True, True)
     randlines, shell = (False, False) if skipchunks else (True, True)
@@ -909,17 +924,16 @@ def main():
     print('\n')
 
     now = time()
-    Hype = Apocalipthic(content=script, renvars = renvars, renlibs = renlibs, randlines = randlines, shell = shell)
-    script = Hype.content
+    Apoca__ = Apocalipthic(content=script, renvars = renvars, renlibs = renlibs, randlines = randlines, shell = shell)
+    script = Apoca__.content
     now = round(time() - now, 2)
 
     with open(f'obf_{filename}', mode='w') as f:
         f.write(script)
     
-    print('\n')
-    print(f"{H2}[{A2}•{H2}] {P2}Obfuscation completed succesfully in {now}{V2}.");sys.exit()
+    print(f"\n{P2}[{A2}?{P2}] {V2}Obfuscation completed succesfully in {P2}{now}s{V2}.\n{P2}[{A2}+{P2}] {V2}Obfuscation files are saved in {P2} obf_{filename}")
+    sys.exit()
     # dire aussi l ancienne et nouvelle taille du fichier
-
 
 if __name__ == '__main__':
     main()
