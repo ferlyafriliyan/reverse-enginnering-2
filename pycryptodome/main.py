@@ -3,12 +3,19 @@ import requests as r
 from bs4 import BeautifulSoup as bs
 import os, sys
 
+import datetime, time
+import platform
+
 # Clear Terminal
 def clear():
     if 'linux' in sys.platform.lower():os.system('clear')
     elif 'win' in sys.platform.lower():os.system('cls')
 
-# Memeriksa apakah modul Crypto (pycryptodome) terinstal
+Take_the_encryption = "https://pyobfuscate.com/pyd"
+current_time = datetime.datetime.now()
+current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
+
+# Memeriksa apakah modul Crypto (pycryptodome) terinstall
 try:
     clear()
     importlib.import_module('Crypto')
@@ -50,7 +57,10 @@ else:
         if result:
             encrypted_code = result.text
             with open(output_file, "w", encoding="utf-8") as file:
-                file.write(f'created_by = "Ferly Afriliyan and Merch"\n' + encrypted_code)  # Menambahkan komentar di baris pertama
+                file.write(f'# Take the encryption method from the website = {Take_the_encryption}\n')
+                file.write(f'created_by = "Ferly Afriliyan and Merch"\n')
+                file.write(f'# Time : {current_time_str}\n')
+                file.write(f'# Platform : {platform.system()}-{platform.machine()}\n' + encrypted_code)
             print(f"Berhasil, file {input_file} tersimpan Di : {output_file}")
         else:
             print("Tidak dapat menemukan kode Obfuscate.")
