@@ -51,7 +51,16 @@ else:
         result = source.find('textarea', {'id': 'myTextarea2'})
 
         # Meminta pengguna untuk memasukkan nama file output
-        output_file = input("Masukkan nama file Output: ")
+        while True:
+            output_file = input("Masukkan nama file Output: ")
+            if not output_file:
+                print("Isi dengan benar!")
+                exit()
+            elif not output_file.endswith(".py"):
+                print("File output harus memiliki ekstensi .py")
+                exit()
+            else:
+                break
 
         # Simpan teks yang telah dienkripsi ke dalam file output
         if result:
@@ -65,4 +74,4 @@ else:
         else:
             print("Tidak dapat menemukan kode Obfuscate.")
     else:
-        print("Prosess Obfuscate dibatalkan karena file Input tidak ditemukan.")
+        print("Proses Obfuscate dibatalkan karena file Input tidak ditemukan.")
