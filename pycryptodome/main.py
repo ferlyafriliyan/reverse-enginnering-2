@@ -11,10 +11,6 @@ def clear():
     if 'linux' in sys.platform.lower():os.system('clear')
     elif 'win' in sys.platform.lower():os.system('cls')
 
-Take_the_encryption = "https://pyobfuscate.com/pyd"
-current_time = datetime.datetime.now()
-current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
-
 # Memeriksa apakah modul Crypto (pycryptodome) terinstall
 try:
     clear()
@@ -26,9 +22,38 @@ except ImportError:
 if not crypto_module_installed:
     print(f"Modul Crypto   : (pycryptodome) belum terinstall. Anda perlu menginstal modul ini sebelum menggunakan program ini.")
     print(f"Ketik perintah : pip install pycryptodome")
+
+# Memeriksa apakah modul requests terinstall
+try:
+    importlib.import_module('requests')
+    requests_module_installed = True
+except ImportError:
+    requests_module_installed = False
+
+# Memeriksa apakah modul bs4 terinstall
+try:
+    importlib.import_module('bs4')
+    bs4_module_installed = True
+except ImportError:
+    bs4_module_installed = False
+
+if not crypto_module_installed or not requests_module_installed or not bs4_module_installed:
+    print("Beberapa modul belum terinstal. Anda perlu menginstal modul-modul berikut:")
+    if not crypto_module_installed:
+        print("  - pycryptodome (Crypto)")
+        print("  - requests")
+        print("  - bs4 (Beautiful Soup)")
+    print("Ketik perintah: pip install pycryptodome bs4 requests")
 else:
+    # Clear Terminal
+    if 'linux' in platform.system().lower():os.system('clear')
+    elif 'win' in platform.system().lower():os.system('cls')
+
+    Take_the_encryption = "https://pyobfuscate.com/pyd"
+    current_time = datetime.datetime.now()
+    current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
+
     # Meminta pengguna untuk memasukkan nama file input
-    clear()
     input_file = input("Masukkan nama file Input: ")
 
     # Membaca teks dari file input
@@ -70,7 +95,7 @@ else:
                 file.write(f'created_by = "Ferly Afriliyan and Merch"\n')
                 file.write(f'# Time : {current_time_str}\n')
                 file.write(f'# Platform : {platform.system()}-{platform.machine()}\n' + encrypted_code)
-            print(f"Berhasil, file {input_file} tersimpan Di : {output_file}")
+            print(f"Berhasil, file {input_file} tersimpan di: {output_file}")
         else:
             print("Tidak dapat menemukan kode Obfuscate.")
     else:
