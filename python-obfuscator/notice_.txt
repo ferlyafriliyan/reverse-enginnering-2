@@ -1,0 +1,1 @@
+Obfuscate with : https://pypi.org/project/python-obfuscator/
