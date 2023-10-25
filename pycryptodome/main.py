@@ -6,7 +6,13 @@ import os, sys
 import datetime, time
 import platform
 
-k= '\033[1;33m'; a = '\033[1;30m'; m= '\033[1;31m'; h = '\033[1;32m'; p = '\033[1;37m';
+k = '\033[1;33m'  # Warna Kuning
+a = '\033[1;30m'  # Warna Hitam/Abu-Abu
+m = '\033[1;31m'  # Warna Merah
+h = '\033[1;32m'  # Warna Hijau
+p = '\033[1;37m'  # Warna Putih
+b = '\033[1;34m'  # Warna Biru
+v = '\033[1;35m'  # Warna Violet
 
 # Clear Terminal
 def clear():
