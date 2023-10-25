@@ -1,5 +1,5 @@
 # Pycryptodome Obfuscate - with Python
-![img](https://raw.githubusercontent.com/ferlyafriliyan/reverse-enginnering-2/main/pycryptodome/Data/Pycryptodome.jpg?token=GHSAT0AAAAAACJMPE5HMKVXUYDPJD2J2DVYZJZGH6Q)
+![img](https://raw.githubusercontent.com/ferlyafriliyan/reverse-enginnering-2/main/pycryptodome/Data/Pycryptodome.jpg?token=GHSAT0AAAAAACJMPE5HQRO6YU63J4KSGE5SZJZGQ2Q)
 
 ## <p align="left">📚・Example・📚</p>
 
