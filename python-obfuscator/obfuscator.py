@@ -1,3 +1,6 @@
+# __author : Ferly Afriliyan
+# Do not change the original author's name 
+
 from colorama import Fore, init
 import subprocess
 import importlib
