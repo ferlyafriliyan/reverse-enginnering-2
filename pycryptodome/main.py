@@ -21,6 +21,13 @@ def clear():
     if 'linux' in sys.platform.lower():os.system('clear')
     elif 'win' in sys.platform.lower():os.system('cls')
 
+logo = r"""
+╔═╗┬ ┬┌─┐┬─┐┬ ┬┌─┐┌┬┐┌─┐┌┬┐┌─┐┌┬┐┌─┐
+╠═╝└┬┘│  ├┬┘└┬┘├─┘ │ │ │ │││ ││││├┤  | Coded by : Ferly Afriliyan and Merch
+╩   ┴ └─┘┴└─ ┴ ┴   ┴ └─┘─┴┘└─┘┴ ┴└─┘
+[•] obfuscate python code with methods that are quite difficult to reverse
+"""[:-1]
+
 # Memeriksa apakah modul requests terinstall
 try:
     clear()
@@ -65,7 +72,16 @@ else:
     current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
 
     # Meminta pengguna untuk memasukkan nama file input
+    print(logo)
+    print("")
     input_file = input(f"{h}[{a}•{h}] {p}Masukkan nama file Input {a}: {p}")
+    if not input_file:
+        print(f"{m}[{a}!{m}] {p}File '{input_file}' tidak ditemukan.")
+        exit()
+    elif not input_file.endswith(".py"):
+        print(f"{m}[{a}!{m}] {p}File harus memiliki ekstensi .py {p}")
+        exit()
+        input_text = None
 
     # Membaca teks dari file input
     try:
