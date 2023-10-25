@@ -13,6 +13,8 @@ h = '\033[1;32m'  # Warna Hijau
 p = '\033[1;37m'  # Warna Putih
 b = '\033[1;34m'  # Warna Biru
 v = '\033[1;35m'  # Warna Violet
+u = '\033[1;36m'  # Warna Ungu
+j = '\033[1;38;5;202m'  # Warna Jingga
 
 # Clear Terminal
 def clear():
