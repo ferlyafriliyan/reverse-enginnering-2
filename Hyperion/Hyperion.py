@@ -174,19 +174,18 @@ def Main():
         print('Not a file. !')
         time.sleep(interval)
         exit()
-    output_filename = input(f"{m}Enter the output file name (including '.py' extension): {p}")
+    output_filename = input(f"{m}Enter the output file name ({u}including {p}'{b}.py{p}' {u}extension): {p}")
     time.sleep(input_)
     code = ""
-    Write.Input('[!] WARN: The __name__ variable will be set to "__main__". Press Enter to continue...',
-                Col.DynamicMIX([Col.orange, Col.yellow]), interval)
-    time.sleep(interval)
+    print(f"{k}[{a}!{k}] {p}WARN: The __name__ variable will be set to '__main__'. Press Enter to continue...")
+    time.sleep(0.1)
     with open(path, 'r', encoding='utf-8') as file:
         code = file.read()
     code = Hyperion.Obfuscate(code)
     with open(output_filename, 'w', encoding='utf-8') as file:
         file.write(code)
-    Write.Print(f'[!] Successfully obfuscated and saved to {output_filename}!', Col.green)
-    time.sleep(interval)
+    print(f"{h}[{a}!{h}] {p}Successfully obfuscated and saved to {j}{output_filename}{p}!")
+    time.sleep(0.01)
     exit()
 
 if __name__ == '__main__':
