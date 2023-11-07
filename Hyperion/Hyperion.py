@@ -69,14 +69,14 @@ class Interpreter():
     def Run(self) -> None:
         decoder = self.__getobject__()
         gate = self.__tunnel().Pass()
-        exec(eval(MARSHALMODULE.loads(decoder),
-                  {'__selfObject__': self, '__module': self.__module, '__sr_m': MARSHALMODULE, '__globals': self.__globals, 'gate': gate}),
+        exec(eval(marshal.loads(decoder),
+                  {'__selfObject__': self, '__module': self.__module, '__sr_m': marshal.loads, '__globals': self.__globals, 'gate': gate}),
                   self.__globals)
 
     def __getobject__(self) -> object:
         func = self.layersFunction
         return self.__module.b64decode(func)
-    """[1:-1].replace('MARSHALMODULE', Alt('__import__("marshal")')).replace('GATEWAYKEY', str(gatewayKey))
+    """[1:-1].replace('marshal.loads', Alt('__import__("marshal")')).replace('GATEWAYKEY', str(gatewayKey))
 
     gatewayClass = """
 class Gateway():
@@ -89,10 +89,10 @@ class Gateway():
         self.__interpreter = ext.get('interpreter', None)
 
     def Pass(self):
-        exec(MARSHALMODULE.loads(self.module__.b16decode(self.way)),
+        exec(marshal.loads(self.module__.b16decode(self.way)),
              {'__selfObject__': self, '__key__': self.key, '__module': self.module__, '__globals': self.__globals, '__InterpreterObject__': self.__interpreter})
         return self
-    """[1:-1].replace('MARSHALMODULE', Alt('__import__("marshal")'))
+    """[1:-1].replace('marshal.loads', Alt('__import__("marshal")'))
 
     def RemoveLayers() -> str:
         _globals = globals()['__globals']
