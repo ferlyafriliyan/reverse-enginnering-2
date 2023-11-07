@@ -4,6 +4,24 @@ import random
 from pystyle import *
 import marshal as marshal
 import base64
+import time
+
+# Clear Terminal
+def clear():
+    if 'linux' in sys.platform.lower():
+        os.system('clear')
+    elif 'win' in sys.platform.lower():
+        os.system('cls')
+
+k = '\033[1;33m'  # Warna Kuning
+a = '\033[1;30m'  # Warna Hitam/Abu-Abu
+m = '\033[1;31m'  # Warna Merah
+h = '\033[1;32m'  # Warna Hijau
+p = '\033[1;37m'  # Warna Putih
+b = '\033[1;34m'  # Warna Biru
+v = '\033[1;35m'  # Warna Violet
+u = '\033[1;36m'  # Warna Ungu
+j = '\033[1;38;5;202m'  # Warna Jingga
 
 class Hyperion():
     serializer = marshal
@@ -40,21 +58,48 @@ class Hyperion():
 
     interpreterClass = """
 class Interpreter():
-  def __init__(self, code: str, layersFunction: bytes, module, globals_, backend: bytes = b'') -> None: self.__module = module;self.layersFunction = layersFunction;self.__globals = globals_;self.code = {'bytes': code, 'str': str(code)}; self.__backend = backend
-  def __tunnel(self) -> Gateway: return Gateway(self.__backend, GATEWAYKEY, __module = self.__module, __globals = self.__globals, interpreter = self)
-  def Run(self) -> None: decoder = self.__getobject__(); gate = self.__tunnel().Pass();exec(eval(MARSHALMODULE.loads(decoder), {'__selfObject__': self, '__module': self.__module, '__sr_m': MARSHALMODULE, '__globals': self.__globals, 'gate': gate}), self.__globals)
-  def __getobject__(self) -> object: func = self.layersFunction; return self.__module.b64decode(func)
-"""[1:-1].replace('MARSHALMODULE', Alt('__import__("marshal")')).replace('GATEWAYKEY', str(gatewayKey))
+    def __init__(self, code: str, layersFunction: bytes, module, globals_, backend: bytes = b'') -> None:
+        self.__module = module
+        self.layersFunction = layersFunction
+        self.__globals = globals_
+        self.code = {'bytes': code, 'str': str(code)}
+        self.__backend = backend
+
+    def __tunnel(self) -> Gateway:
+        return Gateway(self.__backend, GATEWAYKEY, __module=self.__module, __globals=self.__globals, interpreter=self)
+
+    def Run(self) -> None:
+        decoder = self.__getobject__()
+        gate = self.__tunnel().Pass()
+        exec(eval(MARSHALMODULE.loads(decoder),
+                  {'__selfObject__': self, '__module': self.__module, '__sr_m': MARSHALMODULE, '__globals': self.__globals, 'gate': gate}),
+                  self.__globals)
+
+    def __getobject__(self) -> object:
+        func = self.layersFunction
+        return self.__module.b64decode(func)
+    """[1:-1].replace('MARSHALMODULE', Alt('__import__("marshal")')).replace('GATEWAYKEY', str(gatewayKey))
 
     gatewayClass = """
 class Gateway():
-  def __init__(self, way: bytes, key: int, **ext) -> None: self.way = way;self.key = key; self.module__ = ext.get('__module', None);self.__globals = ext.get('__globals', None);self.__module = ext.get('__module', None); self.__interpreter = ext.get('interpreter', None)
-  def Pass(self): exec(MARSHALMODULE.loads(self.module__.b16decode(self.way)), {'__selfObject__': self, '__key__': self.key, '__module': self.module__, '__globals': self.__globals, '__InterpreterObject__': self.__interpreter}); return self
-"""[1:-1].replace('MARSHALMODULE', Alt('__import__("marshal")'))
+    def __init__(self, way: bytes, key: int, **ext) -> None:
+        self.way = way
+        self.key = key
+        self.module__ = ext.get('__module', None)
+        self.__globals = ext.get('__globals', None)
+        self.__module = ext.get('__module', None)
+        self.__interpreter = ext.get('interpreter', None)
+
+    def Pass(self):
+        exec(MARSHALMODULE.loads(self.module__.b16decode(self.way)),
+             {'__selfObject__': self, '__key__': self.key, '__module': self.module__, '__globals': self.__globals, '__InterpreterObject__': self.__interpreter})
+        return self
+    """[1:-1].replace('MARSHALMODULE', Alt('__import__("marshal")'))
 
     def RemoveLayers() -> str:
         _globals = globals()['__globals']
-        if not globals().get('gate'): return
+        if not globals().get('gate'):
+            return
         obj = globals()['__selfObject__']
         module = globals()['__module']
         code = obj.code['bytes']
@@ -91,19 +136,22 @@ exec({_code!r}, {program})
 {Hyperion.gatewayClass}
 {Hyperion.interpreterClass}
 
-Interpreter({code__!r},
+if __name__ == '__main__':
+    try:
+        Interpreter({code__!r},
             {base64.b64encode(Hyperion.serializer.dumps(Hyperion.RemoveLayers.__code__))!r},
             {Hyperion.Alt('__import__("base64")')}, globals(),
             {base64.b16encode(Hyperion.serializer.dumps(Hyperion.Gateway.__code__))!r}
-).Run()
-
+        ).Run()
+    except (KeyboardInterrupt, Exception) as e:
+        exit(f"[Error] {{str(e).capitalize()}}!")
 # Lu Kontool
 """[1:-1]
         return code_
 
 colors = Col.red_to_purple
-space = '\n' * 3
-interval = 0.01
+input_ = 0.01
+interval = 0.1
 banner = """
 ██╗  ██╗██╗   ██╗██████╗ ███████╗██████╗ ██╗ ██████╗ ███╗   ██╗
 ██║  ██║╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██║██╔═══██╗████╗  ██║
@@ -111,45 +159,40 @@ banner = """
 ██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══╝  ██╔══██╗██║██║   ██║██║╚██╗██║
 ██║  ██║   ██║   ██║     ███████╗██║  ██║██║╚██████╔╝██║ ╚████║
 ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-                                                               
 """[:-1]
 
-print("Press Enter!")
-
-def Intro():
-    System.Clear()
-    Anime.Fade(text = Center.Center(banner), color = colors, mode = Colorate.Vertical, enter = True)
-    while True:
-        System.Clear()
-        Main()
-
 def Main():
-    whiteChars = list('═╝╚╔╗║') # █
-    print(space +
-        Colorate.Format(Center.XCenter(banner), whiteChars, Colorate.Vertical, colors, Col.white)
-    + space)
-    path = Write.Input('Drag and drop the file to obfuscate => ', colors, interval)
+    whiteChars = list('═╝╚╔╗║')  # █
+    print(Colorate.Format(banner, whiteChars, Colorate.Vertical, colors, Col.white))
+    path = input(f"{m}Drag and drop the file to obfuscate => {p}")
     path = os.path.normpath(path)
     if not os.path.exists(path):
         Colorate.Error('File not found.')
+        time.sleep(input_)
         exit()
     if not os.path.isfile(path):
-        Colorate.Error('Not a file.')
+        print('Not a file. !')
+        time.sleep(interval)
         exit()
-    Write.Input('[!] WARN: The __name__ variable will be set to "__main__". Press Enter to continue...', Col.DynamicMIX([Col.orange, Col.yellow]), interval)
-    with open(path, 'r', encoding = 'utf-8') as file:
+    output_filename = input(f"{m}Enter the output file name (including '.py' extension): {p}")
+    time.sleep(input_)
+    code = ""
+    Write.Input('[!] WARN: The __name__ variable will be set to "__main__". Press Enter to continue...',
+                Col.DynamicMIX([Col.orange, Col.yellow]), interval)
+    time.sleep(interval)
+    with open(path, 'r', encoding='utf-8') as file:
         code = file.read()
     code = Hyperion.Obfuscate(code)
-    filename = os.path.basename(path).removesuffix('.py')
-    with open(filename + '_.py', 'a+', encoding = 'utf-8') as file:
+    with open(output_filename, 'w', encoding='utf-8') as file:
         file.write(code)
-    Write.Print(f'[!] Successfully obfuscated !', Col.green, interval)
+    Write.Print(f'[!] Successfully obfuscated and saved to {output_filename}!', Col.green)
+    time.sleep(interval)
     exit()
 
 if __name__ == '__main__':
     System.Title('Hyperion - By Ferly Afriliyan_')
-    System.Size(200, 50)
+    System.Size(150, 47)
     try:
-        Intro()
+        Main()
     except (KeyboardInterrupt, Exception) as e:
         exit(f"[Error] {str(e).capitalize()}!")
