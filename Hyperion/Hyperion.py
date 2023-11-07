@@ -33,13 +33,11 @@ class Hyperion():
     hhidedText = 'GG! You deobfuscated the code! obfuscated by Hyperion'
     exceptionCode = 'input("Don\'t try to skid Hyperion obfuscation !");exit(0)'
     GithubLink = 'https://github.com/ferlyafriliyan/Hyperion'
-    Tools = 'Hyperion Obfuscator Code Python3'
 
     infos = {
-        '__Author__': 'Ferly Afriliyan',
-        '__MadeBy__': '[ ZameuZID ( Ferly Afriliyan ) ]',
-        '__Github__': GithubLink,
-        '__Repositories__': Tools,
+        '__author__': 'Ferly Afriliyan',
+        '__madeBy__': 'Hyperion',
+        '__git__': GithubLink,
     }
     gatewayKey = random.randint(0, 10000)
 
