@@ -1,5 +1,5 @@
 import os
-import time
+import time, sys
 import base64
 import marshal
 import zlib
@@ -42,14 +42,19 @@ J2 = "[#FF8F00]"  # Jingga
 A2 = "[#AAAAAA]"  # Abu-Abu
 T2 = "[#FFA500]"  # Oranye
 
+# Clear Terminal
+def clear():
+    if 'linux' in sys.platform.lower():
+        os.system('clear')
+    elif 'win' in sys.platform.lower():
+        os.system('cls')  # clear()
+
 class LambdaObfuscators:
     def __init__(self):
         current_time = datetime.datetime.now()
         current_time_str = current_time.strftime("%A, %B %d, %Y %H:%M:%S")
 
-        self.mzb = f'''# Kalo bisa decrypt file ini kabarin gw
-# WhatsApp : +62 857-5922-9322\n# Facebook : www.facebook.com/freya.xyz
-# Time : {current_time_str}
+        self.mzb = f'''# Time : {current_time_str}
 # Platform : {platform.system()}-{platform.machine()}
 # Obfuscated by : Ferly Afriliyan (Ryougaa Hideki)
 
@@ -107,7 +112,7 @@ Hidekii_ = (\n'''
 
 if __name__ == "__main__":
     encryptor = LambdaObfuscators()
-    os.system("clear")
+    clear()
     tulis(Panel("""[#00BFFF]    ╔═╗┬  ┬┌─┐┬   ┌─┐┌┐ ┌─┐[#808080]Python3 with lambda[#00BFFF]
     ║╣ └┐┌┘├─┤│───│ │├┴┐├┤
     ╚═╝ └┘ ┴ ┴┴─┘ └─┘└─┘└ 
