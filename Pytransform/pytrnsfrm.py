@@ -5,13 +5,12 @@ Tools = '__PyTransform__ Obfuscator Code Python3'
 
 import os, time
 
-___Author____ = "Ferly Afriliyan & Nanta XE (XE)"
+___author____ = "Ferly Afriliyan & Nanta XE (XE)"
 ___infos = f"""
-# ____Time____ = {time.strftime("%Y-%m-%d %H:%M:%S")}
-__Author__ = "{___Author____}"
-__MadeBy__ = "__PyTransform"
-__Github__ = "https://github.com/ferlyafriliyan/__PyTransform"
-__Repositories__ = "__PyTransform__ Obfuscator Code Python3"
+# __Time__ = {time.strftime("%Y-%m-%d %H:%M:%S")}
+__author__ = "{___Author____}"
+__madeBy__ = "Pytransform"
+__git__ = "https://github.com/ferlyafriliyan/__PyTransform"
         """
 
 
