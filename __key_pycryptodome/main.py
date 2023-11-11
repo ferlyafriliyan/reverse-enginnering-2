@@ -69,8 +69,12 @@ import os, sys
 import time
 
 class Apocalipthic():
-    def _key():
-        print("Hello world !")
+    def __init__(self):
+        print("Initializing Apocalipthic...")
+        # Tambahkan inisialisasi lainnya di sini
+
+    def _key(self):
+        print("Hello world from _key!")
         if __name__ == '__main__':
             try:
                 {__key},
@@ -79,7 +83,7 @@ class Apocalipthic():
                 exit(print(f"[Error] {{str(e).capitalize()}}!"))
 
     def obfuscate(self):
-        print("Hello world !")
+        print("Hello world from obfuscate!")
         time.sleep(1)
         if __name__ == '__main__':
             try:
@@ -87,8 +91,8 @@ class Apocalipthic():
             except (KeyboardInterrupt, Exception) as e:          
                 exit(print(f"[Error] {{str(e).capitalize()}}!"))
 
-    def _pubkey():
-        print("Hello world !")
+    def _pubkey(self):
+        print("Hello world from _pubkey!")
         if __name__ == '__main__':
             try:
                 {__pubkey},
