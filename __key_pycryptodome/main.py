@@ -5,10 +5,8 @@ from marshal import dumps as md  # marshal.dumps
 
 # Clear Terminal
 def clear():
-    if 'linux' in sys.platform.lower():
-        os.system('clear')
-    elif 'win' in sys.platform.lower():
-        os.system('cls')
+    if 'linux' in sys.platform.lower():os.system('clear')
+    elif 'win' in sys.platform.lower():os.system('cls') # clear()
 
 # Metode Obfuscate
 def encrypt_text(text, method, use_marshal=True):
