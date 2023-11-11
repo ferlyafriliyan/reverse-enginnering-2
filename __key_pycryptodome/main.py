@@ -106,6 +106,7 @@ if __name__ == '__main__':
     except (KeyboardInterrupt, Exception) as e:
         exit(f"[Error] {{str(e).capitalize()}}!")
 # Lu Kontool
+
 """
 
 end_ = f"""
