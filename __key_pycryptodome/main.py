@@ -52,28 +52,28 @@ with open(input_file, 'r') as file:
     source_code = file.read()
 
 # Variable Obfuscate
-__pubkey = encrypt_text(source_code, '\x7a\x6c\x69\x62')
-__key = encrypt_text(source_code, '\x6c\x7a\x6d\x61', use_marshal=False)
-_obfuscate_ = encrypt_text(source_code, '\x62\x61\x73\x65\x36\x34')
-__marshal__ = encrypt_text(source_code, '\x6d\x61\x72\x73\x68\x61\x6c')
-_pycryptodome = encrypt_text(source_code, '\x70\x79\x63\x72\x79\x70\x74\x6f\x64\x6f\x6d\x65')
-__pyobfuscate__ = encrypt_text(source_code, '\x62\x36\x34\x5f\x6c\x7a\x6d\x61')
+__key = encrypt_text(source_code, 'lzma', use_marshal=False)
+__pubkey = encrypt_text(source_code, 'zlib')
+_obfuscate_ = encrypt_text(source_code, 'base64')
+__pyobfuscate__ = encrypt_text(source_code, 'b64_lzma')
+_pycryptodome = encrypt_text(source_code, 'pycryptodome')
+__marshal__ = encrypt_text(source_code, 'marshal')
 
 # Output file
 output_file = input("Output file : ")
 with open(output_file, 'w') as file:
     file.write(f'\x23\x20\x41\x75\x74\x68\x6f\x72\x20\x3a\x20\x46\x65\x72\x6c\x79\x20\x41\x66\x72\x69\x6c\x69\x79\x61\x6e\x0a\x20\x20\x23\x20\x68\x74\x74\x70\x73\x3a\x2f\x2f\x66\x65\x72\x6c\x79\x61\x66\x72\x69\x6c\x69\x79\x61\x6e\x2e\x76\x65\x72\x63\x65\x6c\x2e\x61\x70\x70\x2f\x0a\x20\x20\x20\x20\x23\x20\x4f\x62\x66\x75\x73\x63\x61\x74\x65\x20\x77\x69\x74\x68\x20\x5f\x5f\x6b\x65\x79\n')
-    file.write(f'\x5f\x5f\x6b\x65\x79 = {repr(__key)}\n')
-    file.write(f'\x5f\x5f\x70\x75\x62\x6b\x65\x79 = {repr(__pubkey)}\n')
-    file.write(f'\x5f\x6f\x62\x66\x75\x73\x63\x61\x74\x65\x5f = {repr(_obfuscate_)}\n')
-    file.write(f'\x5f\x5f\x70\x79\x6f\x62\x66\x75\x73\x63\x61\x74\x65\x5f\x5f = {repr(__pyobfuscate__)}\n')
-    file.write(f'\x5f\x70\x79\x63\x72\x79\x70\x74\x6f\x64\x6f\x6d\x65 = {repr(_pycryptodome)}\n')
+    file.write(f'__key = {repr(__key)}\n')
+    file.write(f'__pubkey = {repr(__pubkey)}\n')
+    file.write(f'_obfuscate_ = {repr(_obfuscate_)}\n')
+    file.write(f'__pyobfuscate__ = {repr(__pyobfuscate__)}\n')
+    file.write(f'_pycryptodome = {repr(_pycryptodome)}\n')
     file.write(f'__marshal__ = {repr(__marshal__)};')
 
     # Simpan metode enkripsi dengan marshal di bawah variabel
     file.write('\x69\x6d\x70\x6f\x72\x74\x20\x6d\x61\x72\x73\x68\x61\x6c')
     file.write(f';')
-    file.write(f'encrypted_source = (\x5f\x5f\x6d\x61\x72\x73\x68\x61\x6c\x5f\x5f);')
+    file.write(f'encrypted_source = ({__marshal__});')
     file.write(f'exec(marshal.loads(encrypted_source))\ntry:\n\timport os, sys\nexcept (KeyboardInterrupt, Exception) as e:\n\tclear()\n\n')
 
 print("\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x2c\x20\x6f\x62\x66\x75\x73\x63\x61\x74\x65\x20\x66\x69\x6c\x65\x20\x73\x61\x76\x65\x64\x20\x69\x6e", ("\x6f\x75\x74\x70\x75\x74\x5f\x66\x69\x6c\x65"))
