@@ -57,25 +57,82 @@ __pyobfuscate__ = encrypt_text(source_code, 'b64_lzma')
 _pycryptodome = encrypt_text(source_code, 'pycryptodome')
 __marshal__ = encrypt_text(source_code, 'marshal')
 
+infos_ = f"""# Author : Ferly Afriliyan
+  # https://ferlyafriliyan.vercel.app/
+    # Obfuscate with __key
+"""
+
+# Variable Obfuscate
+# Variable Obfuscate
+EncryptVar = f"""
+import os, sys
+import time
+
+class Apocalipthic():
+    def _key():
+        print("Hello world !")
+        if __name__ == '__main__':
+            try:
+                {__key},
+                {_obfuscate_}
+            except (KeyboardInterrupt, Exception) as e:          
+                exit(print(f"[Error] {{str(e).capitalize()}}!"))
+
+    def obfuscate(self):
+        print("Hello world !")
+        time.sleep(1)
+        if __name__ == '__main__':
+            try:
+                {__marshal__}
+            except (KeyboardInterrupt, Exception) as e:          
+                exit(print(f"[Error] {{str(e).capitalize()}}!"))
+
+    def _pubkey():
+        print("Hello world !")
+        if __name__ == '__main__':
+            try:
+                {__pubkey},
+                {__pyobfuscate__}
+            except (KeyboardInterrupt, Exception) as e:          
+                exit(print(f"[Error] {{str(e).capitalize()}}!"))
+"""
+
+code_ = f"""
+{infos_}
+{EncryptVar}
+if __name__ == '__main__':
+    try:
+        Apocalipthic().obfuscate()
+    except (KeyboardInterrupt, Exception) as e:
+        exit(f"[Error] {{str(e).capitalize()}}!")
+# Lu Kontool
+"""
+
+end_ = f"""
+try:
+        if "linux" in sys.platform.lower():os.system('clear')
+        elif "win" in sys.platform.lower():os.system('cls')
+except (KeyboardInterrupt, Exception) as e:
+    clear()
+"""
+
+
 # Output file
 output_file = input("Output file : ")
 with open(output_file, 'w') as file:
-    file.write(f'\x23\x20\x41\x75\x74\x68\x6f\x72\x20\x3a\x20\x46\x65\x72\x6c\x79\x20\x41\x66\x72\x69\x6c\x69\x79\x61\x6e\x0a\x20\x20\x23\x20\x68\x74\x74\x70\x73\x3a\x2f\x2f\x66\x65\x72\x6c\x79\x61\x66\x72\x69\x6c\x69\x79\x61\x6e\x2e\x76\x65\x72\x63\x65\x6c\x2e\x61\x70\x70\x2f\x0a\x20\x20\x20\x20\x23\x20\x4f\x62\x66\x75\x73\x63\x61\x74\x65\x20\x77\x69\x74\x68\x20\x5f\x5f\x6b\x65\x79\n')
-    file.write(f'__key = {repr(__key)}\n')
-    file.write(f'__pubkey = {repr(__pubkey)}\n')
-    file.write(f'_obfuscate_ = {repr(_obfuscate_)}\n')
-    file.write(f'__pyobfuscate__ = {repr(__pyobfuscate__)}\n')
-    file.write(f'_pycryptodome = {repr(_pycryptodome)}\n')
-    file.write(f'__marshal__ = {repr(__marshal__)};')
+    file.write(f'{code_}')
+    file.write(f'_pycryptodome = {repr(_pycryptodome)};')
 
     # Simpan metode enkripsi dengan marshal di bawah variabel
     file.write('\x69\x6d\x70\x6f\x72\x74\x20\x6d\x61\x72\x73\x68\x61\x6c')
     file.write(f';')
     file.write(f'encrypted_source = ({__marshal__});')
-    file.write(f'exec(marshal.loads(encrypted_source))\ntry:\n\timport os, sys\nexcept (KeyboardInterrupt, Exception) as e:\n\tclear()\n\n')
+    file.write(f'exec(marshal.loads(encrypted_source))')
+    file.write(f'{end_}')
 
 print("\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x2c\x20\x6f\x62\x66\x75\x73\x63\x61\x74\x65\x20\x66\x69\x6c\x65\x20\x73\x61\x76\x65\x64\x20\x69\x6e", ("\x6f\x75\x74\x70\x75\x74\x5f\x66\x69\x6c\x65"))
-try:
-	import os, sys
-except (KeyboardInterrupt, Exception) as e:
-	clear()
+if __name__ == '__main__':
+    try:
+	    import os, sys
+    except (KeyboardInterrupt, Exception) as e:
+	    clear()
