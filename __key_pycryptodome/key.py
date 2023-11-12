@@ -7,14 +7,32 @@ import base64
 
 # Clear Terminal
 def clear():
-    if 'linux' in sys.platform.lower():
-        os.system('clear')
-    elif 'win' in sys.platform.lower():
-        os.system('cls')  # clear()
+    if 'linux' in sys.platform.lower():os.system('clear')
+    elif 'win' in sys.platform.lower():os.system('cls')  # clear()
+
+k = '\033[1;33m'  # Warna Kuning
+a = '\033[1;30m'  # Warna Hitam/Abu-Abu
+m = '\033[1;31m'  # Warna Merah
+h = '\033[1;32m'  # Warna Hijau
+p = '\033[1;37m'  # Warna Putih
+b = '\033[1;34m'  # Warna Biru
+v = '\033[1;35m'  # Warna Violet
+u = '\033[1;36m'  # Warna Ungu
+j = '\033[1;38;5;202m'  # Warna Jingga
 
 def Alt(text: str, evalCode: bool = True) -> str:
     formated = '+'.join(f'chr({char})' for char in [ord(char_) for char_ in text])
     return f'eval(eval({formated!r}))' if evalCode else f'eval({formated!r})'
+
+logo = f"""
+
+█  █▀ ▄███▄ ▀▄    ▄ 
+█▄█   █▀   ▀  █  █  
+█▀▄   ██▄▄     ▀█   
+█  █  █▄   ▄▀  █    
+  █   ▀███▀  ▄▀     
+ ▀                  
+                    """
 
 # Metode Obfuscate
 def encrypt_text(text, method, use_marshal=True):
@@ -50,8 +68,15 @@ def encrypt_text(text, method, use_marshal=True):
     return encrypted
 
 # Input file
-clear()
-input_file = input("Input file : ")
+clear();print(logo)
+input_file = input(f"{h}[{a}•{h}] {p}Masukkan nama file Input {a}: {p}")
+if not input_file:
+        print(f"{m}[{a}!{m}] {p}File '{input_file}' tidak ditemukan.")
+        exit()
+elif not input_file.endswith(".py"):
+        print(f"{m}[{a}!{m}] {p}File harus memiliki ekstensi .py {p}")
+        exit()
+        input_text = None
 
 # Open file Input
 with open(input_file, 'r') as file:
@@ -116,8 +141,7 @@ class Apocalipthic():
                 exit(print(f"[Error] {{str(e).capitalize()}}!"))
 """
 
-code_ = f"""
-{infos_}
+code_ = f"""{infos_}
 {EncryptVar}
 if __name__ == '__main__':
     try:
@@ -132,14 +156,21 @@ if __name__ == '__main__':
 
 end_ = f"""
 try:
-    if "linux" in sys.platform.lower(): os.system('clear')
-    elif "win" in sys.platform.lower(): os.system('cls')
+        if "linux" in sys.platform.lower():os.system('clear')
+        elif "win" in sys.platform.lower():os.system('cls')
 except (KeyboardInterrupt, Exception) as e:
     clear()
 """
 
 # Output file
-output_file = input("Output file : ")
+output_file = input(f"{h}[{a}•{h}] {p}Masukkan nama file Output {a}: {p}")
+if not output_file:
+                print(f"{m}[{a}!{m}] {p}Isi dengan benar {m}! {p}")
+                exit()
+elif not output_file.endswith(".py"):
+                print(f"{m}[{a}!{m}] {p}File output harus memiliki ekstensi .py {p}")
+                exit()
+
 with open(output_file, 'w') as file:
     file.write(f'{code_}')
     file.write(f'_pycryptodome = {repr(_pycryptodome)};')
@@ -151,9 +182,14 @@ with open(output_file, 'w') as file:
     file.write(f'exec(marshal.loads(encrypted_source))')
     file.write(f'{end_}')
 
-print("\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x2c\x20\x6f\x62\x66\x75\x73\x63\x61\x74\x65\x20\x66\x69\x6c\x65\x20\x73\x61\x76\x65\x64\x20\x69\x6e", ("\x6f\x75\x74\x70\x75\x74\x5f\x66\x69\x6c\x65"))
 if __name__ == '__main__':
     try:
         import os, sys
     except (KeyboardInterrupt, Exception) as e:
         exit(f"[Error] {{str(e).capitalize()}}!")
+
+    if __pyobfuscate__ or _pycryptodome:
+        print(f"{h}[{a}•{h}] {p}Berhasil, file {input_file} tersimpan di {a}: {output_file} {p}")
+    else:
+        print(f"{m}[{a}!{m}] {p}Tidak dapat menemukan kode Obfuscate.")
+
