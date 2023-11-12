@@ -36,3 +36,10 @@ TTL = "26/Mei/1996"
 Pass = "DenventaAfriliyan费利4409#"
 print("\n[•] Akun - 5 ( Pribadi + Locked Profile)\nNama FB :", Nama + "\nEmail :", Email + "\nTtl :", TTL + "\nPassword :", Pass)
 
+# Akun 6
+Nama = "Ayu Novitasaridewi"
+Email = "giu91593@zslsz.com"
+TTL = "10/Maret/1995"
+Pass = "Ferly4409_$XD"
+print("\n[•] Akun - 6\nNama FB :", Nama + "\nEmail :", Email + "\nTtl :", TTL + "\nPassword :", Pass)
+
