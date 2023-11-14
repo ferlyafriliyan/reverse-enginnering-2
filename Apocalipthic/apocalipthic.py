@@ -123,7 +123,7 @@ class Apocalipthic:
 
 # https://github.com/ferlyafriliyan/Apocalipthic
 
-# coded By : billythegoat356 and BlueRed
+# coded By : billy and BlueRed
 
 
 try:
