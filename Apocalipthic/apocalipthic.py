@@ -526,7 +526,6 @@ if __name__ == '__main__':
         protected = self._protect(lib, r=2, basic=True)
         return f"{self.getattr}({self.__import__}({protected}),{self.dir}({self.__import__}({protected}))[{self.dir}({self.__import__}({protected})).index({self._protect(var, r=2, basic=True)})])"
 
-    
     # CreateVars
 
     @property
