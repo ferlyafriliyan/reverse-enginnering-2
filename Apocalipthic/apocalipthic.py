@@ -41,7 +41,6 @@ def clear():
     if 'linux' in sys.platform.lower():os.system('clear')
     elif 'win' in sys.platform.lower():os.system('cls') # clear()
 
-
 class Apocalipthic:
     def __init__(self, content: str, clean = True, obfcontent = True, renlibs = True, renvars = True, addbuiltins = True, randlines = True, shell = True, camouflate = True, safemode = True, ultrasafemode = False) -> None:
         clear()
@@ -886,7 +885,7 @@ purple = Colors.StaticMIX((Col.purple, Col.blue))
 bpurple = Colors.StaticMIX((Col.purple, Col.blue, Col.blue))
 
 def p(text):
-    # sleep(0.05)
+    sleep(0.1)
     return print(text)
 
 def stage(text: str, symbol: str = '...', col1=light, col2=None) -> str:
@@ -898,42 +897,58 @@ def stage(text: str, symbol: str = '...', col1=light, col2=None) -> str:
         return f""" {Col.Symbol(symbol, col1, dark)} {col2}{text}{Col.reset}"""
 
 def main():
+    # Perubahan pada baris ini untuk memastikan bahwa ukuran terminal dan judul diatur dengan benar
     System.Size(150, 47)
     System.Title("Apocalipthic")
-    clear()
     print(_banner)
-    file = input(stage(f"Drag the file you want to obfuscate {dark}->  {Col.reset}", "?", col2 = bpurple)).replace('"','').replace("'","")
-    print('\n')
 
+    file = input(stage(f"Input file {dark}->  {Col.reset}", "?", col2=bpurple)).replace('"', '').replace("'", "")
+    if not file:
+        print(f" {M2}[{A2}!{M2}] {P2}File '{file}' tidak ditemukan.")
+        exit()
+    elif not file.endswith(".py"):
+        print(f" {M2}[{A2}!{M2}] {P2}File harus memiliki ekstensi .py")
+        exit()
+    output = input(stage(f"Output file {dark}->  {Col.reset}", "?", col2=bpurple)).replace('"', '').replace("'", "")
+    if not output:
+        print(f" {M2}[{A2}!{M2}] {P2}Isi dengan benar {M2}!{P2}")
+        exit()
+    elif not output.endswith(".py"):
+        print(f" {M2}[{A2}!{M2}] {P2}File output harus memiliki ekstensi .py")
+        exit()
 
     try:
         with open(file, mode='rb') as f:
             script = f.read().decode('utf-8')
-        filename = file.split('\\')[-1]
+        # Perubahan pada baris ini untuk mendapatkan nama file output tanpa path lengkap
+        output = output.split('\\')[-1]
     except:
-        input(f" {Col.Symbol('!', light, dark)} {Col.light_red}Invalid file!{Col.reset}")
-        sys.exit()
+        print(f" {Col.Symbol('!', light, dark)} {Col.light_red}Invalid file!{Col.reset}")
+        exit()
 
-    skiprenaming = input(stage(f"Skip the renaming of libraries and variables {dark}[{light}y{dark}/{light}n{dark}] ->  {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
-    print()
-    skipchunks = input(stage(f"Skip the protection of chunks {dark}[{light}y{dark}/{light}n{dark}] ->  {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
+    skiprenaming = input(stage(f"Skip the renaming of libraries and variables {dark}[{light}y{dark}/{light}n{dark}] ->  {Col.reset}", "?")).replace('"', '').replace("'", "") == 'y'
+    skipchunks = input(stage(f"Skip the protection of chunks {dark}[{light}y{dark}/{light}n{dark}] ->  {Col.reset}", "?")).replace('"', '').replace("'", "") == 'y'
 
     renvars, renlibs = (False, False) if skiprenaming else (True, True)
     randlines, shell = (False, False) if skipchunks else (True, True)
 
-    print('\n')
-
     now = time()
-    Apoca__ = Apocalipthic(content=script, renvars = renvars, renlibs = renlibs, randlines = randlines, shell = shell)
+    Apoca__ = Apocalipthic(content=script, renvars=renvars, renlibs=renlibs, randlines=randlines, shell=shell)
     script = Apoca__.content
+
     now = round(time() - now, 2)
 
-    with open(f'obf_{filename}', mode='w') as f:
-        f.write(script)
-    
-    print(f"\n{P2}[{A2}?{P2}] {V2}Obfuscation completed succesfully in {P2}{now}s{V2}.\n{P2}[{A2}+{P2}] {V2}Obfuscation files are saved in {P2} obf_{filename}")
+    # Perubahan pada baris ini untuk menyimpan hasil obfuscation ke file output yang benar
+    with open(output, 'w', encoding='utf-8') as file:
+        file.write(script)
+
+    clear()
+    # Perubahan pada baris ini untuk memberikan pesan dengan nama file output yang benar
+    print(f"\n{P2}[{A2}?{P2}] {V2}Obfuscation completed successfully in {P2}{now}s{V2}.\n{P2}[{A2}+{P2}] {V2}Obfuscation files are saved in {P2} {output}")
+
     sys.exit()
-    # dire aussi l ancienne et nouvelle taille du fichier
+    # Dire aussi l'ancienne et nouvelle taille du fichier
 
 if __name__ == '__main__':
+    clear()
     main()
