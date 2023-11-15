@@ -56,7 +56,7 @@ def obfuscate_file(input_file):
 INFO     Pyarmor 8.4.3 (trial), 000000, non-profits
 INFO     Platform windows.x86_64
 INFO     search inputs ...
-INFO     find script pyarmor.py
+INFO     find script {input_file}
 INFO     find 1 top resources
 INFO     start to generate runtime files
 INFO     target platforms {'windows.amd64'}
@@ -64,8 +64,8 @@ INFO     write dist\pyarmor_runtime_000000\pyarmor_runtime.pyd
 INFO     generate runtime files OK
 INFO     start to obfuscate scripts
 INFO     process resource "pyarmor"
-INFO     obfuscating file pyarmor.py
-INFO     write dist\pyarmor.py
+INFO     obfuscating file {input_file}
+INFO     write dist\{input_file}
 INFO     obfuscate scripts OK
 """)
 
