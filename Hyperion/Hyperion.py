@@ -68,14 +68,14 @@ class Interpreter():
     def Run(self) -> None:
         decoder = self.__getobject__()
         gate = self.__tunnel().Pass()
-        exec(eval(MARSHALMODULE.loads(decoder),
+        exec(eval(MARSHAL_MODULE.loads(decoder),
                   {'__selfObject__': self, '__module': self.__module, '__sr_m': eval(eval('chr(95)+chr(95)+chr(105)+chr(109)+chr(112)+chr(111)+chr(114)+chr(116)+chr(95)+chr(95)+chr(40)+chr(34)+chr(109)+chr(97)+chr(114)+chr(115)+chr(104)+chr(97)+chr(108)+chr(34)+chr(41)')), '__globals': self.__globals, 'gate': gate}),
                   self.__globals)
 
     def __getobject__(self) -> object:
         func = self.layersFunction
         return self.__module.b64decode(func)
-        """[1:-1].replace('MARSHALMODULE', Alt('__import__("marshal")')).replace('GATEWAYKEY', str(gatewayKey))
+        """[1:-1].replace('MARSHAL_MODULE', Alt('__import__("marshal")')).replace('GATEWAYKEY', str(gatewayKey))
 
     gatewayClass = """
 class Gateway():
@@ -88,10 +88,10 @@ class Gateway():
         self.__interpreter = ext.get('interpreter', None)
 
     def Pass(self):
-        exec(MARSHALMODULE.loads(self.module__.b16decode(self.way)),
+        exec(MARSHAL_MODULE.loads(self.module__.b16decode(self.way)),
              {'__selfObject__': self, '__key__': self.key, '__module': self.module__, '__globals': self.__globals, '__InterpreterObject__': self.__interpreter})
         return self
-    """[1:-1].replace('MARSHALMODULE', Alt('__import__("marshal")'))
+    """[1:-1].replace('MARSHAL_MODULE', Alt('__import__("marshal")'))
 
     def RemoveLayers() -> str:
         _globals = globals()['__globals']
@@ -129,7 +129,7 @@ exec({_code!r}, {program})
 {infos_}
 
 # {Hyperion.comment}
-import marshal, base64
+
 {Hyperion.gatewayClass}
 {Hyperion.interpreterClass}
 
