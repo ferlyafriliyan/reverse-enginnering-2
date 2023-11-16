@@ -21,6 +21,11 @@ Pyarmor = r"""
  █    ▄▀        █   █      █          █   
   ▀            █   ▀      ▀          ▀    
               ▀                           """
+#--> Clear Terminal
+def clear():
+    if "linux" in sys.platform.lower():os.system('clear')
+    elif "win" in sys.platform.lower():os.system('cls')
+
 def check_module(module_name, install_command):
     try:
         __import__(module_name)
@@ -75,7 +80,7 @@ INFO     obfuscate scripts OK
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    os.system("cls")
+    clear()
     print(Pyarmor)
     if not check_module("pyarmor", "pip install pyarmor"):
         exit(1)
