@@ -330,4 +330,4 @@ if __name__ == "__main__":
     try:
         main()
     except (KeyboardInterrupt, Exception) as e:
-        exit(f"[Error] {str(e).capitalize()}!")
+        exit(f"{h}[{a}Error{h}] {p}{str(e).capitalize()}!")
