@@ -20,8 +20,6 @@ u = '\033[1;36m'  # Warna Ungu
 j = '\033[1;38;5;202m'  # Warna Jingga
 
 # How strings are encoded
-# Turning off will remove all numbers in the code,
-# but will increase output size by a lot!, # Obfuscate Python's built-in function calls, # Remove comments from code
 USE_HEXSTRINGS = False
 OBFUSCATE_BUILTINS = False
 REMOVE_COMMENTS = True
@@ -33,11 +31,11 @@ REPLACEMENTS = {
 }
 
 # Ignore the following two constants if you don't know what they mean
-RESERVED_VAR = "__RSV"  # Name of variable for internal actions (such as string decryption)
-BUILTINS_CONST = "__B"  # name used in the header for storing the "builtins" string
+RESERVED_VAR = "__RSV"       # Name of variable for internal actions (such as string decryption)
+BUILTINS_CONST = "__B"       # name used in the header for storing the "builtins" string
 
-# Python reserved keywords
 _RESERVED = [
+    # Python reserved keywords
     'None', 'and', 'as', 'assert', 'break', 'class', 'continue',
     'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from',
     'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not',
@@ -76,11 +74,7 @@ class Obfuscator(object):
     def getHeader(self):
         return ";".join("{}={}".format(self.header_variables[number], self.variables[self.header_variables[number]]) for number in sorted(self.header_variables, key=lambda x: len(self.header_variables[x]))) + "\n"
 
-    def getVariable(self, variableName):
-        pass
-
     def addHeaderVar(self, varName, expression):
-
         if varName in self.header_variables:
             return self.header_variables[varName]
 
@@ -96,11 +90,9 @@ class Obfuscator(object):
         return variable_name
 
     def encodeNumber(self, number, addToHeader=False):
-
         if int(number) < 0:
-            return "(~([]==())*{})".format(self.encodeNumber(abs(int(number))))  # Not working for some reason
-            # return "(({}-{})*{})".format(self.encodeNumber('0'), self.encodeNumber('1'), self.encodeNumber(-int(number)))
-
+            return "(~([]==())*{})".format(self.encodeNumber(abs(int(number))))
+        
         number = str(number)
 
         if number in self.header_variables:
@@ -110,32 +102,23 @@ class Obfuscator(object):
             return '((()==[])+(()==[]))'
         elif number == '1':
             return '((()==())+(()==[]))'
-
         else:
-            # Try to avoid adding a header unless you really need to
-
             if ('0' not in self.header_variables):
                 self.addHeaderVar('0', '((()==[])+(()==[]))')
                 self.addHeaderVar('1', '({0}**{0})'.format(self.header_variables['0']))
 
-            # Convert a number to binary, then encode
-            # eg.    13  => 1101 (binary)    => (1 << 3)+(1 << 2)+(1 << 0)
             bin_number = bin(int(number))[2:]
             shifts = 0
             obf_number = ''
             while bin_number != '':
                 if bin_number[-1] == '1':
-
                     if shifts == 0:
                         obf_number += self.encodeNumber(1)
-
                     elif str(1 << shifts) in self.header_variables:
                         obf_number += self.header_variables[str(1 << shifts)]
-
                     elif str(shifts) in self.header_variables:
                         encode_bitshift = self.header_variables[str(shifts)]
                         obf_number += '({}<<{})'.format(self.header_variables['1'], encode_bitshift)
-
                     else:
                         bit_m1 = self.encodeNumber(str(1 << (shifts - 1)), True)
                         obf_number += '({}<<{})'.format(bit_m1, self.encodeNumber('1'))
@@ -144,6 +127,7 @@ class Obfuscator(object):
 
                 bin_number = bin_number[:-1]
                 shifts += 1
+
             if bin_number.count('1') == 1:
                 obf_number = obf_number[:-1]
             else:
@@ -154,7 +138,6 @@ class Obfuscator(object):
             return obf_number
 
     def encodeString(self, string, addToHeader=False, forceHexstrings=False):
-
         if USE_HEXSTRINGS or forceHexstrings:
             result = "'{}'".format("".join("\\x{:02x}".format(ord(c)) for c in string))
         else:
@@ -166,12 +149,9 @@ class Obfuscator(object):
         return result
 
     def obfuscate(self, code, append_header=True):
-
-        # import statements should just be returned
         if code.split()[0] in ['import', 'from']:
             return code
 
-        # Pad certain characters so they can be parsed properly
         prepadded = code
         for p in _PREPAD:
             prepadded = prepadded.replace(p, " {} ".format(p))
@@ -182,8 +162,6 @@ class Obfuscator(object):
         lineCommented = False
 
         for symbol in prepadded.split():
-
-            # Check if the rest of the line is commented
             if symbol[0] == '#':
                 if REMOVE_COMMENTS:
                     return
@@ -193,12 +171,10 @@ class Obfuscator(object):
                 result += symbol + ' '
                 continue
 
-            # If you encounter a string
             if (parsingQuote == '') and (symbol[0] in ["\"", "\'"]):
                 parsingQuote = symbol + ' '
                 continue
 
-            # when it reaches the end of the string
             if parsingQuote != '':
                 if (symbol.find(parsingQuote[0]) != -1):
                     parsingQuote += symbol[:symbol.find(parsingQuote[0]) + 1]
@@ -208,38 +184,31 @@ class Obfuscator(object):
                     parsingQuote += symbol + ' '
                 continue
 
-            # Reserved words are passed along with spacing
             if symbol in _RESERVED:
                 result += " {} ".format(symbol)
                 continue
 
-            # arithmetic and similar symbols are passed along as well
             if symbol in _PREPAD:
                 result += symbol
                 continue
 
-            # special replacements
             if symbol in REPLACEMENTS:
                 result += REPLACEMENTS[symbol]
                 continue
 
-            # if we find a number
             if symbol.isdigit():
                 result += self.encodeNumber(int(symbol))
                 continue
 
-            # Try to find the name of a variable / function
             name = ""
             for s in symbol:
                 if s in string.ascii_letters + '_':
                     name += s
                 elif name:
-                    # if name in self.variables
                     if name[0] in string.digits:
                         name = ""
 
             if name in _BUILT_IN:
-
                 if OBFUSCATE_BUILTINS:
                     if BUILTINS_CONST not in self.header_variables:
                         self.addHeaderVar(BUILTINS_CONST, self.encodeString('builtins'))
@@ -252,17 +221,14 @@ class Obfuscator(object):
 
                 continue
 
-            # If it is a variable/function, replace the old variable name with a new one
             if (name != "") and (name not in _RESERVED) and (name not in _BUILT_IN):
                 if name not in self.variables:
                     self.variables[name] = '_' * (len(self.variables) + 1)
                 result += self.variables[name] + symbol[len(name):]
                 continue
 
-            # If there aren't any changes, just use the original code
             result += symbol
 
-        # restore original indentation
         indents = ""
         i = 0
         while code[i] in ['\t', ' ']:
@@ -275,13 +241,10 @@ class Obfuscator(object):
 
         return result
 
-    # For processing multiple lines at once
     def obfuscate_lines(self, code):
-
         str_start = -1
         strings = []
 
-        # get all strings in the code
         for i, c in enumerate(code):
             if (c in ['\'', '\"']) and (code[i - 1] != '\\'):
                 if str_start == -1:
@@ -290,7 +253,6 @@ class Obfuscator(object):
                     strings.append(code[str_start: i + 1])
                     str_start = -1
 
-        # encode all the strings, and store them as variables in the header
         string_vars = {}
         for s in strings:
             encoded_str = self.encodeString(s[1:-1])
@@ -307,15 +269,13 @@ class Obfuscator(object):
             result += self.obfuscate(line, False) + "\n"
         return self.getHeader() + result
 
-#--> Clear Terminal
+# Clear Terminal
 def clear():
-    if "linux" in sys.platform.lower():
-        os.system('clear')
-    elif "win" in sys.platform.lower():
-        os.system('cls')
+    if "linux" in sys.platform.lower(): os.system('clear')
+    elif "win" in sys.platform.lower(): os.system('cls')
 
 def logo():
-    print(f"""
+    print("""
 ╔═╗┌─┐┌┬┐┌─┐  ┌─┐┌┐ ┌─┐
 ║  │ │ ││├┤   │ │├┴┐├┤ 
 ╚═╝└─┘─┴┘└─┘  └─┘└─┘└  """)
@@ -351,8 +311,9 @@ def main():
     with open(output_file, 'w') as fh:
         fh.write(output)
         print(' {}[{}+{}] {}Saved to {}\n'.format(h, a, h, p, output_file))
-        print('{}[{}+{}] {}Wait.. !'.format(h, a, h, p));time.sleep(1)
-
+        print('{}[{}+{}] {}Wait.. !'.format(h, a, h, p))
+        time.sleep(1)
+        
     # Jika ingin melihat informasi debug, Anda dapat menambahkan bagian ini
     # print('CONVERTED VARIABLES')
     # for v in obf.variables:
