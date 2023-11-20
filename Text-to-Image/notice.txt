@@ -1,1 +1,2 @@
-
+Gunakan Spasi ( ), ataupun koma serta titik untuk setiap kata yang ingin di gunakan, 
+Jangan menekan Enter sebelum selesai menyebutkan Perintah Input prompt
