@@ -52,7 +52,7 @@ def main():
         original_code = file.read()
         obf = marshal.dumps(compile(original_code, "", "exec"))
 
-    obfuscated_code = base64. b64encode(base64.b32encode(zlib.compress(obf)))[::-1]
+    obfuscated_code = base64.b64encode(base64.b32encode(zlib.compress(obf)))[::-1]
 
     base64_encoded = base64.b64encode(obfuscated_code)
     base64x2_encoded = base64.b64encode(base64_encoded)
