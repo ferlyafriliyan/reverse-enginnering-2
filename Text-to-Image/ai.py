@@ -35,7 +35,7 @@ class Main:  # line:15
             try:
                 request_image = self.session.post(self.url_generator_image, headers=new_headers, json=params)  # line:20
             except Exception as error:
-                print(f" {K}[{H}!{K}] {M}" + str(error))  # line:21
+                print(f"{M}[!]{K} {str(error)}")  # line:21
             if request_image.text == 'null':
                 continue  # line:22
             else:
@@ -49,7 +49,7 @@ class Main:  # line:15
         try:
             self.read_root = self.session.get(self.url_api)  # line:26
         except Exception as error:
-            print(f"{K}[{H}!{K}] {M}" + error)  # line:27
+            print(f"{M}[!]{K} {error}")  # line:27
         console = Console()  # Added line
 
         # Menempatkan informasi dalam variabel
@@ -61,8 +61,8 @@ class Main:  # line:15
 
         # Mencetak informasi yang disimpan dalam variabel
         console.print(panel_info)
-        print(f" {K}[{H}#{K}] {P}Client Host : {H}{self.read_root.json()[client_host_key]}")
-        self.prompt = input(f" {K}[{H}+{K}] {P}Input prompt : {H}")
+        print(f"{K}[{H}#{K}] {P}Client Host : {H}{self.read_root.json()[client_host_key]}")
+        self.prompt = input(f"{K}[{H}+{K}] {P}Input prompt : {H}")
         system(clear_command)
         console.print(panel_info)
 
@@ -73,12 +73,12 @@ class Main:  # line:15
 
         while True:  # line:29
             print(
-                f" {K}[{choice(self.warna)}{choice(self.load)}{K}] {P}Generate Image{choice(self.titik)}    ",
+                f"{K}[{choice(self.warna)}{choice(self.load)}{K}] {P}Generate Image{choice(self.titik)}    ",
                 end='\r')  # line:30
             try:
                 self.list_image = requests.get(self.url_image).json()  # line:31
             except Exception as error:
-                print(f" {K}[{H}!{K}] {M}" + error)  # line:32
+                print(f"{M}[!]{K} {error}")  # line:32
             if self.list_image['status_gen'] == True:
                 break  # line:33
             else:
@@ -89,7 +89,7 @@ class Main:  # line:15
             try:
                 response = requests.get(link)  # line:37
             except Exception as error:
-                print(f" {K}[{H}!{K}] {M}" + error)  # line:38
+                print(f"{M}[!]{K} {error}")  # line:38
             open(result_image_path + link.replace(self.url_image, ''), 'wb').write(response.content)  # line:39
 
         # Mencetak informasi yang disimpan dalam variabel
