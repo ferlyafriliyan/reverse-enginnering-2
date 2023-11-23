@@ -1,14 +1,7 @@
-HidedText = 'GG! You deobfuscated the code! obfuscated by __PyTransform__'
-ExceptionCode = 'input("Don\'t try to skid __PyTransform__ obfuscation !");exit(0)'
-GithubLink = 'https://github.com/ferlyafriliyan/__PyTransform'
-Tools = '__PyTransform__ Obfuscator Code Python3'
-
 import os, time
 
 ___author____ = "Ferly Afriliyan & Nanta XE (XE)"
-___infos = f"""
-# __Time__ = {time.strftime("%Y-%m-%d %H:%M:%S")}
-__author__ = "{___author____}"
+___infos = f"""__author__ = "{___author____}"
 __madeBy__ = "Pytransform"
 __git__ = "https://github.com/ferlyafriliyan/__PyTransform"
         """
@@ -103,13 +96,13 @@ _________________=_____(_______("{self.__encodestring('___________.decode')}({se
                 (___infos)
             )
             output_file.write(obfuscator.code)
-        print("\033[1;32m" + "\n Successfully Obfuscated!...")
+        print("\033[1;32m" + "\n Successfully Obfuscated!...\033[1;37m")
         time.sleep(1)
         exit()
 
     file_name = input(
         "\t\033[1;93m"
-        + "\n Drag the Python File (Which You Want to Obfuscate)"
+        + "\n Drag the Python File "
         + "\033[1;90m"
         + " > "
         + "\033[0;37m"
@@ -119,7 +112,7 @@ _________________=_____(_______("{self.__encodestring('___________.decode')}({se
     if ".py" in file_name:
         pass
     else:
-        print("\n\033[1;31m Only for python scripts")
+        print("\n\033[1;31m Only for python scripts\033[1;37m")
         time.sleep(1)
         exit()
     bruh = ""
@@ -156,9 +149,13 @@ clear()
 
 print(
     f"""\033[1;36m
-╔═╗┌┐ ┌─┐┬ ┬┌─┐┌─┐┌─┐┌┬┐┌─┐┌┬┐  ╔═╗┬ ┬┌┬┐┬ ┬┌─┐┌┐┌ \033[1;37mBy \033[1;90mFer_Nanta
-║ ║├┴┐├┤ │ │└─┐│  ├─┤ │ ├┤  ││  ╠═╝└┬┘ │ ├─┤│ ││││ \033[1;37mVersion: \033[1;90m4.9
-╚═╝└─┘└  └─┘└─┘└─┘┴ ┴ ┴ └─┘─┴┘  ╩   ┴  ┴ ┴ ┴└─┘┘└┘
-                                                        """
+
+ ____  ____    __    _  _  ___  ____  _____  ____  __  __   
+(_  _)(  _ \  /__\  ( \( )/ __)( ___)(  _  )(  _ \(  \/  )  
+  )(   )   / /(__)\  )  ( \__ \ )__)  )(_)(  )   / )    (   
+ (__) (_)\_)(__)(__)(_)\_)(___/(__)  (_____)(_)\_)(_/\/\_)  
+
+\033[1;37mBy \033[1;90mFer_Nanta
+\033[1;37mVersion: \033[1;90m4.9                                                        """
 )
 __fer___Nanta__Xe()
