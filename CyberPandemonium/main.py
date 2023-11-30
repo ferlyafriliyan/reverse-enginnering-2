@@ -10,25 +10,29 @@ import sys
 
 # Clear Terminal
 def clear_terminal():
-    if 'linux' in sys.platform.lower():
-        os.system('clear')
-    elif 'win' in sys.platform.lower():
-        os.system('cls')
+    if "linux" in sys.platform.lower():
+        os.system("clear")
+    elif "win" in sys.platform.lower():
+        os.system("cls")
+
 
 def display_logo():
-    print("""
+    print(
+        """
     CyberPandemonium
-""")
+"""
+    )
 
-k = '\033[1;33m'  # Warna Kuning
-a = '\033[1;30m'  # Warna Hitam/Abu-Abu
-m = '\033[1;31m'  # Warna Merah
-h = '\033[1;32m'  # Warna Hijau
-p = '\033[1;37m'  # Warna Putih
-b = '\033[1;34m'  # Warna Biru
-v = '\033[1;35m'  # Warna Violet
-u = '\033[1;36m'  # Warna Ungu
-j = '\033[1;38;5;202m'  # Warna Jingga
+
+k = "\033[1;33m"  # Warna Kuning
+a = "\033[1;30m"  # Warna Hitam/Abu-Abu
+m = "\033[1;31m"  # Warna Merah
+h = "\033[1;32m"  # Warna Hijau
+p = "\033[1;37m"  # Warna Putih
+b = "\033[1;34m"  # Warna Biru
+v = "\033[1;35m"  # Warna Violet
+u = "\033[1;36m"  # Warna Ungu
+j = "\033[1;38;5;202m"  # Warna Jingga
 
 # Minta input dari pengguna
 def main():
@@ -90,11 +94,13 @@ except (KeyboardInterrupt, Exception) as e:
     with open(output_filename, "w", encoding="utf-8", errors="ignore") as file:
         file.write(obfuscated_stub)
 
+
 def display_banner():
     clear_terminal()
     display_logo()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     display_banner()
     try:
         main()
