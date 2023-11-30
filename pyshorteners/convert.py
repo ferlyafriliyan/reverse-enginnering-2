@@ -10,4 +10,4 @@ print("Converting link ...")
 
 short_url = converting_url.tinyurl.short(url)
 
-print("Ressult convert link : \n [-]",short_url)
+print("Ressult convert link : \n [-]", short_url)
