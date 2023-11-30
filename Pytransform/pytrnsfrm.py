@@ -92,9 +92,7 @@ _________________=_____(_______("{self.__encodestring('___________.decode')}({se
             CODE = file.read()
         obfuscator = Obfuscator(CODE)
         with open(files, "w", encoding="utf-8") as output_file:
-            output_file.write(
-                (___infos)
-            )
+            output_file.write((___infos))
             output_file.write(obfuscator.code)
         print("\033[1;32m" + "\n Successfully Obfuscated!...\033[1;37m")
         time.sleep(1)
