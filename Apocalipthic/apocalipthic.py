@@ -13,17 +13,6 @@ from zlib import compress
 from rich import print
 from re import findall
 
-# Definisi warna teks ANSI
-Hitam = "\x1b[0;90m"  # Hitam
-Merah = "\x1b[38;5;196m"  # Merah
-Hijau = "\x1b[38;5;46m"  # Hijau
-Kuning = "\x1b[38;5;226m"  # Kuning
-Biru = "\x1b[38;5;44m"  # Biru
-Ungu = "\x1b[0;95m"  # Ungu
-Putih = "\x1b[38;5;231m"  # Putih
-Jingga = "\x1b[38;5;208m"  # Jingga
-Abu = "\x1b[38;5;248m"  # Abu-Abu
-
 # Definisi warna teks Rich
 Z2 = "[#000000]"  # Hitam
 M2 = "[#FF0000]"  # Merah
