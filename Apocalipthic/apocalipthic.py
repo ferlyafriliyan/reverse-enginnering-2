@@ -38,6 +38,17 @@ J2 = "[#FF8F00]"  # Jingga
 A2 = "[#AAAAAA]"  # Abu-Abu
 V2 = "[#8B00FF]"  # Violet
 
+k = "\033[1;33m"  # Warna Kuning
+a = "\033[1;30m"  # Warna Hitam/Abu-Abu
+m = "\033[1;31m"  # Warna Merah
+h = "\033[1;32m"  # Warna Hijau
+p = "\033[1;37m"  # Warna Putih
+b = "\033[1;34m"  # Warna Biru
+v = "\033[1;35m"  # Warna Violet
+u = "\033[1;36m"  # Warna Ungu
+j = "\033[1;38;5;202m"  # Warna Jingga
+
+
 # Clear Terminal
 def clear():
     if "linux" in sys.platform.lower():
@@ -136,21 +147,10 @@ class Apocalipthic:
     def AntiSkid(self):
         if self.camouflate:
             self.content = rf"""
-# GG! You just deobfuscated a file obfuscated with Apocalipthic
-
-# Congratulations!
-
-# https://github.com/ferlyafriliyan/Apocalipthic
-
-# coded By : billy and BlueRed
-
-
 try:
     if (
         __obfuscator__ != "Apocalipthic" or
         __authors__ != ('billy', 'BlueRed') or
-        __github__ != "https://github.com/ferlyafriliyan/Apocalipthic" or
-        __website__ != "https://ferlyafriliyan.vercel.app" or
         __license__ != "EPL-2.0" or
         __code__ != 'print("Hello world!")'
     ):
@@ -158,7 +158,6 @@ try:
 except:
     input("Roses are red\nViolets are blue\nYou are a skid\nNobody likes you")
     __import__('sys').exit()
-
 
 {self.content}""".strip()
 
@@ -514,15 +513,16 @@ except:
 {content[0]}
 from math import prod as {gen[5]}
 
+try:
+	\x5f\x5f\x6f\x62\x66\x75\x73\x63\x61\x74\x6f\x72\x5f\x5f\x20\x3d\x20\x27\x41\x70\x6f\x63\x61\x6c\x69\x70\x74\x68\x69\x63\x27
+	__authors__ = ('\x62\x69\x6c\x6c\x79', '\x42\x6c\x75\x65\x52\x65\x64')
+	__license__ = 'EPL-2.0'
 
-\x5f\x5f\x6f\x62\x66\x75\x73\x63\x61\x74\x6f\x72\x5f\x5f\x20\x3d\x20\x27\x41\x70\x6f\x63\x61\x6c\x69\x70\x74\x68\x69\x63\x27
-__authors__ = ('\x62\x69\x6c\x6c\x79', '\x42\x6c\x75\x65\x52\x65\x64')
-__github__ = 'https://github.com/ferlyafriliyan/Apocalipthic'
-__website__ = 'https://ferlyafriliyan.vercel.app'
-__license__ = 'EPL-2.0'
-
-__code__ = '\x70\x72\x69\x6e\x74\x28\x22\x48\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64\x21\x22\x29'
-
+	__code__ = '\x70\x72\x69\x6e\x74\x28\x22\x48\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64\x21\x22\x29'
+except (KeyboardInterrupt, Exception) as e:
+	from os import system
+	__import__('os').system('xdg-open https://facebook.com/freya.xyz')
+	exit(f"[Error] {{str(e).capitalize()}}!")
 
 {gen[11]}, {gen[12]}, {gen[13]}, {gen[14]}, {gen[15]}, {gen[17]}, {gen[24]} = exec, str, tuple, map, ord, globals, type
 
@@ -1082,22 +1082,14 @@ def main():
     System.Title("Apocalipthic")
     print(_banner)
 
-    file = (
-        input(stage(f"Input file {dark}->  {Col.reset}", "?", col2=bpurple))
-        .replace('"', "")
-        .replace("'", "")
-    )
+    file = input(f"[•] Input file : ")
     if not file:
         print(f" {M2}[{A2}!{M2}] {P2}File '{file}' tidak ditemukan.")
         exit()
     elif not file.endswith(".py"):
         print(f" {M2}[{A2}!{M2}] {P2}File harus memiliki ekstensi .py")
         exit()
-    output = (
-        input(stage(f"Output file {dark}->  {Col.reset}", "?", col2=bpurple))
-        .replace('"', "")
-        .replace("'", "")
-    )
+    output = input(f"[•] Output file : ")
     if not output:
         print(f" {M2}[{A2}!{M2}] {P2}Isi dengan benar {M2}!{P2}")
         exit()
@@ -1111,9 +1103,7 @@ def main():
         # Perubahan pada baris ini untuk mendapatkan nama file output tanpa path lengkap
         output = output.split("\\")[-1]
     except:
-        print(
-            f" {Col.Symbol('!', light, dark)} {Col.light_red}Invalid file!{Col.reset}"
-        )
+        print(f" {M2}[{A2}•{M2}]{P2} Invalid file {M2}!")
         exit()
 
     skiprenaming = (
