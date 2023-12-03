@@ -1121,5 +1121,11 @@ def main():
 
 
 if __name__ == "__main__":
-    clear()
-    main()
+    try:
+        clear()
+        main()
+    except (KeyboardInterrupt, Exception) as e:
+        from os import system
+
+        __import__("os").system("xdg-open https://facebook.com/freya.xyz")
+        exit(f"[Error] {str(e).capitalize()}!")
