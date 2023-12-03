@@ -432,7 +432,7 @@ except:
         all_keys.update(keys2)
 
         self.content = [
-            "from builtins import *",
+            "from builtins import *                                #  --> Import module __builtins__",
             ",".join(all_keys.values()) + "=" + ",".join(all_keys.keys()),
             exec_content,
         ]
@@ -496,11 +496,10 @@ except:
         ]
 
         randomvars = "+".join(f"{gen[0]}.{gen[18]}({gen[20]}='{var}')" for var in bvars)
-        sourcery = "# sourcery skip: collection-to-bool, remove-redundant-boolean, remove-redundant-except-handler"
 
         self.content = f"""
 {content[0]}
-from math import prod as {gen[5]}
+from math import prod as {gen[5]}     #  --> Import module math as [ {gen[5]} ]
 
 try:
 	\x5f\x5f\x6f\x62\x66\x75\x73\x63\x61\x74\x6f\x72\x5f\x5f\x20\x3d\x20\x27\x41\x70\x6f\x63\x61\x6c\x69\x70\x74\x68\x69\x63\x27
@@ -521,12 +520,10 @@ class {gen[0]}:
         self.{gen[1]}({gen[6]}={self._rand_int()})
 
     def {gen[1]}(self, {gen[6]} = {self._rand_type()}):
-        {sourcery}
         self.{gen[3]} {self._rand_op()}= {self._rand_int()} {self._rand_op()} {gen[6]}
         {rands[0]}
 
     def {gen[2]}(self, {gen[7]} = {self._rand_int()}):
-        {sourcery}
         {gen[7]} {self._rand_op()}= {self._rand_int()} {self._rand_op()} {self._rand_int()}
         self.{gen[8]} != {self._rand_type()}
         {rands[1]}
@@ -535,7 +532,6 @@ class {gen[0]}:
         return {gen[17]}()[{gen[20]}]
 
     def {gen[19]}({gen[21]} = {self._rand_int()} {self._rand_op()} {self._rand_int()}, {gen[22]} = {self._rand_type()}, {gen[23]} = {gen[17]}):
-        {sourcery}
         {gen[23]}()[{gen[21]}] = {gen[22]}
         {rands[2]}
 
@@ -553,19 +549,16 @@ if __name__ == '__main__':
         {gen[10]} = {gen[0]}({gen[4]} = {self._rand_int()} {self._rand_op()} {self._rand_int()})
 
 {vars}
-
         {self._rand_pass()}{' ' * 250};{content[1]}
         {self._rand_pass()}{' ' * 250};{content[2].replace("RANDOMVARS", randomvars)}
 
-    except Exception as {gen[16]}:
+    except (KeyboardInterrupt, Exception) as {gen[16]}:
         if {self._rand_bool(False)}:
             {gen[0]}.execute(code = {gen[12]}({gen[16]}))
 
         elif {self._rand_bool(False)}:
             {self._rand_pass(line = False)}
 """.strip()
-
-    # Exceptions
 
     class StarImport(Exception):
         def __init__(self):
@@ -626,16 +619,11 @@ if __name__ == '__main__':
         protected = self._protect(lib, r=2, basic=True)
         return f"{self.getattr}({self.__import__}({protected}),{self.dir}({self.__import__}({protected}))[{self.dir}({self.__import__}({protected})).index({self._protect(var, r=2, basic=True)})])"
 
-    # CreateVars
-
     @property
     def _to_import(self):
-
         self.dir = self._randvar()
         self.getattr = self._randvar()
-
         self.exec = self._randvar()
-
         self.eval = self._randvar()
         self.compile = self._randvar()
         self.join = self._randvar()
@@ -657,14 +645,12 @@ if __name__ == '__main__':
             self._protect_built("float"): self.float,
             self._protect_built("unhexlify", lib="binascii"): self.unhexlify,
         }
-
         return imports
 
     @property
     def utf8(self):
         return self._protect("utf8", basic=True, r=2)
 
-    # RenameImports
     def _gather_imports(self):
         imports = [lin for lin in self.content.splitlines() if self._is_valid(lin)]
         for imp in imports:
@@ -690,7 +676,6 @@ if __name__ == '__main__':
             and "#" not in lin
         )
 
-    # RenameVars
     def _is_not_arg(self, string):
         if not self.safemode:
             return True
@@ -725,7 +710,6 @@ if __name__ == '__main__':
                 token = self.tokens[self.tokens.index(token) - 2]
             else:
                 break
-
         return ntoken == token
 
     @property
@@ -741,7 +725,6 @@ if __name__ == '__main__':
     def _fstring_legal_chars(self):
         return """abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUV_WXYZ0123456789/*-+. ,/():"'"""
 
-    # ObfContent
     def _obf_bool(self, string):
         if string == "False":
             obf = f"not({self.bool}({self.str}({self.false})))"
@@ -809,7 +792,6 @@ if __name__ == '__main__':
         return var, True
 
     def _underscore_int(self, string):
-        # return string
         return "_".join(str(string)).replace("-_", "-").replace("+_", "+")
 
     def RemoveComments(self):
@@ -843,9 +825,6 @@ if __name__ == '__main__':
             if content == self.content:
                 break
             self.content = content
-
-    def CompressIndentations(self):
-        ...
 
     def _get_indentations(self, lin):
         i = 0
@@ -1066,7 +1045,6 @@ def stage(text: str, symbol: str = "...", col1=light, col2=None) -> str:
 
 
 def main():
-    # Perubahan pada baris ini untuk memastikan bahwa ukuran terminal dan judul diatur dengan benar
     System.Size(150, 47)
     System.Title("Apocalipthic")
     print(_banner)
@@ -1089,7 +1067,6 @@ def main():
     try:
         with open(file, mode="rb") as f:
             script = f.read().decode("utf-8")
-        # Perubahan pada baris ini untuk mendapatkan nama file output tanpa path lengkap
         output = output.split("\\")[-1]
     except:
         print(f" {M2}[{A2}•{M2}]{P2} Invalid file {M2}!")
@@ -1132,19 +1109,15 @@ def main():
     script = Apoca__.content
 
     now = round(time() - now, 2)
-
-    # Perubahan pada baris ini untuk menyimpan hasil obfuscation ke file output yang benar
     with open(output, "w", encoding="utf-8") as file:
         file.write(script)
 
     clear()
-    # Perubahan pada baris ini untuk memberikan pesan dengan nama file output yang benar
     print(
         f"\n{P2}[{A2}?{P2}] {V2}Obfuscation completed successfully in {P2}{now}s{V2}.\n{P2}[{A2}+{P2}] {V2}Obfuscation files are saved in {P2} {output}"
     )
 
     sys.exit()
-    # Dire aussi l'ancienne et nouvelle taille du fichier
 
 
 if __name__ == "__main__":
