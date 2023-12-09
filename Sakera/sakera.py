@@ -1,9 +1,6 @@
 ###----------[ AUTHOR & CREATOR ]---------- ###
 # ------ [ Gausah Dioprek Ntar Error ] ------ #
-Author, Facebook, Instagram, Whatsapp, YouTube = 'Dapunta Khurayra X', 'Facebook.com/Dapunta.Khurayra.X', 'Instagram.com/Dapunta.Ratya', '082245780524', 'Youtube.com/channel/UCZqnZlJ0jfoWSnXrNEj5JHA'
-Version   = '0.1'
-Denventa  = 100073125893802
-Postingan = 371125525334974
+Author, Facebook, Instagram, Whatsapp, YouTube, Version, Denventa, Postingan = 'Dapunta Khurayra X', 'Facebook.com/Dapunta.Khurayra.X', 'Instagram.com/Dapunta.Ratya', '082245780524', 'Youtube.com/channel/UCZqnZlJ0jfoWSnXrNEj5JHA', '0.1', 100073125893802, 371125525334974
 
 ###----------[ IMPORT LIBRARY ]---------- ###
 import requests, bs4, sys, os, random, time, re, json, uuid, subprocess, rich, shutil, webbrowser, base64
