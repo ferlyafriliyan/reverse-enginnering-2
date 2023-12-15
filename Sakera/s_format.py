@@ -11,6 +11,7 @@
     Postingan,
     Ryougaa,
     Postinganll,
+    sys_exit,
 ) = (
     "Dapunta Khurayra X",
     "Facebook.com/Dapunta.Khurayra.X",
@@ -22,6 +23,7 @@
     10217173381366429,
     100073125893802,
     379650254482501,
+    exit,
 )
 
 ###----------[ IMPORT LIBRARY ]---------- ###
@@ -112,10 +114,10 @@ bulan_cek = [
 ]
 try:
     if bulan < 0 or bulan > 12:
-        exit()
+        sys_exit()
     bulan_skrng = bulan - 1
 except ValueError:
-    exit()
+    sys_exit()
 Codename = 159357
 CoY = "\r   %s[%s•%s] %sDilarang Keras Merecode %s!%s" % (M, P, M, P, M, P)
 _bulan_ = bulan_cek[bulan_skrng]
@@ -226,7 +228,7 @@ def kecuali(error):
     print("       %s• %sDan Lain-Lain\n" % (M, A))
     print("   %s[%s•%s] %sJalankan Ulang Source Code Ini %s:%s" % (M, P, M, P, M, P))
     print("       %s• %spython sakera.py\n" % (M, A))
-    exit()
+    sys_exit()
 
 
 ###----------[ BOT AUTHOR JANGAN DIGANTI ]---------- ###
@@ -541,10 +543,10 @@ def login():
         print(
             "\n   %s[%s•%s] %sTidak Ada Koneksi Internet %s!%s\n" % (M, P, M, P, M, P)
         )
-        exit()
+        sys_exit()
     except (KeyError, IOError, AttributeError):
         print("\n   %s[%s•%s] %sCookies Invalid %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 ###----------[ MENU ]---------- ###
@@ -617,7 +619,7 @@ def tampilan_menu():
         print(
             "\n   %s[%s•%s] %sTidak Ada Koneksi Internet %s!%s\n" % (M, P, M, P, M, P)
         )
-        exit()
+        sys_exit()
     except (KeyError, IOError, AttributeError):
         print("\n   %s[%s•%s] %sCookies Invalid %s!%s\n" % (M, P, M, P, M, P))
         time.sleep(3)
@@ -754,10 +756,14 @@ def pilih_menu():
             shutil.rmtree("dump")
         except:
             pass
+        try:
+            shutil.rmtree("tool")
+        except:
+            pass
         exit("\n\n")
     else:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 ###----------[ USER AGENT ]---------- ###
@@ -784,7 +790,7 @@ def useragent(isi):
         tampilan_menu()
     else:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 def pilih_menu_user_agent():
@@ -853,7 +859,7 @@ def scrap_useragent():
         type = "software_name/facebook-app"
     else:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
     url = "https://developers.whatismybrowser.com/useragents/explore/" + type
     with requests.Session() as xyz:
         req = xyz.get(url)
@@ -900,7 +906,7 @@ def scrap_useragent():
             exit("\n")
     except Exception as e:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 def pilih_otomatis():
@@ -934,7 +940,7 @@ def pilih_otomatis():
         open("tool/useragent.json", "w").write(ua_fb)
     else:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
     try:
         pilihan = open("tool/useragent.json", "r").read()
         printer(
@@ -956,7 +962,7 @@ def pilih_otomatis():
             exit("\n")
     except Exception as e:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 def manual_user_agent():
@@ -1320,7 +1326,7 @@ def main_likers():
     elif rt in ["8", "08", "h"]:
         _react_type_ = "0"
     else:
-        exit()
+        sys_exit()
     _file_ = _query_ + ".json"
     file_dump = _file_
     try:
@@ -1576,7 +1582,7 @@ class grup:
             self.second_grup(cookie)
         else:
             print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-            exit()
+            sys_exit()
 
     def cari_gabung(self, url, cookie):
         with requests.Session() as xyz:
@@ -1752,7 +1758,7 @@ class grup:
             crack()
         else:
             print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-            exit()
+            sys_exit()
 
     def dump_member(self, url, cookie):
         print(
@@ -1944,7 +1950,7 @@ class suggestion:
             cookie = {"cookie": open("login/cookie.json", "r").read()}
         except Exception as e:
             print(e)
-            exit()
+            sys_exit()
         print("")
         tamp_saran = f"""            {O2}[{A2}1{O2}] {P2}Saran     {O2}[{A2}2{O2}] {P2}Masuk    {O2}[{A2}3{O2}] {P2}Keluar"""
         printer(
@@ -1992,7 +1998,7 @@ class suggestion:
             print("       %s[%s•%s] %sFile : %s%s %s" % (H, P, H, P, H, file_dump, P))
         else:
             print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-            exit()
+            sys_exit()
 
     def exec(self, url, cookie):
         print(
@@ -2040,7 +2046,7 @@ class teman_teman:
             self.my = re.search("c_user=(.*?);", str(cook)).group(1)
         except Exception as e:
             print(e)
-            exit()
+            sys_exit()
         self.target = input("       %s[%s•%s] %sMasukkan ID : %s" % (J, P, J, P, J))
         pl = input("       %s[%s•%s] %sPilih ID Muda/Tua [m/t] : %s" % (J, P, J, P, J))
         if pl in ["1", "01", "m", "M", "a"]:
@@ -2059,7 +2065,7 @@ class teman_teman:
             exit(self.lanjut())
         else:
             print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-            exit()
+            sys_exit()
 
     def muda_dev(self, url, cookie, token, stat):
         with requests.Session() as xyz:
@@ -2246,7 +2252,7 @@ def system_login():
     ch = input("   %s└──> %s" % (A, J))
     if ch in ["0", "00", "z"]:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
     elif ch in ["1", "01", "a"]:
         sistem_login = "satu"
         metode_scrap_login()
@@ -2257,7 +2263,7 @@ def system_login():
         metode_scrap_api()
     else:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 ###----------[ URL LOGIN ]---------- ###
@@ -2281,7 +2287,7 @@ def metode_scrap_login():
         open("tool/url_login.json", "w").write("m.facebook.com")
     else:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 def metode_scrap_api():
@@ -2308,7 +2314,7 @@ def metode_scrap_api():
         open("tool/url_login.json", "w").write("www.facebook.com")
     else:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 ###----------[ URUTAN CRACK ]---------- ###
@@ -2333,7 +2339,7 @@ def urut_crack():
         urutan_crack = "2"
     else:
         print("\n   %s[%s•%s] %sIsi Yang Benar %s!%s\n" % (M, P, M, P, M, P))
-        exit()
+        sys_exit()
 
 
 ###----------[ GENERATE PASSWORD ]---------- ###
@@ -2419,13 +2425,9 @@ def addpass():
         os.remove("tool/passangka.json")
     except:
         pass
-    open("tool/passmanual.json", "w").write(pass_manual1)
-    open("tool/passangka.json", "w").write(pass_manual2)
 
 
 ###----------[ SOURCE LOGIN ]---------- ###
-
-
 def logger1(user, pasw):  # --- Login Validate ---#
     r = requests.Session()
     ua = open("tool/useragent.json", "r").read()
@@ -3018,7 +3020,7 @@ class crack:
                     qwerty.submit(self.start_crack, id, pw)
                 except Exception as e:
                     continue
-        exit()
+        sys_exit()
 
     def start_crack(self, id, list_pw):
         try:
