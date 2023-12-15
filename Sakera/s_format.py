@@ -747,7 +747,7 @@ def pilih_menu():
                 style="#00C8FF",
             )
         )
-        input("\n               %s[ %sEnter Untuk Log Out %s]" % (B, P, B))
+        input("\n               %s[ %sEnter Untuk Log Out %s]%s" % (B, P, B, P))
         try:
             shutil.rmtree("login")
         except:
