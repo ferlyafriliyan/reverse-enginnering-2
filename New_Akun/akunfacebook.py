@@ -49,3 +49,11 @@ Email = "fitrichan3055@gmail.com"
 TTL = "30/Mei/2005"
 Pass = "DenventaAfriliyan费利4409#"
 print("\n[•] Akun - 7\nNama FB :", Nama + "\nEmail :", Email + "\nTtl :", TTL + "\nPassword :", Pass)
+
+# Akun 8
+Nama = "Ditt Yaa"
+Email = "100082438915769"
+TTL = "1/Maret/1999"
+Pass = "Aditya123"
+print("\n[•] Akun - 8\nNama FB :", Nama + "\nEmail :", Email + "\nTtl :", TTL + "\nPassword :", Pass)
+
