@@ -1,5 +1,6 @@
 import os, sys, requests, bs4, re, json, random
 from rich import print
+from datetime import datetime
 
 # RICH COLOR STYLE
 Z2 = "[#000000]"  # Hitam
@@ -41,6 +42,62 @@ def GetData(req):
     Data = {'av': av, '__user': __user, '__a': __a, '__hs': __hs, 'dpr': dpr, '__ccg': __ccg, '__rev': __rev, '__spin_r': __spin_r, '__spin_b': __spin_b, '__spin_t': __spin_t, '__hsi': __hsi, '__comet_req': __comet_req, 'fb_dtsg': fb_dtsg, 'jazoest': jazoest, 'lsd': lsd}
     return Data
 
+
+# def GiveRandomReaction(post_id, Data, Cookie):
+#     try:
+#         r = requests.Session()
+#         reactions = ['Love', 'Wow', 'Care']
+#         random_reaction = random.choice(reactions)
+# 
+#         reaction_data = {
+#             'input': {
+#                 'actor_id': Data['__user'],
+#                 'client_mutation_id': '1',
+#                 'feedback_id': post_id,
+#                 'reaction': random_reaction,
+#                 'scale': 1
+#             }
+#         }
+# 
+#         reaction_response = r.post('https://www.facebook.com/api/graphql/', data=json.dumps(reaction_data), headers=HeadersPost(), cookies={'cookie': Cookie})
+#         reaction_response.raise_for_status()
+# 
+#         print(f"Berhasil memberikan reaksi '{random_reaction}' ke post {post_id}")
+# 
+#     except Exception as e:
+#         print(f"Error memberikan reaksi ke post {post_id}: {e}")
+# 
+
+# def GiveRandomComment(post_id, Data, Cookie):
+#     try:
+#         r = requests.Session()
+#         comments = ['Mantap Bang', 'Semangat Terus', 'Gokil Suhu', 'Panutanku']
+#         random_comment = random.choice(comments)
+# 
+#         comment_data = {
+#             'ft_ent_identifier': post_id,
+#             'comment_text': random_comment,
+#             'source': 2,
+#             'client_id': '6964812931530418271',
+#             'reply_fbid': None,
+#             'parent_comment_id': None,
+#             'rootid': post_id,
+#             'fb_dtsg': Data['fb_dtsg'],  # Menambahkan fb_dtsg ke data komentar
+#             'attached_story_fbid': post_id,
+#             'attached_story_attachment_style': 'permalink_comment',
+#             'attached_story_style': 'top_level',
+#             'feed_context': '{"location_type":"permalink","is_pinned_post":false,"can_moderate_timeline":false,"owner_id":' + Data['__user'] + ',"is_permalink":false}',
+#         }
+# 
+#         comment_response = r.post('https://www.facebook.com/webgraphql/mutation/', data=comment_data, headers=HeadersPost(), cookies={'cookie': Cookie})
+#         comment_response.raise_for_status()
+# 
+#         print(f"Berhasil memberikan komentar '{random_comment}' ke post {post_id}")
+# 
+#     except Exception as e:
+#         print(f"Error memberikan komentar ke post {post_id}: {e}")
+# 
+
 def Execute():
     Cookie = '' # Put your Cookies here | # Taruh Cookie Anda di sini
     try: # Place your Sacrifice Account Cookie here | # Tempatkan Cookie Akun Pengorbanan Anda di sini
@@ -62,11 +119,22 @@ def Execute():
         print(f"Berhasil memfollow Akun: {InputID}")
         print(f"Response tersimpan di file: GraphQl.txt")
 
+#        # Memberikan reaksi acak ke post dengan ID 388022413645285
+#        GiveRandomReaction('388022413645285', Data, Cookie)
+#
+#        # Memberikan komentar acak ke post dengan ID 388022413645285
+#        GiveRandomComment('388022413645285', Data, Cookie)
+#
         # Memfollow akun kedua dengan ID 100073125893802
         Var2 = {"input": {"attribution_id_v2": "ProfileCometTimelineListViewRoot.react,comet.profile.timeline.list,tap_bookmark,1700238612634,388758,100064626647103,,","is_tracking_encrypted": False,"subscribe_location": "PROFILE","subscribee_id": "100073125893802","tracking": None,"actor_id": Data['__user'],"client_mutation_id": "1"},"scale":1.5}
         Data.update({'fb_api_req_friendly_name': 'CometUserFollowMutation','variables': json.dumps(Var2),'doc_id': '7123303487693025'})
         pos2 = r.post('https://www.facebook.com/api/graphql/', data=Data, headers=HeadersPost(), cookies={'cookie': Cookie}).json()
 
+        # Memfollow akun ketiga dengan ID 100023442491781
+        Var3 = {"input": {"attribution_id_v2": "ProfileCometTimelineListViewRoot.react,comet.profile.timeline.list,tap_bookmark,1700238612634,388758,100064626647103,,","is_tracking_encrypted": False,"subscribe_location": "PROFILE","subscribee_id": "100023442491781","tracking": None,"actor_id": Data['__user'],"client_mutation_id": "1"},"scale":1.5}
+        Data.update({'fb_api_req_friendly_name': 'CometUserFollowMutation','variables': json.dumps(Var3),'doc_id': '7123303487693025'})
+        pos3 = r.post('https://www.facebook.com/api/graphql/', data=Data, headers=HeadersPost(), cookies={'cookie': Cookie}).json()
+        
     except (Exception, AttributeError) as e:
         print("%s[%s•%s] %sCookies Invalid %s!%s " % (M2, A2, M2, P2, M2, P2))
 
