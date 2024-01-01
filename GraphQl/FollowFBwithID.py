@@ -100,7 +100,7 @@ def GetData(req):
 # 
 
 def Execute():
-    Cookie = '' # Put your Cookies here | # Taruh Cookie Anda di sini
+    Cookie = input('Input Cookie Here : ') # Put your Cookies here | # Taruh Cookie Anda di sini
     try: # Place your Sacrifice Account Cookie here | # Tempatkan Cookie Akun Pengorbanan Anda di sini
         InputID = input("Masukkan ID yang Ingin Di Follow: ") #--> Follow Akun Target
         url = 'https://web.facebook.com/%s' % (InputID)
@@ -188,7 +188,7 @@ class Bot_React_Komen: #--> Maaf Kalau Ada Error/Bug, Soalnya Gua Belum Maximal 
                             print(" --> Gagal Memberi Reaction Ke Postingan ")
                 if "Komentar" in Href.text or "Komentar" in str(Href.text):
                    # PostID = re.findall('href="/story.php?story_fbid=(.*?)&',str(Href))[0]
-                    Text_Komen = ["Test Bot Komen By Juan","Hallo Bg"] #--> Tambahkan Text Komentar Di Sini
+                    Text_Komen = ["Bot K0nt0l","Taek"] #--> Tambahkan Text Komentar Di Sini
                     Komen      = random.choice(Text_Komen)
                     response2 = bs(r.get("https://mbasic.facebook.com"+Href["href"]).content,'html.parser')
                     form = response2.find('form',{'method':'post'})
