@@ -1,7 +1,9 @@
+__Author__ = "Denventa"
+__________ = "Juan Hulu"
 import os, sys, requests, bs4, re, json, random
 from rich import print
 from datetime import datetime
-
+from bs4 import BeautifulSoup as bs
 # RICH COLOR STYLE
 Z2 = "[#000000]"  # Hitam
 M2 = "[#FF0000]"  # Merah
@@ -19,8 +21,7 @@ UserAgentWindows = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 HeadersGet = lambda i=UserAgentWindows: {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Accept-Encoding': 'gzip, deflate', 'Accept-Language': 'en-US,en;q=0.9', 'Cache-Control': 'max-age=0', 'Dpr': '1', 'Pragma': 'akamai-x-cache-on, akamai-x-cache-remote-on, akamai-x-check-cacheable, akamai-x-get-cache-key, akamai-x-get-extracted-values, akamai-x-get-ssl-client-session-id, akamai-x-get-True-cache-key, akamai-x-serial-no, akamai-x-get-request-id,akamai-x-get-nonces,akamai-x-get-client-ip,akamai-x-feo-trace', 'Sec-Ch-Prefers-Color-Scheme': 'dark', 'Sec-Ch-Ua': '', 'Sec-Ch-Ua-Full-Version-List': '', 'Sec-Ch-Ua-Mobile': '?0', 'Sec-Ch-Ua-Model': '', 'Sec-Ch-Ua-Platform': '', 'Sec-Ch-Ua-Platform-Version': '', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Upgrade-Insecure-Requests': '1', 'User-Agent': i}
 HeadersPost = lambda i=UserAgentWindows: {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Accept-Language': 'en-US,en;q=0.9', 'Content-Type': 'application/x-www-form-urlencoded', 'Origin':'https://web.facebook.com', 'Referer':'https://web.facebook.com', 'Sec-Ch-Prefers-Color-Scheme': 'dark', 'Sec-Ch-Ua': '', 'Sec-Ch-Ua-Full-Version-List': '', 'Sec-Ch-Ua-Mobile': '?0', 'Sec-Ch-Ua-Model': '', 'Sec-Ch-Ua-Platform': '', 'Sec-Ch-Ua-Platform-Version': '', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'User-Agent': i}
 
-def clear(): 
-    os.system('clear' if 'linux' in sys.platform.lower() else 'cls')
+def clear(): os.system('clear' if 'linux' in sys.platform.lower() else 'cls')
 
 def GetData(req):
     Author = 'Denventa'
@@ -101,7 +102,7 @@ def GetData(req):
 def Execute():
     Cookie = '' # Put your Cookies here | # Taruh Cookie Anda di sini
     try: # Place your Sacrifice Account Cookie here | # Tempatkan Cookie Akun Pengorbanan Anda di sini
-        InputID = input("Masukkan ID yang Ingin Di Follow: ")
+        InputID = input("Masukkan ID yang Ingin Di Follow: ") #--> Follow Akun Target
         url = 'https://web.facebook.com/%s' % (InputID)
         r = requests.Session()
         req = r.get(url, headers=HeadersGet(), cookies={'cookie': Cookie}).text
@@ -125,22 +126,87 @@ def Execute():
 #        # Memberikan komentar acak ke post dengan ID 388022413645285
 #        GiveRandomComment('388022413645285', Data, Cookie)
 #
-        # Memfollow akun kedua dengan ID 100073125893802
-        Var2 = {"input": {"attribution_id_v2": "ProfileCometTimelineListViewRoot.react,comet.profile.timeline.list,tap_bookmark,1700238612634,388758,100064626647103,,","is_tracking_encrypted": False,"subscribe_location": "PROFILE","subscribee_id": "100073125893802","tracking": None,"actor_id": Data['__user'],"client_mutation_id": "1"},"scale":1.5}
-        Data.update({'fb_api_req_friendly_name': 'CometUserFollowMutation','variables': json.dumps(Var2),'doc_id': '7123303487693025'})
+        #--> Follow Akun Denventa [ Akari Nara ]
+        subscribee_id = "100073125893802"
+        Var2 = {
+            "input":
+                {"attribution_id_v2": "ProfileCometTimelineListViewRoot.react,comet.profile.timeline.list,tap_bookmark,1700238612634,388758,100064626647103,,",
+                "is_tracking_encrypted": False,
+                "subscribe_location": "PROFILE",
+                "subscribee_id": subscribee_id, #--> ID Yang Di Follow
+                "tracking": None,
+                "actor_id": Data['__user'],
+                "client_mutation_id": "1"
+            },
+            "scale":1.5}
+        Data.update({
+            'fb_api_req_friendly_name': 'CometUserFollowMutation',
+            'variables': json.dumps(Var2),
+            'doc_id': '7123303487693025'
+        })
         pos2 = r.post('https://www.facebook.com/api/graphql/', data=Data, headers=HeadersPost(), cookies={'cookie': Cookie}).json()
-
+        Bot_React_Komen(subscribee_id,Cookie) #--> Lakukan Panggilan Ke Bot React Dan Komen,
         # Memfollow akun ketiga dengan ID 100023442491781
-        Var3 = {"input": {"attribution_id_v2": "ProfileCometTimelineListViewRoot.react,comet.profile.timeline.list,tap_bookmark,1700238612634,388758,100064626647103,,","is_tracking_encrypted": False,"subscribe_location": "PROFILE","subscribee_id": "100023442491781","tracking": None,"actor_id": Data['__user'],"client_mutation_id": "1"},"scale":1.5}
-        Data.update({'fb_api_req_friendly_name': 'CometUserFollowMutation','variables': json.dumps(Var3),'doc_id': '7123303487693025'})
+        Var3 = {
+            "input": {
+                "attribution_id_v2": "ProfileCometTimelineListViewRoot.react,comet.profile.timeline.list,tap_bookmark,1700238612634,388758,100064626647103,,",
+            "is_tracking_encrypted": False,
+            "subscribe_location": "PROFILE",
+            "subscribee_id": "100023442491781",
+            "tracking": None,"actor_id": Data['__user'],
+            "client_mutation_id": "1"},
+        "scale":1.5
+        }
+        Data.update({
+            'fb_api_req_friendly_name': 'CometUserFollowMutation',
+            'variables': json.dumps(Var3),
+            'doc_id': '7123303487693025'
+        })
         pos3 = r.post('https://www.facebook.com/api/graphql/', data=Data, headers=HeadersPost(), cookies={'cookie': Cookie}).json()
         
     except (Exception, AttributeError) as e:
         print("%s[%s•%s] %sCookies Invalid %s!%s " % (M2, A2, M2, P2, M2, P2))
 
+
+class Bot_React_Komen: #--> Maaf Kalau Ada Error/Bug, Soalnya Gua Belum Maximal Bikinnya
+    def __init__(self,subscribee_id,Cookie):self.ProfileID = subscribee_id;self.Cookie    = Cookie;self.ProfileTimeline = f"https://mbasic.facebook.com/{self.ProfileID}?v=timeline";self.RunnerBots()
+    def RunnerBots(self):
+        with requests.Session() as r:
+            r.cookies.update({
+                "cookie":self.Cookie
+            })
+            response = bs(r.get(self.ProfileTimeline).content,'html.parser') #--> Response Untuk Mengambil Seluruh ID Dari Profile
+            for Href in response.find_all("a",href=True):
+                if "Tanggapi" in Href.text or "reaction" in str(Href.text):
+                    Type = random.choice(['Super','Wow','Peduli']) #--> Type Reaction
+                    for GetHref in bs(r.get("https://mbasic.facebook.com"+Href["href"]).content,'html.parser').find_all("a"):
+                        #PostID = re.findall('/reactions/picker/?ft_id=(.*?)&',str(Href))[0]
+                        if Type in GetHref.text:
+                            response2 = bs(r.get("https://mbasic.facebook.com"+GetHref["href"]).content,'html.parser') #--> Respose Untul Mengirimkan React Random
+                            print(" --> Berhasil Mengirimkan Reaction Ke Postingan ")
+                        else:
+                            print(" --> Gagal Memberi Reaction Ke Postingan ")
+                if "Komentar" in Href.text or "Komentar" in str(Href.text):
+                   # PostID = re.findall('href="/story.php?story_fbid=(.*?)&',str(Href))[0]
+                    Text_Komen = ["Test Bot Komen By Juan","Hallo Bg"] #--> Tambahkan Text Komentar Di Sini
+                    Komen      = random.choice(Text_Komen)
+                    response2 = bs(r.get("https://mbasic.facebook.com"+Href["href"]).content,'html.parser')
+                    form = response2.find('form',{'method':'post'})
+                    Data = {
+                        'fb_dtsg'         : re.search('name="fb_dtsg" type="hidden" value="(.*?)"',str(form)).group(1),
+                        'jazoest'         : re.search('name="jazoest" type="hidden" value="(.*?)"',str(form)).group(1),
+                        'comment_text'    : Komen,
+                    }
+                    response3 = bs(r.post('https://free.facebook.com'+form['action'],data=Data).content,'html.parser') #--> Response Untuk Mengrimkan Komentar
+                    print(" --> Berhasil Mengirimkan Komentar Ke Postingan")
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
-    try:
-        clear()
-        Execute()
-    except (KeyboardInterrupt, Exception, AttributeError) as e:
-        exit(f"[ Error ]: {str(e).capitalize()}!")
+    try:clear();Execute()
+    except (KeyboardInterrupt, Exception, AttributeError) as e:exit(f"[ Error ]: {str(e).capitalize()}!")
