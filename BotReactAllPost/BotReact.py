@@ -218,7 +218,6 @@ def login():
         open('login/token.json','w').write(token)
         print('Berhasil');user()
     except requests.exceptions.ConnectionError:print('\n   %s[%s•%s] %sTidak Ada Koneksi Internet %s!%s\n'%(M,P,M,P,M,P));exit()
-    except (KeyError,IOError,AttributeError):print('\n   %s[%s•%s] %sCookies Invalid %s!%s\n'%(M,P,M,P,M,P));exit()
 
 ###----------[ MENU ]---------- ###
 def user(nama):
