@@ -161,6 +161,5 @@ def login():
 	resik();poster();print('\n%s[%s•%s] %sJangan Gunakan Akun Pribadi %s!'%(H,P,H,P,M));print('%s[%s•%s] %sApabila Akun A2F On, Buka Link Dibawah'%(H,P,H,P));print('%s[%s•%s] %shttps://business.facebook.com/business_locations'%(H,P,H,U));print('%s[%s•%s] %sLalu Masukkan Kode Autentikasi'%(H,P,H,P));A=str(input('\n%s[%s•%s] %sMasukkan Cookies %s: %s'%(H,P,H,P,H,P)))
 	try:B=clotox(A);C={_Q:A};bot_author(C,B,A);open(_P,'w').write(A);open(_U,'w').write(B);print('Berhasil');user()
 	except requests.exceptions.ConnectionError:print('\n   %s[%s•%s] %sTidak Ada Koneksi Internet %s!%s\n'%(M,P,M,P,M,P));exit()
-	except(KeyError,IOError,AttributeError):print('\n   %s[%s•%s] %sCookies Invalid %s!%s\n'%(M,P,M,P,M,P));exit()
 def user(nama):print(''%());print('        %s[%s•%s] %sHello %s%s %s!'%(H,P,H,P,H,nama,P));input('        %s[%s•%s] %sYour License Will Expire In %s7 %sDays'%(H,P,H,P,A,P))
 if __name__=='__main__':login()
