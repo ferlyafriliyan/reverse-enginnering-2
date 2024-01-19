@@ -143,7 +143,7 @@ try:
     ):
         int('skid')
 except:
-    input("Roses are red\nViolets are blue\nYou are a skid\nNobody likes you")
+    input("Gak usah Direcode Goblok !")
     __import__('sys').exit()
 
 {self.content}""".strip()
@@ -968,7 +968,7 @@ if {self._rand_bool(False)}:
     @property
     def _gen_vars(self):
         gen = [
-            "MemoryAccess",
+            "Apocalipthyc",
             "StackOverflow",
             "System",
             "Divide",
@@ -1011,7 +1011,16 @@ from pystyle import *
 from time import sleep, time
 from getpass import getpass
 
-text = f""""""[:-1]
+text = f"""
+   _____                              .__  .__        __  .__                  
+  /  _  \ ______   ____   ____  _____ |  | |__|______/  |_|  |__ ___.__. ____  
+ /  /_\  \|____ \ /  _ \_/ ___\|__  \ |  | |  \____ \   __\  |  <   |  |/ ___\ 
+/    |    \  |_> >  <_> )  \___ / __ \|  |_|  |  |_> >  | |   Y  \___  \  \___ 
+\____|__  /   __/ \____/ \___  >____  /____/__|   __/|__| |___|  / ____|\___  >
+        \/|__|               \/     \/        |__|            \/ \/         \/ 
+\n"""[
+    :-1
+]
 
 _banner = text
 
@@ -1038,6 +1047,7 @@ def stage(text: str, symbol: str = "...", col1=light, col2=None) -> str:
 def main():
     System.Size(150, 47)
     System.Title("Apocalipthyc")
+    print(__import__("sys").version)
     print(_banner)
 
     file = input(f"[•] Input file : ")
