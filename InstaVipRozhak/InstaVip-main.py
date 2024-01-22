@@ -1,11 +1,9 @@
-# Hyperion deobf by __.KhanhNguyen__bot
-# FB: https://fb.me/freya.xyz
+# Hyperion deobf by KhanhNguyen9872
+# FB: https://fb.me/khanh10a1
 # File name: [InstaVip.py] (py - 3.11)
 
-from builtins import divmod,exec,format,input,len,print,int,range,str,open,exit
-exec("")
 try:
-    import requests,datetime,random,json,time,sys,re,"<module 'os' (frozen)>"
+    import requests,datetime,random,json,time,sys,re, os
     from rich.columns import Columns
     from rich.panel import Panel
     from requests.exceptions import RequestException
@@ -15,8 +13,8 @@ except(Exception,KeyboardInterrupt)as e:
     exit(f"[Error] {str(e).capitalize()}!")
 Sukses,Gagal,Dumping=[],[],[]
 def Banner():
-    "<module 'os' (frozen)>".system(
-        "cls" if "<module 'os' (frozen)>".name=="nt" else "clear"
+    os.system(
+        "cls" if os.name=="nt" else "clear"
 )
     print(Panel("[bold red]●[bold yellow] ●[bold green] ●[bold white]\n[bold red]       .----.                                       \n         /   `            /      ..-.     .-..-.     \n        /.  .-.     . ---/---.-.    )   /   `-'.-.  \n       /  )/   )   / \\  /   (  |   /   /   /   /  ) \n      /  '/   (   / ._)/     `-'-'(  .' _.(__./`-'  \n[bold white] .---------'   `-/                 \\/        /      \n   [bold reverse red on white]INSTAGRAM FOLLOWERS WITH VIPIG - Coded by Rozhak",width=59,style="bold bright_white"))
     return("Banner Sukses")
@@ -253,7 +251,7 @@ class Fitur:
             try:
                 print(Panel(f"[italic green]Sedang Menghapus Cookies Instagram Dan Vipig!",width=59,style="bold bright_white",title=">>> Menghapus <<<"))
                 time.sleep(2.5)
-                "<module 'os' (frozen)>".remove("Data/Cookie.json")
+                os.remove("Data/Cookie.json")
                 exit()
             except:
                 exit()
@@ -394,11 +392,11 @@ class Mission:
                                 continue
                         elif "\"spam\":true" in str(response2.text)or "Harap tunggu" in str(response2.text)or "Please wait" in str(response2.text):
                             print(Panel(f"[italic red]Sepertinya Akun Instaram Kamu Telah Terblokir Silahkan Coba Lagi Besok Atau Ganti Akun Instagram Kamu!",width=59,style="bold bright_white",title=">>> Terblokir <<<"))
-                            "<module 'os' (frozen)>".remove("Data/Cookie.json")
+                            os.remove("Data/Cookie.json")
                             exit()
                         elif "accounts/login/?" in str(response2.text)or "checkpoint_required" in str(response2.text):
                             print(Panel(f"[italic red]Sepertinya Akun Instaram Kamu Terkena Checkpoint Atau Tidak Dalam Keadaan Login!",width=59,style="bold bright_white",title=">>> Checkpoint <<<"))
-                            "<module 'os' (frozen)>".remove("Data/Cookie.json")
+                            os.remove("Data/Cookie.json")
                             exit()
                         else:
                             print(f"[bold bright_white]   ╰─>[bold red] Gagal Mengikuti @{self.username}...    ",end="\r")
@@ -518,19 +516,20 @@ class Menukarkan:
                 return(self.kode_promo.group(1))
 if __name__=="__main__":
     try:
-        if "<module 'os' (frozen)>".path.exists("Data/Subscribe.json")==False:
+        if os.path.exists("subscribe.json")==False:
             youtube_url=json.loads(requests.get("https://raw.githubusercontent.com/RozhakXD/InstaVip/main/Data/Youtube.json").text)["Link"]
-            "<module 'os' (frozen)>".system(f'xdg-open {youtube_url}')
+            os.system(f'xdg-open https://github.com/ferlyafriliyan/reverse-enginnering')
             with open("Data/Subscribe.json","w")as w:
                 w.write(json.dumps({
                     "Status":True
 }))
             w.close()
             time.sleep(3.5)
-        "<module 'os' (frozen)>".system("git pull")
+        os.system("git pull")
         Fitur()
     except(Exception)as e:
-        print(Panel(f"[italic red]{str(e).title()}!",width=59,style="bold bright_white",title=">>> Error <<<"))
+        print(e)
+#        print(Panel(f"[italic red]{str(e).title()}!",width=59,style="bold bright_white",title=">>> Error <<<"))
         exit()
     except(KeyboardInterrupt):
         exit()
