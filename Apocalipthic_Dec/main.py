@@ -3,19 +3,19 @@ import os
 if __name__ != '__main__':exit()
 os.system('cls')
 
-print(">>> Hyperion Deobf by KhanhNguyen9872")
-print(">>> FB: https://fb.me/khanh10a1")
-print("!! ĐÂY LÀ TOOL SHARE FREE TẠI GITHUB KHANHNGUYEN9872 !!")
+print(">>> Hyperion Deobf by __builtins__.KhanhNguyen__bot")
+print(">>> FB: https://fb.me/freya.xyz")
+print("!! ĐÂY LÀ CÔNG CỤ CÓ THỂ GIẢI MÃ MÃ OBF TỪ BILLY !!")
 print("!! NẾU BẠN MUA TOOL NÀY TỪ MỘT AI ĐÓ, HỌ LÀ LỪA ĐẢO !!")
 print()
 
-__builtins__.bbllaacckk_khanh_tokenize = __import__('tokenize')
+__builtins__.bbllaacckk_deobfuscate_tokenize = __import__('tokenize')
 __builtins__.bbllaacckk_sieu_nhan_gao_den = __import__('os')
-__builtins__.bbllaacckk_sieu_nhan_gao_hong = __import__('subprocess')
+__builtins__.bbllaacckk_thanks_to_nguyen = __import__('subprocess')
 __builtins__.bbllaacckk_khong_co_gi_la_kho = __import__('sys')
 __builtins__.bbllaacckk_sieu_nhan_gao_trang = __import__('marshal')
 __builtins__.bbllaacckk_khanh_dep_trai_dang_test_thu_unhexlify = __import__('binascii').unhexlify
-__builtins__.bbllaacckk_khanh_BytesIO = __import__('io').BytesIO
+__builtins__.bbllaacckk_MinhNguyen_x_NgocUyen_bot = __import__('io').BytesIO
 __builtins__.bbllaacckk_stdout__ = __import__('sys').stdout
 __builtins__.bbllaacckk_nhung_modules_bi_khoa = ['os', 'threading', 'subprocess', 'sys']
 __builtins__.bbllaacckk___devnull__ = open('nul' if __builtins__.bbllaacckk_sieu_nhan_gao_den.name == 'nt' else '/dev/null', 'wb')
@@ -25,7 +25,7 @@ try:
 except NameError:
     __cpy_syspath__ = __builtins__.bbllaacckk_khong_co_gi_la_kho.executable
 
-class bbllaacckk_KhanhNguyen9872:
+class bbllaacckk_KhanhNguyen__bot:
     def rm_pycache():
         try:
             __import__("shutil").rmtree("__pycache__")
@@ -46,9 +46,9 @@ class bbllaacckk_KhanhNguyen9872:
                 folder = "." + folder
         return file_name,folder
     def get_license(file_name, bbllaacckk_day_la_binary):
-        return f"# Hyperion deobf by KhanhNguyen9872\n# FB: https://fb.me/khanh10a1\n# File name: [{file_name}.py] (".encode('utf8') + str('pyc' if bbllaacckk_day_la_binary else 'py').encode('utf8') + " - ".encode('utf8') + __builtins__.bbllaacckk_KhanhNguyen9872.get_py_ver().encode('utf8') + ")\n\n".encode('utf8')
+        return f"# Hyperion deobf by __.KhanhNguyen__bot\n# FB: https://fb.me/freya.xyz\n# File name: [{file_name}.py] (".encode('utf8') + str('pyc' if bbllaacckk_day_la_binary else 'py').encode('utf8') + " - ".encode('utf8') + __builtins__.bbllaacckk_KhanhNguyen__bot.get_py_ver().encode('utf8') + ")\n\n".encode('utf8')
     def get_code(self):
-        return __builtins__.bbllaacckk_khanh_tokenize.untokenize(self.ntokens)
+        return __builtins__.bbllaacckk_deobfuscate_tokenize.untokenize(self.ntokens)
     def replace_var(self, target, var):
         self.ntokens = []
         for token in self.content:
@@ -58,11 +58,11 @@ class bbllaacckk_KhanhNguyen9872:
                 if str(string) == str(target):
                     string = str(var)
 
-            self.ntokens.append(__builtins__.bbllaacckk_khanh_tokenize.TokenInfo(token.type, string, token.start, token.end, token.line))
+            self.ntokens.append(__builtins__.bbllaacckk_deobfuscate_tokenize.TokenInfo(token.type, string, token.start, token.end, token.line))
         self.put_code(self.get_code())
 
     def put_code(self, content):
-        self.content = list(__builtins__.bbllaacckk_khanh_tokenize.tokenize(__builtins__.bbllaacckk_khanh_BytesIO(content).readline))
+        self.content = list(__builtins__.bbllaacckk_deobfuscate_tokenize.tokenize(__builtins__.bbllaacckk_MinhNguyen_x_NgocUyen_bot(content).readline))
 
     def replace_by_khanh_dep_trai(tai_sao_em_khong_dua_cho_anh_code, bbllaacckk_thang_nao_bao_em_khong_dep_trai, bbllaacckk_tao_dep_trai_nhat_vu_tru):
         tai_sao_em_khong_dua_cho_anh_code = tai_sao_em_khong_dua_cho_anh_code.split(b"\n")
@@ -116,7 +116,7 @@ __file__ = \"\"\"{0}\"\"\"
 """.format(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum).encode('utf8') + open(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum, "rb").read(), '<KhanhNguyen9872>', 'exec'))
         try:
             if is_dump:
-                file_name, folder = __builtins__.bbllaacckk_KhanhNguyen9872.get_f_d(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum)
+                file_name, folder = __builtins__.bbllaacckk_KhanhNguyen__bot.get_f_d(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum)
                 try:
                     __import__("shutil").rmtree(folder + file_name + "_py")
                 except:
@@ -141,7 +141,7 @@ def decompress(code):
     khanhcount+=1
     return zlib.decompress(code)
 
-'''.format(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum, file_name, str(folder.encode('utf8')), str(__builtins__.bbllaacckk_KhanhNguyen9872.get_license(file_name, __builtins__.bbllaacckk_day_la_binary))), '<KhanhNguyen9872>', 'exec'))
+'''.format(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum, file_name, str(folder.encode('utf8')), str(__builtins__.bbllaacckk_KhanhNguyen__bot.get_license(file_name, __builtins__.bbllaacckk_day_la_binary))), '<KhanhNguyen9872>', 'exec'))
                 print(">> Obf code will start now! please wait.....")
             else:
                 __builtins__.bbllaacckk_cuoc_doi_that_dep_lam_sao = __builtins__.bbllaacckk_sieu_nhan_gao_trang.dumps(compile('''
@@ -173,10 +173,10 @@ while 1:
         try:
             cmd = f"{__cpy_syspath__} temp_code.py" if __builtins__.bbllaacckk_sieu_nhan_gao_den.name == 'nt' else '{} temp_code.py'.format(__builtins__.bbllaacckk_khong_co_gi_la_kho.executable)
             if __builtins__.bbllaacckk_sieu_nhan_gao_den.name == 'nt':
-                __builtins__.bbllaacckk_sieu_nhan_gao_hong.check_output(cmd, timeout = 15, stderr = __builtins__.bbllaacckk___devnull__)
+                __builtins__.bbllaacckk_thanks_to_nguyen.check_output(cmd, timeout = 15, stderr = __builtins__.bbllaacckk___devnull__)
             else:
-                __builtins__.bbllaacckk_sieu_nhan_gao_hong.run(cmd, stderr = __builtins__.bbllaacckk___devnull__, shell=True)
-            __builtins__.bbllaacckk_KhanhNguyen9872.rm_pycache()
+                __builtins__.bbllaacckk_thanks_to_nguyen.run(cmd, stderr = __builtins__.bbllaacckk___devnull__, shell=True)
+            __builtins__.bbllaacckk_KhanhNguyen__bot.rm_pycache()
             __builtins__.bbllaacckk_sieu_nhan_gao_den.unlink('khanh_dep_trai_tmp.py')
             del cmd
             if is_dump:
@@ -189,7 +189,7 @@ while 1:
                 __import__('sys').exit()
             else:
                 open('temp_run.py','wb').write(__import__('zlib').decompress(__builtins__.bbllaacckk_sieu_nhan_gao_do))
-        except __builtins__.bbllaacckk_sieu_nhan_gao_hong.TimeoutExpired:
+        except __builtins__.bbllaacckk_thanks_to_nguyen.TimeoutExpired:
             __builtins__.bbllaacckk_sieu_nhan_gao_den.unlink('temp_code.py')
             __builtins__.bbllaacckk_sieu_nhan_gao_den.unlink('khanh_dep_trai_tmp.py')
             if is_dump:
@@ -197,7 +197,7 @@ while 1:
             print('!! failed when deobfuscate!')
             input()
             __import__('sys').exit()
-        except __builtins__.bbllaacckk_sieu_nhan_gao_hong.CalledProcessError:
+        except __builtins__.bbllaacckk_thanks_to_nguyen.CalledProcessError:
             __builtins__.bbllaacckk_sieu_nhan_gao_den.unlink('temp_code.py')
             __builtins__.bbllaacckk_sieu_nhan_gao_den.unlink('khanh_dep_trai_tmp.py')
             if __builtins__.bbllaacckk_day_la_binary:
@@ -225,13 +225,13 @@ while 1:
         __builtins__.bbllaacckk_sieu_nhan_gao_den.unlink('temp_run.py')
         return __builtins__.bbllaacckk_sieu_nhan_gao_do
 
-__builtins__.bbllaacckk_KhanhNguyen9872 = bbllaacckk_KhanhNguyen9872
-del bbllaacckk_KhanhNguyen9872
-__builtins__.bbllaacckk_KhanhNguyen9872.rm_pycache()
+__builtins__.bbllaacckk_KhanhNguyen__bot = bbllaacckk_KhanhNguyen__bot
+del bbllaacckk_KhanhNguyen__bot
+__builtins__.bbllaacckk_KhanhNguyen__bot.rm_pycache()
 #get code from enc
-print(">> Python: {}".format(__builtins__.bbllaacckk_KhanhNguyen9872.get_py_ver()))
+print(">> Python: {}".format(__builtins__.bbllaacckk_KhanhNguyen__bot.get_py_ver()))
 while 1:
-    inp = input("!! auto detect code+vars? [Y/n]: ").lower()
+    inp = input("!! Auto Detect Code + Vars? [Y/n]: ").lower()
     if inp == "y":
         while 1:
             try:
@@ -242,16 +242,16 @@ while 1:
                 else:
                     __builtins__.bbllaacckk_day_la_binary = False
                 if int(__builtins__.bbllaacckk_sieu_nhan_gao_den.stat(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum).st_size) > 524288000:
-                    print('>> this file to large!')
+                    print('>> This file becomes Large!')
                     continue
                 break
             except FileNotFoundError:
-                print('>> file not found!')
+                print('>> File not Found!')
             except PermissionError:
-                print('>> permission denied!')
+                print('>> Permission Denied!')
             except OSError:
                 continue
-        __builtins__.bbllaacckk_sieu_nhan_gao_do = __builtins__.bbllaacckk_KhanhNguyen9872.read(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum,__builtins__.bbllaacckk_day_la_binary,False)
+        __builtins__.bbllaacckk_sieu_nhan_gao_do = __builtins__.bbllaacckk_KhanhNguyen__bot.read(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum,__builtins__.bbllaacckk_day_la_binary,False)
         break
     elif inp == "n":
         while 1:
@@ -275,7 +275,7 @@ while 1:
                         print('>> permission denied!')
                     except OSError:
                         continue
-                __builtins__.bbllaacckk_sieu_nhan_gao_do = __builtins__.bbllaacckk_KhanhNguyen9872.read(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum,__builtins__.bbllaacckk_day_la_binary,True)
+                __builtins__.bbllaacckk_sieu_nhan_gao_do = __builtins__.bbllaacckk_KhanhNguyen__bot.read(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum,__builtins__.bbllaacckk_day_la_binary,True)
                 print(">> Done all first layer!")
                 __import__('sys').exit(0)
             elif inp == "n":
@@ -303,7 +303,7 @@ while 1:
 
 del inp
 
-__builtins__.bbllaacckk_KhanhNguyen9872.rm_pycache()
+__builtins__.bbllaacckk_KhanhNguyen__bot.rm_pycache()
 
 __builtins__.bbllaacckk_sieu_nhan_gao_xanh = 0
 
@@ -466,7 +466,7 @@ if __builtins__.bbllaacckk_ignore_var_by_khanh:
     if not __builtins__.bbllaacckk_cuoc_doi_that_dep_lam_sao:
         print('>> replace vars string [{} mode]....'.format(("Fast" if __builtins__.bbllaacckk_replace_type == 0 else "Very Slow")))
         if __builtins__.bbllaacckk_replace_type == 1:
-            Khanh = __builtins__.bbllaacckk_KhanhNguyen9872()
+            Khanh = __builtins__.bbllaacckk_KhanhNguyen__bot()
             Khanh.put_code(__builtins__.bbllaacckk_khanh_nguyen_9872)
 
         __tmp_list__ = list(__builtins__.bbllaacckk_khanh_dep_trai_nhi)
@@ -501,7 +501,7 @@ if __builtins__.bbllaacckk_ignore_var_by_khanh:
                     if __builtins__.bbllaacckk_replace_type == 1:
                         Khanh.replace_var(bbllaacckk_khanh_dep_trai_nhat, __builtins__.bbllaacckk_khanh_number_one)
                     elif __builtins__.bbllaacckk_replace_type == 0:
-                        __builtins__.bbllaacckk_khanh_nguyen_9872 = __builtins__.bbllaacckk_KhanhNguyen9872.replace_by_khanh_dep_trai(__builtins__.bbllaacckk_khanh_nguyen_9872, bbllaacckk_khanh_dep_trai_nhat.encode(), __builtins__.bbllaacckk_khanh_number_one.encode())
+                        __builtins__.bbllaacckk_khanh_nguyen_9872 = __builtins__.bbllaacckk_KhanhNguyen__bot.replace_by_khanh_dep_trai(__builtins__.bbllaacckk_khanh_nguyen_9872, bbllaacckk_khanh_dep_trai_nhat.encode(), __builtins__.bbllaacckk_khanh_number_one.encode())
             __builtins__.index = int(__tmp_list__.index(bbllaacckk_khanh_dep_trai_nhat))+1
             __builtins__.i=int((100/(__builtins__.bbllaacckk_max__-__builtins__.bbllaacckk_min__))*(__builtins__.index-__builtins__.bbllaacckk_min__))
             __builtins__.bbllaacckk_stdout__.write(f"\r[%-25s] %d%% ({__builtins__.index}/{__builtins__.bbllaacckk_max__} var)" % ('='*int(__builtins__.i/4), __builtins__.i))
@@ -580,8 +580,8 @@ if __builtins__.bbllaacckk_ignore_var_by_khanh:
     __builtins__.bbllaacckk_khanh_nguyen_9872 = __builtins__.bbllaacckk_khanh_nguyen_9872.replace(unhexlify_name.encode(), b"unhexlify")
 
 # write file
-file_name, folder = __builtins__.bbllaacckk_KhanhNguyen9872.get_f_d(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum)
+file_name, folder = __builtins__.bbllaacckk_KhanhNguyen__bot.get_f_d(__builtins__.bbllaacckk_ten_cua_file_code_bi_ma_hoa_tum_lum)
 
 print(f'>> saving.... [ket_qua_cua_viec_dep_trai_{file_name}.py]')
-open(f'{folder}ket_qua_cua_viec_dep_trai_{file_name}.py','wb').write(__builtins__.bbllaacckk_KhanhNguyen9872.get_license(file_name, __builtins__.bbllaacckk_day_la_binary) + __builtins__.bbllaacckk_khanh_nguyen_9872)
+open(f'{folder}ket_qua_cua_viec_dep_trai_{file_name}.py','wb').write(__builtins__.bbllaacckk_KhanhNguyen__bot.get_license(file_name, __builtins__.bbllaacckk_day_la_binary) + __builtins__.bbllaacckk_khanh_nguyen_9872)
 print(">> done!")
