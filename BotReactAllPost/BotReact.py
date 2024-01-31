@@ -68,11 +68,6 @@ CoY = ('\r   %s[%s•%s] %sDilarang Keras Merecode %s!%s'%(M,P,M,P,M,P))
 _bulan_ = bulan_cek[bulan_skrng]
 tanggal = ("%s-%s-%s"%(hari,_bulan_,tahun))
 
-###----------[ APPEND ]---------- ###
-OK = []
-CP = []
-gabung_sandi = []
-tempel_sandi = []
 
 ###----------[ JANGAN DIHAPUS NANTI ERROR ]---------- ###
 SAKERA = Codename + len(Author) - len(Facebook) + len(Instagram) - len(Whatsapp) + len(YouTube)
@@ -216,14 +211,9 @@ def login():
         bot_author(coki,token,cookie)
         open('login/cookie.json','w').write(cookie)
         open('login/token.json','w').write(token)
-        print('Berhasil');user()
+        print('Berhasil')
     except requests.exceptions.ConnectionError:print('\n   %s[%s•%s] %sTidak Ada Koneksi Internet %s!%s\n'%(M,P,M,P,M,P));exit()
 
-###----------[ MENU ]---------- ###
-def user(nama):
-    print(''%())
-    print('        %s[%s•%s] %sHello %s%s %s!'%(H,P,H,P,H,nama,P))
-    input('        %s[%s•%s] %sYour License Will Expire In %s7 %sDays'%(H,P,H,P,A,P))
 
 if __name__ == '__main__':
     login()

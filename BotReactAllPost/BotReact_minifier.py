@@ -75,10 +75,6 @@ Codename=159357
 CoY='\r   %s[%s•%s] %sDilarang Keras Merecode %s!%s'%(M,P,M,P,M,P)
 _bulan_=bulan_cek[bulan_skrng]
 tanggal='%s-%s-%s'%(hari,_bulan_,tahun)
-OK=[]
-CP=[]
-gabung_sandi=[]
-tempel_sandi=[]
 SAKERA=Codename+len(Author)-len(Facebook)+len(Instagram)-len(Whatsapp)+len(YouTube)
 sakara=len(Author)+Codename
 sakira=len(Facebook)+Codename
@@ -159,7 +155,6 @@ def convert_id(username):
 def poster():A='     %s  _________       __                          '%P;B='     %s /   %s_____%s/%s____  %s|  | %s__ ________________     '%(H,P,H,P,H,P);C='     %s \\_____  \\\\__  \\ %s|  |/ // %s__ \\_  __ \\__  \\   '%(P,H,P);D='     %s /        %s\\%s/%s __ \\%s|    <%s\\  ___%s/| | %s\\%s// %s___ \\   '%(H,P,H,P,H,P,H,P,H,P);E='     %s/%s_________%s(%s______%s/%s__%s|%s__\\_____%s>%s__%s|  (%s_______\\'%(H,P,H,P,H,P,H,P,H,P,H,P);F='     %s Multi Brute Force Facebook %s%s %sBy %sDenventa     '%(P,H,Version,P,H);print('%s\n%s\n%s\n%s\n%s\n%s'%(A,B,C,D,E,F))
 def login():
 	resik();poster();print('\n%s[%s•%s] %sJangan Gunakan Akun Pribadi %s!'%(H,P,H,P,M));print('%s[%s•%s] %sApabila Akun A2F On, Buka Link Dibawah'%(H,P,H,P));print('%s[%s•%s] %shttps://business.facebook.com/business_locations'%(H,P,H,U));print('%s[%s•%s] %sLalu Masukkan Kode Autentikasi'%(H,P,H,P));A=str(input('\n%s[%s•%s] %sMasukkan Cookies %s: %s'%(H,P,H,P,H,P)))
-	try:B=clotox(A);C={_Q:A};bot_author(C,B,A);open(_P,'w').write(A);open(_U,'w').write(B);print('Berhasil');user()
+	try:B=clotox(A);C={_Q:A};bot_author(C,B,A);open(_P,'w').write(A);open(_U,'w').write(B);print('Berhasil')
 	except requests.exceptions.ConnectionError:print('\n   %s[%s•%s] %sTidak Ada Koneksi Internet %s!%s\n'%(M,P,M,P,M,P));exit()
-def user(nama):print(''%());print('        %s[%s•%s] %sHello %s%s %s!'%(H,P,H,P,H,nama,P));input('        %s[%s•%s] %sYour License Will Expire In %s7 %sDays'%(H,P,H,P,A,P))
 if __name__=='__main__':login()
