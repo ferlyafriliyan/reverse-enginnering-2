@@ -74,7 +74,7 @@ try:
 except MemoryError:print('MemoryError: >> GOOD LUCK!! , OBF by [NgocUyen x MinhNguyen] <<')
 except Exception as e:__import__('logging').error(__import__('traceback').format_exc())'''
 
-    _2st_marshal_code = marshal.dumps(compile(_1st_level_of_blurring.encode(), '<M_i_n_h_x_U_y_e_n>', 'exec'))
+    _2st_marshal_code = marshal.dumps(compile(_1st_level_of_blurring.encode(), '', 'exec'))
     _2st_bz2_code = bz2.compress(_2st_marshal_code)
 
     _2st_level_of_blurring = f'''#i/usr/bin/python3.11
@@ -82,7 +82,7 @@ try:exec(__import__('marshal').loads(__import__('bz2').BZ2Decompressor().decompr
 except KeyboardInterrupt:print();__import__('sys').exit()
 except Exception as e:__import__('logging').error(__import__('traceback').format_exc())'''
 
-    _3st_marshal_code = marshal.dumps(compile(_2st_level_of_blurring.encode(), '<M_i_n_h_x_U_y_e_n>', 'exec'))
+    _3st_marshal_code = marshal.dumps(compile(_2st_level_of_blurring.encode(), '', 'exec'))
     _3st_zlib_code = zlib.compress(_3st_marshal_code)
     _3st_base64_code = base64.b64encode(_3st_zlib_code).decode()
 
@@ -91,7 +91,7 @@ try:exec(__import__('marshal').loads(__import__('zlib').decompress(__import__('b
 except KeyboardInterrupt:print();__import__('sys').exit()
 except Exception as e:__import__('logging').error(__import__('traceback').format_exc())'''
     
-    _4st_marshal__code = marshal.dumps(compile(_3st_level_of_blurring.encode(), '<M_i_n_h_x_U_y_e_n>', 'exec'))
+    _4st_marshal__code = marshal.dumps(compile(_3st_level_of_blurring.encode(), '', 'exec'))
     _4st_lzma__code = lzma.compress(_4st_marshal__code)
     _4st_bz2_compressed_code = bz2.compress(_4st_lzma__code)
     _4st_base64__code = base64.b64encode(_4st_bz2_compressed_code)
@@ -101,7 +101,7 @@ try:exec(__import__('marshal').loads(__import__('lzma').LZMADecompressor().decom
 except KeyboardInterrupt:print();__import__('sys').exit()
 except Exception as e:__import__('logging').error(__import__('traceback').format_exc())'''
     
-    _5st_marshal_code = marshal.dumps(compile(_4st_level_of_blurring.encode(), '<M_i_n_h_x_U_y_e_n>', 'exec'))
+    _5st_marshal_code = marshal.dumps(compile(_4st_level_of_blurring.encode(), '', 'exec'))
     _5st_zlib_code = zlib.compress(_5st_marshal_code)
     _5st_bz2_code = bz2.compress(_5st_zlib_code)
     _5st_lzma_code = lzma.compress(_5st_bz2_code)
