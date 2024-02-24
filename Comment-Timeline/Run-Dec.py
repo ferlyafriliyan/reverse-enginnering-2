@@ -30,14 +30,14 @@ class Login:
         with requests.Session() as r:
             r.headers.update({
                 'sec-fetch-mode': 'navigate',
-                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36',
-                'Host': 'mobile.facebook.com',
+                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Host': 'www.facebook.com',
                 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
                 'accept-language': 'en-US,en;q=0.9',
                 'sec-fetch-dest': 'document',
                 'sec-fetch-site': 'same-origin',
             })
-            response = r.get('https://mobile.facebook.com/?_rdc=1&_rdr', cookies = {
+            response = r.get('https://www.facebook.com/?_rdc=1&_rdr', cookies = {
                 'cookie': cookies
             }).text
             self.find_account = re.search('"USER_ID":"(\d+)","NAME":"(.*?)"', str(response))
@@ -139,7 +139,7 @@ class Daftar:
             try:
                 print(Panel("[italic white]Silahkan Masukan Link Post, Wajib Sesuai Contoh, Misalnya :[italic green] https://web.facebook.com/story.php?story_fbid=pfbid0gvEwezHWjqEMmQL9mx3FdjwtNPfEzyRimbrypQ7FSHFSBDwHV7Bt3NqVYwJHZMbcl&id=757953543", width=65, style="bold deep_sky_blue3", title = "[bold green]>[bold yellow]>[bold red]>[bold deep_sky_blue3] Catatan[bold red] <[bold yellow]<[bold green]<", subtitle="[bold deep_sky_blue3]╭────", subtitle_align="left"))
                 link_posts = Console().input("[bold deep_sky_blue3]   ╰─> ")
-                if 'https://web.facebook.com/' in str(link_posts):
+                if 'https://www.facebook.com/' in str(link_posts):
                     Dump.append(link_posts)
                     print(Panel("[italic white]Silahkan Masukan[italic green] Delay[italic white] Atau Jeda Reaction Dan Komentar, Saya Sarankan Menggunakan Delay[italic red] 60-180 Detik[italic white], Misalnya :[italic green] 60 Detik", width=65, style="bold deep_sky_blue3", title = "[bold green]>[bold yellow]>[bold red]>[bold deep_sky_blue3] Catatan[bold red] <[bold yellow]<[bold green]<", subtitle="[bold deep_sky_blue3]╭────", subtitle_align="left"))
                     delay = int(Console().input("[bold deep_sky_blue3]   ╰─> "))
@@ -168,16 +168,16 @@ class Likes_Komentar:
         with requests.Session() as r:
             if Komentar['Type'] == 'Satu':
                 r.headers.update({
-                    'Host': 'web.facebook.com',
+                    'Host': 'www.facebook.com',
                     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-                    'accept-language': 'en-US,en;q=0.9',
+                    'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
                     'sec-fetch-user': '?1',
                     'sec-fetch-dest': 'document',
                     'sec-fetch-site': 'same-origin',
                     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36',
                     'sec-fetch-mode': 'navigate',
                 })
-                response = r.get('https://web.facebook.com/', cookies = {
+                response = r.get('https://www.facebook.com/', cookies = {
                     'cookie': cookies
                 }).text
                 self.find_all_postingan = re.findall('"story":{"creation_time":\d+,"url":"(.*?)"', str(response))
@@ -199,9 +199,9 @@ class Likes_Komentar:
         with requests.Session() as r:
             for self.post_url in Dump:
                 r.headers.update({
-                    'Host': 'web.facebook.com',
+                    'Host': 'www.facebook.com',
                     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-                    'accept-language': 'en-US,en;q=0.9',
+                    'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
                     'sec-fetch-user': '?1',
                     'sec-fetch-dest': 'document',
                     'sec-fetch-site': 'same-origin',
@@ -324,7 +324,6 @@ class Likes_Komentar:
                 'Host': 'm.facebook.com',
             })
             self.comment_text = (f"""{self.Teks_Komentar(Teks['Teks'], ids)}
-
 {datetime.datetime.now().strftime('%A, %d/%B/%Y:%H.%M.%S')}""")
             data = {
                 'conversation_guide_shown': None,
