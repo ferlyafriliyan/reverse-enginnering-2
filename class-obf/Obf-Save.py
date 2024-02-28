@@ -45,7 +45,7 @@ def obfuscate_and_save():
     # Build the final obfuscated code
     _1st_level_of_blurring = f'''#i/urs/bin/python3.11
 try:
-	__Minh_x_Uyen__=locals();__Botname__='@MinhNguyen_x_NgocUyen_bot';__Date_Obf__='2024-02-07 - Admin (UTC)';__Mode_ENC__='3.11.6 -> (main) - version: 1.0.1';__OBFUSCATION_BY__='MinhNguyen2412_x_NgocUyen1907'
+	__Minh_x_Uyen__=locals();__Botname__='@ChatGPT_bot';__Date_Obf__='2024-02-07 - Admin (UTC)';__Mode_ENC__='3.11.6 -> (main) - version: 1.0.2';__OBFUSCATION_BY__='MinhNguyen2412_x_NgocUyen1907'
 	class PyObject:
 		def PythonCodeObject(code):return code*2
 		def Obfuscator(code_,_code):__Minh_x_Uyen__[code_]=_code;return __Minh_x_Uyen__[code_]
@@ -100,15 +100,48 @@ except Exception as e:__import__('logging').error(__import__('traceback').format
 try:exec(__import__('marshal').loads(__import__('lzma').LZMADecompressor().decompress(__import__('bz2').BZ2Decompressor().decompress(__import__('base64').b64decode({repr(_4st_base64__code)})))),globals())
 except KeyboardInterrupt:print();__import__('sys').exit()
 except Exception as e:__import__('logging').error(__import__('traceback').format_exc())'''
-    
-    _5st_marshal_code = marshal.dumps(compile(_4st_level_of_blurring.encode(), '', 'exec'))
-    _5st_zlib_code = zlib.compress(_5st_marshal_code)
-    _5st_bz2_code = bz2.compress(_5st_zlib_code)
-    _5st_lzma_code = lzma.compress(_5st_bz2_code)
 
-    _5st_level_of_blurring = f'''#i/urs/bin/python3.11
+    code = _4st_level_of_blurring.encode()
+    compile_code = compile(code, '', 'exec')
+    marshal_code = marshal.dumps(compile_code)
+    bz2_code = bz2.compress(marshal_code)
+    base64_code = base64.b32hexencode(bz2_code)
+    zlib_code = zlib.compress(base64_code, level=zlib.Z_BEST_COMPRESSION)
+
+    anti_skid = f'''
+
 try:
-	__Minh_x_Uyen__=locals();__Botname__='@MinhNguyen_x_NgocUyen_bot';__Date_Obf__='2024-02-07 - Admin (UTC)';__Mode_ENC__='3.11.6 -> (main) - version: 1.0.1';__OBFUSCATION_BY__='MinhNguyen2412_x_NgocUyen1907'
+    if OBFUSCATED_BY != '@Ferly Afriliyan':
+        int('skid')
+except:
+    input("Gak usah Direcode Goblok !")
+    __import__('sys').exit()
+
+'''
+    skid_ = compile(anti_skid, '', 'exec')
+    marshal_ = marshal.dumps(skid_)
+    bz2_ = bz2.compress(marshal_)
+    base64_ = base64.b32hexencode(bz2_)
+    zlib_ = zlib.compress(base64_, level=zlib.Z_BEST_COMPRESSION)
+
+    obfuscate_skid = f'''
+eval(__import__('marshal').loads(__import__('_bz2').BZ2Decompressor().decompress(__import__('base64').b32hexdecode(__import__('zlib').decompress({repr(zlib_)})))), globals())'''
+    
+    _5st_level_of_blurring = f'''
+OBFUSCATED_BY = '@Ferly Afriliyan'
+# try:
+# 	if OBFUSCATED_BY!='@Ferly Afriliyan':int('skid')
+# except:input('Gak usah Direcode Goblok !');__import__('sys').exit()
+{obfuscate_skid};eval(__import__('marshal').loads(__import__('_bz2').BZ2Decompressor().decompress(__import__('base64').b32hexdecode(__import__('zlib').decompress({repr(zlib_code)})))), globals())'''
+
+    _6st_marshal_code = marshal.dumps(compile(_5st_level_of_blurring.encode(), '', 'exec'))
+    _6st_zlib_code = zlib.compress(_6st_marshal_code)
+    _6st_bz2_code = bz2.compress(_6st_zlib_code)
+    _6st_lzma_code = lzma.compress(_6st_bz2_code)
+
+    _6st_level_of_blurring = f'''#i/urs/bin/python3.11
+try:
+	__Minh_x_Uyen__=locals();__Botname__='@ChatGPT_bot';__Date_Obf__='2024-02-07 - Admin (UTC)';__Mode_ENC__='3.11.6 -> (main) - version: 1.0.2';__OBFUSCATION_BY__='MinhNguyen2412_x_NgocUyen1907'
 	class PyObject:
 		def PythonCodeObject(code):return code*2
 		def Obfuscator(code_,_code):__Minh_x_Uyen__[code_]=_code;return __Minh_x_Uyen__[code_]
@@ -133,14 +166,14 @@ try:
 				code_.append(_code);code=Ngoc_Uyen.unused_data
 				if not code:break
 			return b''.join(code_)
-	__CodeObjectData__=PyObject.PythonCodeObject(__import__('math').floor(5)),PyObject.Obfuscator('__CodeObjectData__',{_5st_lzma_code});__import__('builtins').eval(__import__('marshal').loads(__import__('zlib').decompress(PyObject.Windows(PyObject.KaliLinux(__CodeObjectData__[__import__('math').floor(1)])))))
+	__CodeObjectData__=PyObject.PythonCodeObject(__import__('math').floor(5)),PyObject.Obfuscator('__CodeObjectData__',{_6st_lzma_code});__import__('builtins').eval(__import__('marshal').loads(__import__('zlib').decompress(PyObject.Windows(PyObject.KaliLinux(__CodeObjectData__[__import__('math').floor(1)])))))
 except MemoryError:print('MemoryError: >> GOOD LUCK!! , OBF by [NgocUyen x MinhNguyen] <<')
 except Exception as e:__import__('logging').error(__import__('traceback').format_exc())'''
 
     # Save the obfuscated code to a new file
     output_file = input("Output File: ")
     with open(output_file, 'w') as f:
-        f.write(_5st_level_of_blurring)
+        f.write(_6st_level_of_blurring)
 
 if __name__ == '__main__':
     try:
